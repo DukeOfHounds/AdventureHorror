@@ -30,10 +30,7 @@
             "m_Id": "055b2e85bb9843599a35700ef48b3bc2"
         },
         {
-            "m_Id": "b2279cddd04e493e84e7b94c123d9c8f"
-        },
-        {
-            "m_Id": "c12cab12630f4f719b806eec97ef08a2"
+            "m_Id": "b19ba2cc3274472e8280d5c2bf77188c"
         }
     ],
     "m_GroupDatas": [],
@@ -41,8 +38,8 @@
     "m_Edges": [],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 112.0,
+            "y": 23.0
         },
         "m_Blocks": [
             {
@@ -58,8 +55,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": 112.0,
+            "y": 223.0
         },
         "m_Blocks": [
             {
@@ -78,10 +75,7 @@
                 "m_Id": "055b2e85bb9843599a35700ef48b3bc2"
             },
             {
-                "m_Id": "b2279cddd04e493e84e7b94c123d9c8f"
-            },
-            {
-                "m_Id": "c12cab12630f4f719b806eec97ef08a2"
+                "m_Id": "b19ba2cc3274472e8280d5c2bf77188c"
             }
         ]
     },
@@ -250,36 +244,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.ColorRGBMaterialSlot",
-    "m_ObjectId": "4326d26266bc42059db7e818a9fc69f5",
-    "m_Id": 0,
-    "m_DisplayName": "Specular Color",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Specular",
-    "m_StageCapability": 2,
-    "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": [],
-    "m_ColorMode": 0,
-    "m_DefaultColor": {
-        "r": 0.5,
-        "g": 0.5,
-        "b": 0.5,
-        "a": 1.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "4b72150e767d4228874c0a9d5dcbfa03",
     "m_Group": {
@@ -351,7 +315,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "d037d758ebef4801a397b55ccfeb1718"
     },
-    "m_SurfaceType": 1,
+    "m_SurfaceType": 0,
     "m_AlphaMode": 0,
     "m_TwoSided": false,
     "m_AlphaClip": false,
@@ -403,21 +367,6 @@
     "m_StageCapability": 2,
     "m_Value": 0.5,
     "m_DefaultValue": 0.5,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "7dbe41169cd841c2a415df442870fa0c",
-    "m_Id": 0,
-    "m_DisplayName": "Alpha",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Alpha",
-    "m_StageCapability": 2,
-    "m_Value": 1.0,
-    "m_DefaultValue": 1.0,
     "m_Labels": []
 }
 
@@ -478,7 +427,7 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "b2279cddd04e493e84e7b94c123d9c8f",
+    "m_ObjectId": "b19ba2cc3274472e8280d5c2bf77188c",
     "m_Group": {
         "m_Id": ""
     },
@@ -495,7 +444,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "4326d26266bc42059db7e818a9fc69f5"
+            "m_Id": "bab3fdada36b4323991a021666635555"
         }
     ],
     "synonyms": [],
@@ -558,35 +507,32 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "c12cab12630f4f719b806eec97ef08a2",
-    "m_Group": {
-        "m_Id": ""
+    "m_Type": "UnityEditor.ShaderGraph.ColorRGBMaterialSlot",
+    "m_ObjectId": "bab3fdada36b4323991a021666635555",
+    "m_Id": 0,
+    "m_DisplayName": "Specular Color",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Specular",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
     },
-    "m_Name": "SurfaceDescription.Alpha",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
     },
-    "m_Slots": [
-        {
-            "m_Id": "7dbe41169cd841c2a415df442870fa0c"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.Alpha"
+    "m_Labels": [],
+    "m_ColorMode": 0,
+    "m_DefaultColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5,
+        "a": 1.0
+    }
 }
 
 {
