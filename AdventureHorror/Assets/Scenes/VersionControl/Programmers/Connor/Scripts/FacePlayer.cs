@@ -51,7 +51,7 @@ public class FacePlayer : MonoBehaviour
                     removeList.Add(item);
                     continue;
                 }
-                Debug.Log("you spin me right round baby right round like a construction light");
+               // Debug.Log("you spin me right round baby right round like a construction light");
                 item.item.SetActive(Vector3.Distance(lookTarget.transform.position, item.objtrans.position) < item.killDist);// makes sure item is active if close to player
                 //Vector3 direction = (-item.objtrans.position + lookTarget.transform.position);// finds direction to look in 
                 ////Quaternion lookRotation =  Quaternion.LookRotation(lookTarget.transform.position - item.objtrans.position);

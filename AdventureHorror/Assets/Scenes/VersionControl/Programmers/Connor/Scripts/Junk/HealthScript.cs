@@ -25,7 +25,7 @@ namespace HealthAndDamage
         {
             string tag = gameObject.tag;
             maxHealth = health; // keeps track of max health
-            player = PlayerManager.instance.player;
+            player = PlayerInstance.instance.player;
             gameManager = GameObject.Find("GameManager");
         }
         private void Update()

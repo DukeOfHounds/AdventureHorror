@@ -13,7 +13,7 @@ namespace HealthAndDamage
         GameObject player;
          void start()
         {
-            player = PlayerManager.instance.player;
+            player = PlayerInstance.instance.player;
         }
         [Header("=== Menue Toggles ===")]
         [SerializeField]

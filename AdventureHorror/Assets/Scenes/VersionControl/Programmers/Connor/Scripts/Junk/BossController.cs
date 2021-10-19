@@ -35,8 +35,8 @@ public class BossController : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager");
-        target = PlayerManager.instance.player.transform;
-        cam = PlayerManager.instance.cam;
+        target = PlayerInstance.instance.player.transform;
+        cam = PlayerInstance.instance.cam;
         rotationSpeed = startRotationSpeed;
         bossSpeed = bossStartSpeed;
     }

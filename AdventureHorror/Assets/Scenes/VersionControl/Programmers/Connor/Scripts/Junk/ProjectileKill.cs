@@ -14,7 +14,7 @@ namespace HealthAndDamage
 
         private void Start()
         {
-            player = PlayerManager.instance.player;
+            player = PlayerInstance.instance.player;
         }
 
         void Update()
