@@ -23,6 +23,8 @@ public class PlayerInstance : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = .4f;
     public LayerMask groundMask;
+    public int fear;
+    public int fearThreshold;
 }
 
 

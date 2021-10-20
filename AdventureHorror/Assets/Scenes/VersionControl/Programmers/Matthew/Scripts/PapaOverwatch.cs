@@ -6,7 +6,7 @@ using UnityEngine;
 public class PapaOverwatch : MonoBehaviour
 {
 
-    private GameObject player;
+    private GameObject papaInst;
     public NavMeshAgent agent;
 
     public Vector3 spawnPoint;
@@ -19,13 +19,13 @@ public class PapaOverwatch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.fear > player.fearThreshold)
+        if (PlayerInstance.instance.fear > PlayerInstance.instance.fearThreshold)
         {
             TrySpawn();
         }
@@ -33,11 +33,14 @@ public class PapaOverwatch : MonoBehaviour
 
     private void TrySpawn()
     {
-        if (!spawnPointSet) SearchSpawnPoint();
+        if (!spawnPointSet) 
+            SearchSpawnPoint();
 
         if (spawnPointSet)
         {
-            //Instantiate Papa spawnPoint;
+            //Set Papa Active
+            //Teleport to spawnpoint
+
         }
 
     }
