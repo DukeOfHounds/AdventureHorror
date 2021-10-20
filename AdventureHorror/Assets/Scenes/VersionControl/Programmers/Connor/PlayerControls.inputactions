@@ -23,11 +23,11 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "910954c9-7cae-4429-8fa1-4e43b66bced5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 },
                 {
                     "name": "Crouch",
@@ -38,7 +38,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Look Left/right",
+                    "name": "Camera Look",
                     "type": "PassThrough",
                     "id": "7b8d37ea-d917-4fb7-ab1d-191a1cb38b98",
                     "expectedControlType": "Vector2",
@@ -136,7 +136,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Look Left/right",
+                    "action": "Camera Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
