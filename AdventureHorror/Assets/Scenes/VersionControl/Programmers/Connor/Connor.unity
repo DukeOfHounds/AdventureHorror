@@ -692,7 +692,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e290059b3775f4ea4006a4b3dba8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Facer: {fileID: 0}
   killDist: 20
+  fScript: {fileID: 0}
 --- !u!1 &658771695
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +781,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e290059b3775f4ea4006a4b3dba8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Facer: {fileID: 0}
   killDist: 20
+  fScript: {fileID: 0}
 --- !u!1 &696532884 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4410402899750998667, guid: bf0a225a9ff184f2789f3036faaa9150, type: 3}
@@ -797,7 +801,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e290059b3775f4ea4006a4b3dba8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Facer: {fileID: 0}
   killDist: 20
+  fScript: {fileID: 0}
 --- !u!1 &742976836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e290059b3775f4ea4006a4b3dba8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Facer: {fileID: 0}
   killDist: 20
+  fScript: {fileID: 0}
 --- !u!1 &913389840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e290059b3775f4ea4006a4b3dba8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Facer: {fileID: 0}
   killDist: 20
+  fScript: {fileID: 0}
 --- !u!1001 &925734179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1263,7 +1273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e290059b3775f4ea4006a4b3dba8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Facer: {fileID: 0}
   killDist: 20
+  fScript: {fileID: 0}
 --- !u!4 &1267465880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4354465822509128, guid: 85dfab9623c67784fa7894de63cd1604, type: 3}
@@ -1911,6 +1923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   looktargetTag: MainCamera
+  lookTarget: {fileID: 0}
   rotationSpeed: 1
 --- !u!4 &1866052652
 Transform:
@@ -2188,7 +2201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e290059b3775f4ea4006a4b3dba8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Facer: {fileID: 0}
   killDist: 20
+  fScript: {fileID: 0}
 --- !u!1 &2041039584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,6 +2376,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 75575b93-b018-45d2-8613-d6e904b34fdb
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: ChildControlls/InteractWtih [/Mouse/leftButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8319401244507390709}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLeftClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerControls, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666848, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666849, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: PD
+      value: 
+      objectReference: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
     - target: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
       propertyPath: m_Name
       value: First Person Player
@@ -2411,3 +2470,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+--- !u!114 &8319401244507390709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8319401244205666849, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+  m_PrefabInstance: {fileID: 8319401244507390708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d12c394758fdf7f419fe5ba6549acd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

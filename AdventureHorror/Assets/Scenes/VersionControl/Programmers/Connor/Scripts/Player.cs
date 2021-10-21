@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerControls : MonoBehaviour
+public class Player : MonoBehaviour
 {
     ////////////////Variables////////////////
     ////////////////Variables////////////////
-  
-    private Transform playerBody;//what is doing the turning left right
+
+
+
+
+    public Transform playerBody;//what is doing the turning left right
     private Transform playerCam;//what is doing the looking up down
     private CharacterController controller;
     private Transform groundCheck;
@@ -29,20 +32,41 @@ public class PlayerControls : MonoBehaviour
     private float xRotation = 0f;// used to limit potential jarring/neck breaking camera angles
     private float horizontal1D; //w s key inputs for movment
     private float vertical1D; // a d key inputs for movment
-    ////////////////Variables////////////////
-    ////////////////Variables////////////////
+                              ////////////////Variables////////////////
+                              ////////////////Variables////////////////
 
 
-
-
-
-
+    /// <summary>
+    /// New Good shit
+    /// </summary>
+    public PlayerData PD;
+    P_Input input;
+    P_Movment movment;
+    P_Inventory inventory;
+    P_Interact interact;
+    /// <summary>
+    /// New Good shit
+    /// </summary>
 
 
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////
+
+    public void Awake()
+    {
+         input = new P_Input(PD, this);
+         movment = new P_Movment(PD, this);
+         inventory = new P_Inventory(PD, this);
+         interact = new P_Interact(PD, this);
+    }
+
+
     private void Start()
     {
+      
+
+
+
         playerBody = PlayerInstance.instance.player.transform;
         playerCam = PlayerInstance.instance.cam.transform;
         groundCheck = PlayerInstance.instance.groundCheck;
@@ -57,6 +81,24 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movment.UpdateCamera(input.mouseX, input.mouseY);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -67,11 +109,11 @@ public class PlayerControls : MonoBehaviour
         moveSpeed = PlayerInstance.instance.speed;
         gravity = PlayerInstance.instance.gravity;
 
-        xRotation -= mouseY; // inverts mouse look
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);// prevents the player from over rotating/ overstretching their neck.
-        playerCam.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// handles camera Up down movment
+        //xRotation -= mouseY; // inverts mouse look
+        //xRotation = Mathf.Clamp(xRotation, -90f, 90f);// prevents the player from over rotating/ overstretching their neck.
+        //playerCam.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// handles camera Up down movment
 
-        playerBody.Rotate(Vector3.up * mouseX);// handles camera left right movment
+        //playerBody.Rotate(Vector3.up * mouseX);// handles camera left right movment
         //playerBody.Rotate(Vector3.left * mouseY); // using this will have the camera rotate to the point of not keeping it parrallel with the ground
         Vector3 move = playerBody.right * horizontal1D + transform.forward * vertical1D;
 
@@ -154,6 +196,13 @@ public class PlayerControls : MonoBehaviour
 
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+    }
+    public void OnLeftClick(InputAction.CallbackContext context)
+    {
+        Ray ray = PlayerInstance.instance.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit);
+        
     }
     #endregion
     ////////////////Input Methods////////////////
