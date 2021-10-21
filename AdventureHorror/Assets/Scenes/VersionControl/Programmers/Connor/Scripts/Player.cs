@@ -54,10 +54,10 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-         input = new P_Input(PD, this);
-         movment = new P_Movment(PD, this);
-         inventory = new P_Inventory(PD, this);
-         interact = new P_Interact(PD, this);
+         input = new P_Input(PD);
+         movment = new P_Movment(PD);
+         inventory = new P_Inventory(PD);
+         interact = new P_Interact(PD);
     }
 
 

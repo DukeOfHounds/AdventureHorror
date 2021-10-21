@@ -8,13 +8,11 @@ public class P_Input
 {
     public float mouseX;
     public float mouseY;
-    private  Player player;
     private PlayerData PD;
 
-    public P_Input(PlayerData PD, Player player)
+    public P_Input(PlayerData PD)
     {
         this.PD = PD;
-        this.player = player;
     }
 
 

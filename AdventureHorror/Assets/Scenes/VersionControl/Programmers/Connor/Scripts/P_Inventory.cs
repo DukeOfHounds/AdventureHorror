@@ -6,7 +6,7 @@ public class P_Inventory
 {
     private PlayerData PD;
 
-    public P_Inventory(PlayerData PD, Player player)
+    public P_Inventory(PlayerData PD)
     {
         this.PD = PD;
     }
