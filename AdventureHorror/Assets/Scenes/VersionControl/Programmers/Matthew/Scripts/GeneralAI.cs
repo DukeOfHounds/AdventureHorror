@@ -49,7 +49,7 @@ public class GeneralAI : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if (distanceToWalkPoint.magnitude < 1);
+        if (distanceToWalkPoint.magnitude < 1) ;
         walkPointSet = false;
     }
 

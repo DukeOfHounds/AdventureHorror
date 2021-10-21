@@ -60,14 +60,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Tap"
-                },
-                {
-                    "name": "InteractWtih ",
-                    "type": "Button",
-                    "id": "75575b93-b018-45d2-8613-d6e904b34fdb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Tap"
                 }
             ],
             "bindings": [
@@ -189,17 +181,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0c35607e-f3aa-4407-a3b4-7a9aafecacff",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": "",
-                    "action": "InteractWtih ",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
