@@ -30,9 +30,9 @@ Transform:
   m_LocalPosition: {x: 1.6619997, y: 0.492, z: -0.0000002635254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8319401245316301283}
   - {fileID: 8319401246273016052}
   - {fileID: 8319401244706471431}
-  - {fileID: 8319401245316301283}
   - {fileID: 8319401245964863523}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12c394758fdf7f419fe5ba6549acd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 33
+  PD: {fileID: 0}
 --- !u!1 &8319401244706471428
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8319401244205666855}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8319401244706471430
 Camera:
@@ -318,7 +318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8319401244205666855}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8319401245964863522
 GameObject:
@@ -374,6 +374,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+  fear: 0
+  fearThreshold: 0
 --- !u!1 &8319401246273016587
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +406,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.3}
   m_Children: []
   m_Father: {fileID: 8319401244205666855}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8319401246273016054
 MeshFilter:

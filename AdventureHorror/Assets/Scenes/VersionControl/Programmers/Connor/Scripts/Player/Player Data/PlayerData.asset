@@ -16,13 +16,8 @@ MonoBehaviour:
   player: {fileID: 0}
   cam: {fileID: 0}
   speed: 12
-  JumpHeight: 3
+  jumpHeight: 3
   gravity: -9.81
   mouseSensitivity: 33
-  groundCheck: {fileID: 0}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 0
   fear: 0
   fearThreshold: 0

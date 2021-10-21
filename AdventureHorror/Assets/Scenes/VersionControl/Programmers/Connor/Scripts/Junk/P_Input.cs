@@ -8,11 +8,16 @@ public class P_Input
 {
     public float mouseX;
     public float mouseY;
-    private PlayerData PD;
+    public float vertical1D;
+    public float horizontal1D;
 
-    public P_Input(PlayerData PD)
+    private PlayerData PD;
+    private Player player;
+
+    public P_Input(PlayerData PD, Player player)
     {
         this.PD = PD;
+        this.player = player;
     }
 
 
@@ -26,22 +31,18 @@ public class P_Input
     }
     public void OnHorizontalMove(InputAction.CallbackContext context)
     {
-        //horizontal1D = context.ReadValue<float>();
+        horizontal1D = context.ReadValue<float>();
 
     }
     public void OnVerticaleMove(InputAction.CallbackContext context)
     {
-        //vertical1D = context.ReadValue<float>();
+        vertical1D = context.ReadValue<float>();
 
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-
-        //if (isGrounded)
-        //{
-
-        //    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        //}
+        player.movment.Jump();
+        
     }
     public void OnLeftClick(InputAction.CallbackContext context)
     {
