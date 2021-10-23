@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class PlayerData : ScriptableObject
 {
+    [SerializeField]
     [Header("Player (Ignore cam)")]
     public List<GameObject> BairHearts;
+    public GameObject inHand = null;
     public GameObject player;//the player object
     public Camera cam;// the camera following the player
 
