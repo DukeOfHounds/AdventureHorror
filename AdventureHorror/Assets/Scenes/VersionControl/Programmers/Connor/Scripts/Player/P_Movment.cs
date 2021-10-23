@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P_Movment
+public class P_Movment : MovmentInterface
 {
     // Start is called before the first frame update
 
