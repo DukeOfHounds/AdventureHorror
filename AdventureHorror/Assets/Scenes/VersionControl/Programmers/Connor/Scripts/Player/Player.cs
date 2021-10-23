@@ -8,10 +8,10 @@ public class Player : MonoBehaviour
 {
 
 
-    private float mouseX;
-    private float mouseY;
-    private float vertical1D;
-    private float horizontal1D;
+    public float mouseX;
+    public float mouseY;
+    public float vertical1D;
+    public float horizontal1D;
     public Transform groundCheck;
     public LayerMask groundMask;
 

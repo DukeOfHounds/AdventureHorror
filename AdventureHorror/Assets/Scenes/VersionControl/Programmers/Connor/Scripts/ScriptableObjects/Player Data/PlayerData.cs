@@ -8,21 +8,18 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [SerializeField]
-    [Header("Player")]
+    [Header("Player (Ignore cam)")]
     public List<GameObject> BairHearts;
     public GameObject inHand = null;
     public GameObject player;//the player object
-    public P_Movment movment; //
-    public P_Inventory inventory;
-    public P_Interact interact;
+    public Camera cam;// the camera following the player
 
     [Header("Movment Variables")]
     public float speed = 12f; // speed at which the player moves by default. 
     public float jumpHeight = 3f;
-    public float gravity = -9.81F;
+    public float gravity;
 
-    [Header("Camera Variables (Ignore cam it has an OnEnable)")]
-    public Camera cam;// the camera following the player
+    [Header("Camera Variables")]
     public float mouseSensitivity;
 
     [Header("Fear Variables")]
