@@ -8,6 +8,8 @@ public class P_Interact
     private PlayerData PD;
     private Player player;
 
+    private bool holding; // detects when player has something in their hand
+
     public P_Interact(PlayerData PD, Player player)
     {
         this.PD = PD;
@@ -16,7 +18,7 @@ public class P_Interact
 
     public void Interact()
     {
-        Ray ray = PlayerInstance.instance.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;// holds data on what is infront of the player
         Physics.Raycast(ray, out hit);// finds what is infront of the player
         switch (hit.collider.tag) //determins if hit is interactable
@@ -25,7 +27,7 @@ public class P_Interact
                 OpenDoor(hit.collider.gameObject);
                 break;
             case "Bair":
-                PickUpBair(hit.collider.gameObject);
+                PickUpObject(hit.collider.gameObject);
                 break;
             default:
                 break;
@@ -36,11 +38,14 @@ public class P_Interact
     {
         // opens door/plays door opening animaition.
     }
-    private void PickUpBair(GameObject bair)
+    private void PickUpObject(GameObject obj)
     {
-        //remvoes bair from scene
-        //adds bair visual to hands
+        //Attaches OBJ to player in a visable way
         //prevents you from picking up something else
+        if (PD.inHand != null)
+        {
+            PD.inHand = obj;
+        }
         //allows you to throw something
     }
 }
