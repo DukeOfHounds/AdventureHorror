@@ -40,6 +40,7 @@ public class PP_LOS
                 {
                     papaData.targetLastSeen = target.position;
                     papaData.canSeeTarget = true;
+                    papaData.isAgro = true;
                 }
                 else
                     papaData.canSeeTarget = false; 
