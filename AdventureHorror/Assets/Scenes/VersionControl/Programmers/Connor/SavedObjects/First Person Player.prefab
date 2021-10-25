@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8319401244205666849}
   m_Layer: 0
   m_Name: First Person Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,6 +156,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ba688af3-eee2-476a-ae2b-ffcf1fe4864c
     m_ActionName: ChildControlls/PauseGame[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75575b93-b018-45d2-8613-d6e904b34fdb
+    m_ActionName: ChildControlls/InteractWtih [/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: ChildControlls
@@ -173,6 +177,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12c394758fdf7f419fe5ba6549acd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseX: 0
+  mouseY: 0
+  vertical1D: 0
+  horizontal1D: 0
+  groundCheck: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
   PD: {fileID: 0}
 --- !u!1 &8319401244706471428
 GameObject:

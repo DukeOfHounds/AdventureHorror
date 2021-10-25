@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerData : ScriptableObject
 {
-    [SerializeField]
+
     [Header("Player (Ignore cam)")]
     public List<GameObject> BairHearts;
     public GameObject inHand = null;

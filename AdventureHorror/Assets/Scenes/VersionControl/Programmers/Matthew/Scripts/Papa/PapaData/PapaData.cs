@@ -8,14 +8,18 @@ public class PapaData : ScriptableObject
 
     [Header("Papa")]
     public GameObject Papa; //Papa object
+    public Vector3 targetLastSeen;
 
     [Header("Sight Variables")]
-    public float distance;
+    
+    [Range(0, 360)]
     public float angle;
-    public float height;
-    public Color wedgeColor;
-    public int scanFrequency;
-    public LayerMask layers;
+
+    public float radius;
+    public GameObject player;
+    public LayerMask targetLayer;
     public LayerMask occlusionLayers;
+    public bool canSeeTarget;
+
 
 }
