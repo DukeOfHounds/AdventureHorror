@@ -13,9 +13,9 @@ public class PapaData : ScriptableObject
     [Header("Sight Variables")]
     
     [Range(0, 360)]
-    public float angle;
+    public float angle = 150f;
 
-    public float radius;
+    public float radius = 1000f;
     public GameObject player;
     public LayerMask targetLayer;
     public LayerMask occlusionLayers;

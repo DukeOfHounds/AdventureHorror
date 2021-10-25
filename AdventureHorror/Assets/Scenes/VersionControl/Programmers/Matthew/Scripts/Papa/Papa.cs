@@ -14,7 +14,7 @@ public class Papa : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        ppD = ScriptableObject.CreateInstance<PapaData>();
+        //ppD = ScriptableObject.CreateInstance<PapaData>();
         ppD.Papa = gameObject;
         los = new PP_LOS(ppD, this);
         ppM = new PP_Movement(ppD, this);
