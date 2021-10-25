@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class P_Inventory
 {
     private PlayerData PD;
     private Player player;
-
-    public P_Inventory(PlayerData PD, Player player)
+    public P_Inventory(PlayerData PD)
     {
         this.PD = PD;
-        this.player = player;
+        this.player = PD.player;
     }
 
-    public void EatBair()
+    public void ThrowObj()
     {
-        //plays animation eating bair
-        //removes Bair from hands
-        //plays animatio finding Bair heart
-        //adds heart to PD.BairHearts
-        // applys Bair Buff
+        GameObject obj = PD.inHand;
 
     }
 }

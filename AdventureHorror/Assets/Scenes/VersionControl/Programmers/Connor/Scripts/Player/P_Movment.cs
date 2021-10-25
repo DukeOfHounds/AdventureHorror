@@ -16,10 +16,10 @@ public class P_Movment
     private float groundDistance = .4f;
     private Vector3 velocity;
 
-    public P_Movment(PlayerData PD, Player player)
+    public P_Movment(PlayerData PD)
     {
         this.PD = PD;
-        this.player = player;
+        this.player = PD.player;
         this.groundCheck = player.groundCheck;
         this.groundMask = player.groundMask;
     }

@@ -87,7 +87,7 @@ namespace HealthAndDamage
                         break;
                     case "Jewel":
                         gameObject.SetActive(false);
-                        animator.SetTrigger("Damage");
+                        //animator.SetTrigger("Damage");
                         break;
                     case "Player":
                         // unfinished

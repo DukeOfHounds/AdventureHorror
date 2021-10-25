@@ -85,7 +85,7 @@ public class BossController : MonoBehaviour
     }
     IEnumerator LaserAttack()
     {
-        animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
         rotationSpeed = startRotationSpeed * 4f;
         yield return new WaitForSeconds(2f);
         
@@ -178,7 +178,7 @@ public class BossController : MonoBehaviour
     public void Death()
     {
         dead = true;
-        animator.SetBool("Death", true);
+        //animator.SetBool("Death", true);
         rotationSpeed = 0;
         bossSpeed = 0;
 

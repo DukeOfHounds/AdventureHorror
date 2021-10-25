@@ -59,14 +59,14 @@ namespace HealthAndDamage
         {
             if (weaponHolstered == false)
             {
-                laserL.SetBool("Fire", true);
-                laserR.SetBool("Fire", true);
+                //laserL.SetBool("Fire", true);
+                //laserR.SetBool("Fire", true);
             }
 
-            laserL.SetBool("inCombat", true);
-            laserR.SetBool("inCombat", true);
-            missileL.SetBool("inCombat", true);
-            missileR.SetBool("inCombat", true);
+            //laserL.SetBool("inCombat", true);
+            //laserR.SetBool("inCombat", true);
+            ////missileL.SetBool("inCombat", true);
+            //missileR.SetBool("inCombat", true);
 
             weaponHolstered = false;
             weaponHolserCD = weaponHolsterTimer;
@@ -109,14 +109,14 @@ namespace HealthAndDamage
         {
             if (weaponHolstered == false)
             {
-                missileL.SetBool("Fire", true);
-                missileR.SetBool("Fire", true);
+                // missileL.SetBool("Fire", true);
+                //missileR.SetBool("Fire", true);
             }
-            
-            laserL.SetBool("inCombat", true);
-            laserR.SetBool("inCombat", true);
-            missileL.SetBool("inCombat", true);
-            missileR.SetBool("inCombat", true);
+
+            // laserL.SetBool("inCombat", true);
+            //  laserR.SetBool("inCombat", true);
+            // missileL.SetBool("inCombat", true);
+            // missileR.SetBool("inCombat", true);
 
             weaponHolstered = false;
             weaponHolserCD = weaponHolsterTimer;
@@ -148,10 +148,10 @@ namespace HealthAndDamage
 
         public void Unholster()
         {
-            laserL.SetBool("inCombat", true);
-            laserR.SetBool("inCombat", true);
-            missileL.SetBool("inCombat", true);
-            missileR.SetBool("inCombat", true);
+            //  laserL.SetBool("inCombat", true);
+            // laserR.SetBool("inCombat", true);
+            // missileL.SetBool("inCombat", true);
+            //  missileR.SetBool("inCombat", true);
             weaponHolstered = false;
             weaponHolserCD = weaponHolsterTimer;
         }
@@ -162,8 +162,8 @@ namespace HealthAndDamage
             FireLaser();
             yield return new WaitForSeconds(.2f);
             isFiringLaser = false;
-            laserL.SetBool("Fire", false);
-            laserR.SetBool("Fire", false);
+            // laserL.SetBool("Fire", false);
+            //  laserR.SetBool("Fire", false);
         }
         IEnumerator LaunchCheckMissile()
         {
@@ -171,8 +171,8 @@ namespace HealthAndDamage
             FireMissile();
             yield return new WaitForSeconds(.5f);
             isFiringMissile = false;
-            missileL.SetBool("Fire", false);
-            missileR.SetBool("Fire", false);
+            //    missileL.SetBool("Fire", false);
+            //  missileR.SetBool("Fire", false);
 
         }
         IEnumerator LaunchCheckShockWave()
@@ -191,12 +191,12 @@ namespace HealthAndDamage
             if (boosting)
             {
                 weaponHolstered = true;
-                laserL.SetBool("inCombat", false);
-                laserR.SetBool("inCombat", false);
-                missileL.SetBool("inCombat", false);
-                missileR.SetBool("inCombat", false);
+                //  laserL.SetBool("inCombat", false);
+                // laserR.SetBool("inCombat", false);
+                // missileL.SetBool("inCombat", false);
+                // missileR.SetBool("inCombat", false);
             }
-            
+
             if (weaponHolserCD > 0.0f)
             {
                 weaponHolserCD = Mathf.Clamp(weaponHolserCD - Time.deltaTime, 0.0f, weaponHolsterTimer);
@@ -204,10 +204,10 @@ namespace HealthAndDamage
             else
             {
                 weaponHolstered = true;
-                laserL.SetBool("inCombat", false);
-                laserR.SetBool("inCombat", false);
-                missileL.SetBool("inCombat", false);
-                missileR.SetBool("inCombat", false);
+                //  laserL.SetBool("inCombat", false);
+                // laserR.SetBool("inCombat", false);
+                // missileL.SetBool("inCombat", false);
+                //missileR.SetBool("inCombat", false);
             }
         }
 

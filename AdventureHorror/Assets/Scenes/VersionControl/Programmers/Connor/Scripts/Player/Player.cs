@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public float horizontal1D;
     public Transform groundCheck;
     public LayerMask groundMask;
-
+    public Transform hand;
 
 
 
@@ -30,10 +30,11 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+        PD.player = this;
         //input = new P_Input(PD, this);
-        movment = new P_Movment(PD, this);
-        inventory = new P_Inventory(PD, this);
-        interact = new P_Interact(PD, this);
+        movment = new P_Movment(PD);
+        inventory = new P_Inventory(PD);
+        interact = new P_Interact(PD);
         Cursor.visible = false; // hides cursor 
         Cursor.lockState = CursorLockMode.Confined;// locks cursor to game window
     }
@@ -78,6 +79,14 @@ public class Player : MonoBehaviour
     public void OnLeftClick(InputAction.CallbackContext context)
     {
         interact.Interact();
+
+    }
+    public void OnRightClick(InputAction.CallbackContext context)
+    {
+        if (PD.inHand != null)
+        {
+            interact.ThrowHandObj();
+        }
 
     }
     #endregion

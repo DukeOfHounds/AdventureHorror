@@ -4,7 +4,7 @@ using UnityEngine;
 public class FacePlayer : MonoBehaviour
 {
     [SerializeField]
-    public string looktargetTag = "Main Camera";
+    public string looktargetTag = "MainCamera";
     private GameObject lookTarget; // the player or any objects we want to be stared at. 
     private List<Facer> FacingObjects; // list of objects that will stare
     private IEnumerator m_coroutine = null;// coroutine that will eventually cull and rotate objects
