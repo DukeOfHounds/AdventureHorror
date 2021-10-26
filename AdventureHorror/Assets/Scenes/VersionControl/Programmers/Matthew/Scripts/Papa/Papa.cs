@@ -10,6 +10,7 @@ public class Papa : MonoBehaviour
     public PP_LOS los;
     public PP_Movement ppM;
     public NavMeshAgent agent;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Awake()

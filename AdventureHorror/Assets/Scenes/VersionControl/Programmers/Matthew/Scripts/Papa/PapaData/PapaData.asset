@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PapaData
   m_EditorClassIdentifier: 
   Papa: {fileID: 0}
-  targetLastSeen: {x: 15.37, y: 2.42, z: -2.22}
+  targetLastSeen: {x: 14.57, y: 2.42, z: 17.02}
   player: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
-  angle: 0
-  radius: 0
+  angle: 45
+  radius: 10000
   targetLayer:
     serializedVersion: 2
     m_Bits: 16

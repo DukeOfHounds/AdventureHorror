@@ -34,12 +34,14 @@ public class PP_LOS
             if (Vector3.Angle(paparef.transform.position, directionOfTarget) < papaData.angle / 2)//Reduce size of cone by half to do more detailed angle check.
             {
                 float distanceToTarget = Vector3.Distance(paparef.transform.position, target.position);
-
-                if (!Physics.Raycast(paparef.transform.position, directionOfTarget, distanceToTarget, papaData.occlusionLayers))
+                Debug.DrawLine(paparef.transform.position, target.position, Color.red, 5f);
+                if (!Physics.Raycast(paparef.transform.position, -directionOfTarget, distanceToTarget, papaData.occlusionLayers))
                 {
                     papaData.targetLastSeen = target.position;
                     papaData.canSeeTarget = true;
                     papaData.isAgro = true;
+                    Debug.Log(papaData.canSeeTarget);
+
                 }
                 else
                     papaData.canSeeTarget = false; 
