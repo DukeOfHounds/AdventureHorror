@@ -8,17 +8,18 @@ public class PP_Movement
     public Papa papa;
     private GameObject paparef;
     private GameObject cSNode;
-    private bool searching;
+    private int index;
+    private bool searching = false;
     public Vector3 currentDest;
 
     public enum State
     { StartSearch, Search, Chase, Despawn }
 
     public State currentState;
-    private List<GameObject> objects = new List<GameObject>();
+    private List<GameObject> searchNodes = new List<GameObject>();
     Collider[] colliders = new Collider[10];
 
-    int count;
+    int count = 69;
 
     public PP_Movement(PapaData papaData, Papa papa)
     {
@@ -28,6 +29,7 @@ public class PP_Movement
 
     }
 
+    
     public void HandleMovement()
     {
         if (papaData.canSeeTarget)
@@ -60,43 +62,66 @@ public class PP_Movement
         papa.agent.speed = papaData.papaBaseSpeed;
         currentDest = papaData.player.transform.position;
         Vector3 distanceToDest = paparef.transform.position - currentDest;
-        if (distanceToDest.magnitude < 20)
+        if (distanceToDest.magnitude < 20f)
         {
-            currentState = State.Search;
             //papa.agent.isStopped = true;
+            currentState = State.Search;
         }
-        else
-        {
-            papa.agent.SetDestination(currentDest);
-        }
+        papa.agent.SetDestination(currentDest);
+
     }
 
     private void Search()
     {
-
-        if (!searching)
+        Debug.Log(cSNode);
+        if (searchNodes.Count == 0)
         {
             searching = true;
             papa.agent.speed = papaData.papaBaseSpeed;
-            count = Physics.OverlapSphereNonAlloc(paparef.transform.position, 20f, colliders, papaData.searchNodeLayer, QueryTriggerInteraction.Collide);
+            count = Physics.OverlapSphereNonAlloc(paparef.transform.position, 30f, colliders, papaData.searchNodeLayer, QueryTriggerInteraction.Collide);
+            Debug.Log(count);
             for (int i = 0; i < count; ++i)
             {
-                    GameObject obj = colliders[i++].gameObject;
-                    objects.Add(obj);
+                    
+                GameObject obj = colliders[i++].gameObject;
+                
+                Vector3 distanceToDest = paparef.transform.position - obj.transform.position;
+                if (distanceToDest.magnitude > 3)
+                {
+                    searchNodes.Add(obj);
+                }
+
+
             }
-            cSNode = objects[random]; 
+
         }
         else
         {
-            Vector3 distanceToDest = paparef.transform.position - currentDest;
-            if(distanceToDest.magnitude < 1)
+            Debug.Log(searchNodes.Count);
+            int random = Mathf.Abs(Random.Range(0, searchNodes.Count -1));
+        if (cSNode == null)
             {
+                index = random;
+                Debug.Log(index);
+                cSNode = searchNodes[index];
+                currentDest = cSNode.transform.position;
+                //papa.agent.isStopped = false;
+                papa.agent.SetDestination(currentDest);
+            }
+            else
+            {
+                Vector3 distanceToDest = paparef.transform.position - currentDest;
+                if (distanceToDest.magnitude < 1.5)
+                {
+                    searchNodes.RemoveAt(index);
+                    cSNode = null;
 
+                }
             }
         }
         
 
-        currentState = State.Despawn;
+        //currentState = State.Despawn;
     }
 
     private void Chase()

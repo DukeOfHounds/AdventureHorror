@@ -22,7 +22,6 @@ public class PP_LOS
     //Main Method
     public void LineOfSightCheck()
     {
-        Debug.Log(papaData.canSeeTarget);
         //Array of Colliders (within line of sight) only of the layer specified in targetLayer
         Collider[] rangeChecks = Physics.OverlapSphere(paparef.transform.position, papaData.radius, papaData.targetLayer);
         //If collider is in the array, find angle from front of Papa, to the player (presumably).

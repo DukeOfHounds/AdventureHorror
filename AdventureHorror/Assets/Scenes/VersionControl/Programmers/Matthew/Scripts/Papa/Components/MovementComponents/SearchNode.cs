@@ -8,7 +8,7 @@ public class SearchNode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        r.enabled = false;
+        //r.enabled = false;
     }
 
     // Update is called once per frame

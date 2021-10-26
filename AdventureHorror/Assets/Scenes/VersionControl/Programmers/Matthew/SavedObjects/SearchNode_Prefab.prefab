@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 6252885816900779881}
   - component: {fileID: 7019261410651533516}
   - component: {fileID: 5083889265128834054}
-  m_Layer: 0
+  - component: {fileID: 1370994377637600549}
+  - component: {fileID: 7137886030326028115}
+  m_Layer: 10
   m_Name: SearchNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +84,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1370994377637600549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741156547478595027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.097711205, y: 0.046922658, z: 0.17166321}
+  m_Center: {x: -0.01404506, y: 0, z: 0.077436544}
+--- !u!54 &7137886030326028115
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741156547478595027}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8246334854623858561
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3982599406496524017}
   - component: {fileID: 5621260286024290100}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SearchNode_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
