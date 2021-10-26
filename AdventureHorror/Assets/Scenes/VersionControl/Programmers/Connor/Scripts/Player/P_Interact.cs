@@ -7,7 +7,7 @@ public class P_Interact
     // Start is called before the first frame update
     private PlayerData PD;
     private Player player;
-    private Vector3 destination;
+    private Vector3 Throw = Vector3.forward;
     private Vector3 rotation = new Vector3( 0, 0, 0 );
 
     private bool holding; // detects when player has something in their hand
@@ -29,7 +29,7 @@ public class P_Interact
             switch (hit.collider.tag) //determins if hit is interactable
             {
                 case "Door":
-                    OpenDoor(hit.collider.gameObject);
+                    OpenOrCloseDoor(hit.collider.gameObject);
                     break;
                 case "PickUpObject":
                     PickUpObject(hit.collider.gameObject);
@@ -41,9 +41,16 @@ public class P_Interact
         }
         
     }
-    private void OpenDoor(GameObject door)
+    private void OpenOrCloseDoor(GameObject door)
     {
-        // opens door/plays door opening animaition.
+        if (door.GetComponent<Door>().open)
+        {
+            door.GetComponent<Door>().Open();// opens door/plays door opening animaition.
+        }
+        else
+        {
+            door.GetComponent<Door>().Open();
+        }
     }
     private void PickUpObject(GameObject obj)
     {
@@ -72,7 +79,12 @@ public class P_Interact
         obj.GetComponent<Rigidbody>().useGravity = true;
         obj.GetComponent<BoxCollider>().enabled = true;
         obj.GetComponent<Rigidbody>().freezeRotation = false;
+        obj.GetComponent<Rigidbody>().velocity = (obj.transform.forward * PD.throwForce);
 
+
+    }
+    public void PlaceObject()
+    {
 
     }
 }

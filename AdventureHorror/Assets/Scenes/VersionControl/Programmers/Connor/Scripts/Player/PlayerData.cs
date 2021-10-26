@@ -24,6 +24,7 @@ public class PlayerData : ScriptableObject
     public float speed = 12f; // speed at which the player moves by default. 
     public float jumpHeight = 3f;
     public float gravity = -9.81f;
+    public float throwForce = 20;
 
     [Header("Camera Variables")]
     public float mouseSensitivity = 33;
