@@ -43,13 +43,13 @@ public class P_Interact
     }
     private void OpenOrCloseDoor(GameObject door)
     {
-        if (door.GetComponent<Door>().open)
+        if (!door.GetComponent<Door>().isOpen)
         {
             door.GetComponent<Door>().Open();// opens door/plays door opening animaition.
         }
         else
         {
-            door.GetComponent<Door>().Open();
+            door.GetComponent<Door>().Close();
         }
     }
     private void PickUpObject(GameObject obj)
