@@ -26,7 +26,7 @@ public class GeneralAI : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class GeneralAI : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if (distanceToWalkPoint.magnitude < 1);
+        if (distanceToWalkPoint.magnitude < 1)
         walkPointSet = false;
     }
 
