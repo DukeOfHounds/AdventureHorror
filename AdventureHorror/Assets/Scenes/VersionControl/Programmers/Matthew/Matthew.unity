@@ -787,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3982599406496524017, guid: fb121b8767d65e84fa7cba6556360d43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.095
       objectReference: {fileID: 0}
     - target: {fileID: 3982599406496524017, guid: fb121b8767d65e84fa7cba6556360d43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1124,10 +1124,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3727875147660406328, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3898064118609060921, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
       propertyPath: m_Name
       value: Papa

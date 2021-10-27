@@ -29,4 +29,16 @@ public class Papa : MonoBehaviour
         ppM.HandleMovement();
     }
 
+    //Stops movement along navMesh for "wait" seconds
+    public void StopMovement(float wait)
+    {
+        StartCoroutine(SM(wait));
+    }
+    public IEnumerator SM(float wait)
+    {
+        agent.isStopped = true;
+        yield return new WaitForSeconds(wait);
+        agent.isStopped = false;
+    }
+
 }
