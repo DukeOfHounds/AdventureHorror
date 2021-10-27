@@ -7,7 +7,6 @@ public class PP_LOS
     //Scriptable Object Variables 
     public PapaData papaData;
     public Papa papa;
-
     private GameObject paparef; 
 
     //Constructor
@@ -28,19 +27,19 @@ public class PP_LOS
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
-            Vector3 directionOfTarget = (target.position - paparef.transform.position).normalized;
+            Vector3 directionOfTarget = (target.position - paparef.transform.forward).normalized;
 
             //Check if the angle is outside of Papa's sight cone.
-            if (Vector3.Angle(paparef.transform.position, directionOfTarget) < papaData.angle / 2)//Reduce size of cone by half to do more detailed angle check.
+            if (Vector3.Angle(paparef.transform.position, directionOfTarget) < papaData.angle / 2f)//Reduce size of cone by half to do more detailed angle check.
             {
                 float distanceToTarget = Vector3.Distance(paparef.transform.position, target.position);
-                Debug.DrawLine(paparef.transform.position, target.position, Color.red, 5f);
-                if (!Physics.Raycast(paparef.transform.position, -directionOfTarget, distanceToTarget, papaData.occlusionLayers))
+                if (!Physics.Raycast(target.position, directionOfTarget, distanceToTarget, papaData.occlusionLayers))
                 {
                     papaData.targetLastSeen = target.position;
                     papaData.canSeeTarget = true;
                     papaData.isAgro = true;
                     Debug.Log(papaData.canSeeTarget);
+                    Debug.DrawLine(paparef.transform.position, target.position, Color.red, 5f);
 
                 }
                 else

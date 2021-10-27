@@ -32,6 +32,7 @@ public class PP_Movement
     
     public void HandleMovement()
     {
+        Debug.Log(papaData.canSeeTarget);
         if (papaData.canSeeTarget)
         {
             currentState = State.Chase;
@@ -126,6 +127,7 @@ public class PP_Movement
 
     private void Chase()
     {
+        Debug.Log("Chase");
         currentDest = papaData.targetLastSeen;
         Vector3 distanceToDest = paparef.transform.position - currentDest;
         if (papa.agent.velocity.magnitude < 1)

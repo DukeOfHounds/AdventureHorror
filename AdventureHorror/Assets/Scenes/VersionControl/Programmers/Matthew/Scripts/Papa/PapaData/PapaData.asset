@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PapaData
   m_EditorClassIdentifier: 
   Papa: {fileID: 0}
-  targetLastSeen: {x: 14.57, y: 2.42, z: 17.02}
+  targetLastSeen: {x: -4.5, y: 2.42, z: 1.92}
   player: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
-  angle: 45
+  angle: 180
   radius: 10000
   targetLayer:
     serializedVersion: 2
@@ -23,10 +23,11 @@ MonoBehaviour:
   occlusionLayers:
     serializedVersion: 2
     m_Bits: 512
-  canSeeTarget: 0
+  canSeeTarget: 1
   isAgro: 1
-  papaBaseSpeed: 10
-  chaseSpeedMultiplier: 2
+  adjustCone: {x: 0, y: 0, z: 0}
+  papaBaseSpeed: 1
+  chaseSpeedMultiplier: 1
   searchNodeLayer:
     serializedVersion: 2
     m_Bits: 1024
