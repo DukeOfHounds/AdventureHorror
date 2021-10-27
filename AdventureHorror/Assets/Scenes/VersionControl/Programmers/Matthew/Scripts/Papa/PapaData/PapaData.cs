@@ -22,6 +22,7 @@ public class PapaData : ScriptableObject
     public LayerMask occlusionLayers;
     public bool canSeeTarget;
     public bool isAgro = false;
+    public Vector3 adjustCone;
 
     [Header("Movement")]
     public float papaBaseSpeed = 3.5f;

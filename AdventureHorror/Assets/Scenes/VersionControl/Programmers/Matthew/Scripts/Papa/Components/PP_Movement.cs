@@ -32,6 +32,8 @@ public class PP_Movement
     
     public void HandleMovement()
     {
+
+        Debug.Log(papaData.canSeeTarget);
         if (papaData.canSeeTarget)
         {
             currentState = State.Chase;
@@ -64,8 +66,8 @@ public class PP_Movement
         Vector3 distanceToDest = paparef.transform.position - currentDest;
         if (distanceToDest.magnitude < 20f)
         {
-            //papa.agent.isStopped = true;
             currentState = State.Search;
+            papa.StopMovement(2f);
         }
         papa.agent.SetDestination(currentDest);
 
@@ -105,7 +107,6 @@ public class PP_Movement
                 Debug.Log(index);
                 cSNode = searchNodes[index];
                 currentDest = cSNode.transform.position;
-                //papa.agent.isStopped = false;
                 papa.agent.SetDestination(currentDest);
             }
             else
@@ -115,7 +116,7 @@ public class PP_Movement
                 {
                     searchNodes.RemoveAt(index);
                     cSNode = null;
-
+                    papa.StopMovement(2f);
                 }
             }
         }
@@ -126,15 +127,28 @@ public class PP_Movement
 
     private void Chase()
     {
+
         currentDest = papaData.targetLastSeen;
         Vector3 distanceToDest = paparef.transform.position - currentDest;
-        if (papa.agent.velocity.magnitude < 1)
+        Vector3 distanceToPlayer = paparef.transform.position - papaData.player.transform.position;
+        if (distanceToPlayer.magnitude < 3)
         {
-            currentState = State.Search;
-            //papa.agent.isStopped = true;
+            //if(playerIsHiding)
+            {
+                //if(sawPlayerHiding)
+                {
+
+                }
+            }
         }
         else
         {
+            if(papa.agent.velocity.magnitude < 1)
+            {
+                currentState = State.StartSearch;
+                papa.StopMovement(2f);
+            }
+
             papa.agent.SetDestination(currentDest);
             papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
         }
@@ -144,4 +158,5 @@ public class PP_Movement
     {
         papa.agent.speed = papaData.papaBaseSpeed;
     }
+
 }
