@@ -29,10 +29,13 @@ public class P_Interact
             switch (hit.collider.tag) //determins if hit is interactable
             {
                 case "Door":
-                    OpenOrCloseDoor(hit.collider.gameObject);
+                    InteractWithDoor(hit.collider.gameObject);
                     break;
                 case "PickUpObject":
                     PickUpObject(hit.collider.gameObject);
+                    break;
+                case "HidingPlace":
+                    InteractWithHidingPlace(hit.collider.gameObject);
                     break;
                 default:
                     break;
@@ -41,16 +44,14 @@ public class P_Interact
         }
         
     }
-    private void OpenOrCloseDoor(GameObject door)
+    private void InteractWithDoor(GameObject door)
     {
-        if (!door.GetComponent<Door>().isOpen)
-        {
-            door.GetComponent<Door>().Open();// opens door/plays door opening animaition.
-        }
-        else
-        {
-            door.GetComponent<Door>().Close();
-        }
+        door.GetComponent<Door>().interactWith();
+    }
+    public void InteractWithHidingPlace(GameObject HP)
+    {
+        HP.GetComponent<HidingPlace>().interactWith();
+
     }
     private void PickUpObject(GameObject obj)
     {
@@ -83,6 +84,7 @@ public class P_Interact
 
 
     }
+    
     public void PlaceObject()
     {
 

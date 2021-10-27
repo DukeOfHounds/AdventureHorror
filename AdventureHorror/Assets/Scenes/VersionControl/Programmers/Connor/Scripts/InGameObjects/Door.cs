@@ -48,4 +48,15 @@ public class Door : MonoBehaviour
     {
         locked = true;
     }
+    public void interactWith()
+    {
+        if (!isOpen)
+        {
+            Open();// opens door/plays door opening animaition.
+        }
+        else
+        {
+            Close();
+        }
+    }
 }
