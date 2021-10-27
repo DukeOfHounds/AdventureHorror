@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00adeb3161d3a0e4db2ce6bd6bc29a28, type: 3}
   m_Name: PapaData
   m_EditorClassIdentifier: 
-  Papa: {fileID: 3898064118609060921, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
-  targetLastSeen: {x: -63.38, y: 2.42, z: 4.12}
+  Papa: {fileID: 0}
+  targetLastSeen: {x: 3.25, y: 2.42, z: 4.16}
   player: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
   angle: 88
   radius: 10000
@@ -26,7 +26,7 @@ MonoBehaviour:
   canSeeTarget: 0
   isAgro: 1
   adjustCone: {x: 0, y: 0, z: 0}
-  papaBaseSpeed: 0
+  papaBaseSpeed: 2
   chaseSpeedMultiplier: 3
   searchNodeLayer:
     serializedVersion: 2
