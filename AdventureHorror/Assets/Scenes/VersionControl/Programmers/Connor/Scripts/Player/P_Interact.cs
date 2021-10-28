@@ -35,6 +35,7 @@ public class P_Interact
                     PickUpObject(hit.collider.gameObject);
                     break;
                 case "HidingPlace":
+                    Debug.Log("so hidden wow");
                     InteractWithHidingPlace(hit.collider.gameObject);
                     break;
                 default:
@@ -50,7 +51,7 @@ public class P_Interact
     }
     public void InteractWithHidingPlace(GameObject HP)
     {
-        HP.GetComponent<HidingPlace>().interactWith();
+        HP.GetComponent<HidingPlace>().interactWith(PD);
 
     }
     private void PickUpObject(GameObject obj)

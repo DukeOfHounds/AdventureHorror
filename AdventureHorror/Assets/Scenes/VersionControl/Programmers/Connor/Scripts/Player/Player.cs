@@ -42,7 +42,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         movment.UpdateCamera(mouseX, mouseY);
-        movment.UpdatePosition(horizontal1D, vertical1D);
+        if (!PD.isHiding)
+        {
+            movment.UpdatePosition(horizontal1D, vertical1D);
+        }
     }
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////

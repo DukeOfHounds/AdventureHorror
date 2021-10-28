@@ -8,11 +8,12 @@ public class Door : MonoBehaviour
     public bool isOpen = false;
     public bool locked = false;
     private bool canOpen = true;
+    private Collider collider;
     public Animator doorAnimator;
 
     private void Awake()
     {
-        doorAnimator = GetComponent<Animator>();
+        collider = gameObject.GetComponent<Collider>();
     }
     public void Open()
     {
@@ -21,6 +22,8 @@ public class Door : MonoBehaviour
             isOpen = true;
             doorAnimator.SetBool("doorOpen", true);
             StartCoroutine(CanOpenOrClose());
+            
+
 
         }
     }
@@ -37,8 +40,10 @@ public class Door : MonoBehaviour
     IEnumerator CanOpenOrClose()
     {
         canOpen = false;
+        collider.enabled = false;
         yield return new WaitForSeconds(1f);
         canOpen = true;
+        collider.enabled = true;
     }
     public void Unlock()
     {
