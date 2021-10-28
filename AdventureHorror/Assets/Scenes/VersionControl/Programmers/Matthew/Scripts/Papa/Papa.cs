@@ -25,8 +25,11 @@ public class Papa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        los.LineOfSightCheck();
-        ppM.HandleMovement();
+        if (ppD.isActive)
+        {
+            los.LineOfSightCheck();
+            ppM.HandleMovement();
+        }
     }
 
     //Stops movement along navMesh for "wait" seconds
@@ -39,6 +42,15 @@ public class Papa : MonoBehaviour
         agent.isStopped = true;
         yield return new WaitForSeconds(wait);
         agent.isStopped = false;
+    }
+
+    public void Refresh()
+    {
+        //ppD = ScriptableObject.CreateInstance<PapaData>();
+        ppD.Papa = gameObject;
+        los = new PP_LOS(ppD, this);
+        ppM = new PP_Movement(ppD, this);
+        ppM.currentState = PP_Movement.State.StartSearch;
     }
 
 }

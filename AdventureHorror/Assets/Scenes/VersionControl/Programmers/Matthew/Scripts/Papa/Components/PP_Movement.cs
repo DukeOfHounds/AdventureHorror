@@ -84,15 +84,20 @@ public class PP_Movement
             Debug.Log(count);
             for (int i = 0; i < count; ++i)
             {
-                    
-                GameObject obj = colliders[i++].gameObject;
-                
-                Vector3 distanceToDest = paparef.transform.position - obj.transform.position;
-                if (distanceToDest.magnitude > 3)
+                if (papaData.canSeeTarget)
                 {
-                    searchNodes.Add(obj);
+                    break;
                 }
+                else
+                {
+                    GameObject obj = colliders[i++].gameObject;
 
+                    Vector3 distanceToDest = paparef.transform.position - obj.transform.position;
+                    if (distanceToDest.magnitude > 3)
+                    {
+                        searchNodes.Add(obj);
+                    }
+                }
 
             }
 
@@ -129,7 +134,6 @@ public class PP_Movement
     {
 
         currentDest = papaData.targetLastSeen;
-        Vector3 distanceToDest = paparef.transform.position - currentDest;
         Vector3 distanceToPlayer = paparef.transform.position - papaData.player.transform.position;
         if (distanceToPlayer.magnitude < 3)
         {
@@ -156,7 +160,25 @@ public class PP_Movement
 
     private void Despawn()
     {
+        papaData.despawning = true;
         papa.agent.speed = papaData.papaBaseSpeed;
+        float distanceToPlayer = Vector3.Distance(papa.agent.transform.position, papaData.player.transform.position);
+        Vector3 directionOfTarget = (papaData.player.transform.position - papa.agent.transform.position).normalized;
+        if ((distanceToPlayer > 30f) && (!Physics.Raycast(papa.agent.transform.position, directionOfTarget, distanceToPlayer, papaData.occlusionLayers)))
+        {
+            papaData.isActive = false;
+            paparef.transform.position = papaData.timeOut;
+            papaData.despawning = false;
+
+        }
+
+
+
     }
+
+
+
+
+
 
 }
