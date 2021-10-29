@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470538257521122883}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0.7072302, z: 0.7069834, w: 0}
   m_LocalPosition: {x: -0, y: 0.12528764, z: 0}
   m_LocalScale: {x: 12.774092, y: 12.774092, z: 12.774092}
   m_Children: []
   m_Father: {fileID: 8780747099058551224}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 180, z: 0}
 --- !u!33 &5985788485094467027
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3037497276507685046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.494, y: 0.29348782, z: 0.036000133}
+  m_LocalPosition: {x: -0.641, y: 0.5, z: 0.036000133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8780747099058551224}
@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7173995377974912789}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.097, y: 0.29348782, z: 0.036000133}
+  m_LocalPosition: {x: 0.78, y: 0.5, z: 0.036000133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8780747099058551224}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 2294738196240098874}
   - component: {fileID: 153477622531892908}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Door
   m_TagString: HidingPlace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,5 +378,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hidingSpot: {fileID: 7611316781677018791}
-  ExitSpot: {fileID: 1293852343412836553}
+  exitSpot: {fileID: 1293852343412836553}
   isHiding: 0

@@ -7,10 +7,7 @@ public class P_Interact
     // Start is called before the first frame update
     private PlayerData PD;
     private Player player;
-    private Vector3 Throw = Vector3.forward;
-    private Vector3 rotation = new Vector3( 0, 0, 0 );
-
-    private bool holding; // detects when player has something in their hand
+    private Vector3 rotation = new Vector3(0, 0, 0);
 
     public P_Interact(PlayerData PD)
     {
@@ -22,28 +19,30 @@ public class P_Interact
     {
         Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;// holds data on what is infront of the player
-        Physics.Raycast(ray, out hit);// finds what is infront of the player
-        Physics.Raycast(ray, out hit);
+        Physics.Raycast(ray, out hit, 2);// finds what is infront of the player
         if (hit.collider != null)
         {
             switch (hit.collider.tag) //determins if hit is interactable
             {
                 case "Door":
-                    InteractWithDoor(hit.collider.gameObject);
+                    InteractWithDoor(hit.collider.gameObject); // opens or closes door (if you can)
                     break;
-                case "PickUpObject":
-                    PickUpObject(hit.collider.gameObject);
+                case "PickUpAble":
+                    PickUpObject(hit.collider.gameObject);// picks up PickUp
                     break;
                 case "HidingPlace":
-                    Debug.Log("so hidden wow");
+                    //Debug.Log("so hidden wow");
                     InteractWithHidingPlace(hit.collider.gameObject);
+                    break;
+                case "Manipulable":
+                    Manipulate(hit.collider.gameObject);
                     break;
                 default:
                     break;
 
             }
         }
-        
+
     }
     private void InteractWithDoor(GameObject door)
     {
@@ -54,18 +53,23 @@ public class P_Interact
         HP.GetComponent<HidingPlace>().interactWith(PD);
 
     }
+    public void Manipulate(GameObject obj)
+    {  
+            PD.inHand.GetComponent<PickUpObject>().Use(obj);
+    }
     private void PickUpObject(GameObject obj)
     {
+
         //Attaches OBJ to player in a visable way
         //prevents you from picking up something else
-        Debug.Log("pickup");
+        //Debug.Log("pickup");
         if (PD.inHand == null)
         {
             GameObject hand = GameObject.Find("Hand");
             PD.inHand = obj;
             obj.GetComponent<BoxCollider>().enabled = false;// turns off object collisions
             obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
-            obj.transform.SetPositionAndRotation(player.hand.position,PD.cam.transform.rotation);
+            obj.transform.SetPositionAndRotation(player.hand.position, PD.cam.transform.rotation);
             obj.GetComponent<Rigidbody>().freezeRotation = true;
             obj.GetComponent<Rigidbody>().velocity = rotation;
             //obj.transform.position = player.hand.position; // fixes object to player hand position
@@ -73,7 +77,7 @@ public class P_Interact
         }
         //allows you to throw something
     }
-     public void ThrowHandObj()
+    public void ThrowHandObj()
     {
         GameObject obj = PD.inHand;
         PD.inHand = null;
@@ -85,6 +89,7 @@ public class P_Interact
 
 
     }
+
     
     public void PlaceObject()
     {

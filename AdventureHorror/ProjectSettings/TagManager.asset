@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PickUpObject
   - Door
   - HidingPlace
+  - Manipulable
+  - PickUpAble
+  - Screw
   layers:
   - Default
   - TransparentFX
