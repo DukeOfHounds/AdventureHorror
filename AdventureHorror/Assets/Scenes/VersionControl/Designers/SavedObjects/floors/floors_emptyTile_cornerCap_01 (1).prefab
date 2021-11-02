@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4673706948235879297}
   - component: {fileID: 2655524263101693958}
   - component: {fileID: 5212937593458860670}
-  m_Layer: 0
+  - component: {fileID: -8926634125202690818}
+  m_Layer: 9
   m_Name: floors_emptyTile_cornerCap_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-8926634125202690818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68867460083223272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.000001, y: 0.1601085, z: 4.0008626}
+  m_Center: {x: -2.0000005, y: 0.08005425, z: 1.9995695}

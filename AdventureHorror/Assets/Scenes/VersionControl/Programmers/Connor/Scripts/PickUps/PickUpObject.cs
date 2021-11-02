@@ -5,14 +5,16 @@ using UnityEngine;
 public abstract class PickUpObject :MonoBehaviour 
 {
     public abstract void Use(GameObject obj);
-    public Manipulable manipulable;
-    // Start is called before the first frame update
-   
-    public enum Manipulable
+    public PickUp manipulable;   
+    public enum PickUp
     {
-        Screw,
+        WireCutter,
         ScrewDriver
 
 
+    }
+    public PickUp isA()
+    {
+        return manipulable;
     }
 }

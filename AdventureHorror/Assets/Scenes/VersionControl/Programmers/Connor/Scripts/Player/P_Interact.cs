@@ -32,10 +32,13 @@ public class P_Interact
                     break;
                 case "HidingPlace":
                     //Debug.Log("so hidden wow");
-                    InteractWithHidingPlace(hit.collider.gameObject);
+                    HideInHidingPlace(hit.collider.gameObject);
                     break;
                 case "Manipulable":
                     Manipulate(hit.collider.gameObject);
+                    break;
+                case "Removable":
+                    RemoveObject(hit.collider.gameObject);
                     break;
                 default:
                     break;
@@ -48,13 +51,14 @@ public class P_Interact
     {
         door.GetComponent<Door>().interactWith();
     }
-    public void InteractWithHidingPlace(GameObject HP)
+    public void HideInHidingPlace(GameObject HP)
     {
         HP.GetComponent<HidingPlace>().interactWith(PD);
 
     }
     public void Manipulate(GameObject obj)
-    {  
+    {
+        if (PD.inHand != null)
             PD.inHand.GetComponent<PickUpObject>().Use(obj);
     }
     private void PickUpObject(GameObject obj)
@@ -90,7 +94,11 @@ public class P_Interact
 
     }
 
-    
+    public void RemoveObject(GameObject obj)
+    {
+        obj.GetComponent<RemovableObjects>().Remove();
+    }
+
     public void PlaceObject()
     {
 

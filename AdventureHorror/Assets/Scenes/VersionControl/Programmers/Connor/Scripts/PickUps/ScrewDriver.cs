@@ -6,13 +6,14 @@ public class ScrewDriver : PickUpObject
 {
     private Animator screwAnimator;
     private Animator screwDriverAnimator;
-    Manipulable canManipulate = Manipulable.Screw;
+
     //private Screw S;
 
     // Start is called before the first frame update
     void Start()
     {
         screwDriverAnimator = gameObject.GetComponent<Animator>();// gets screwdriver animations
+        manipulable = PickUp.ScrewDriver;
     }
 
     /// <summary>
@@ -25,10 +26,16 @@ public class ScrewDriver : PickUpObject
         if (screw.name.Contains("Screw"))
         //if (canManipulate.Equals(S.isA))//
         {
+
             screwAnimator = screw.GetComponent<Animator>();// gets screw animations
                                                            // unsrew somehow idk yet
-            Debug.Log("screw begone");
-            screw.SetActive(false);
+
+            if (screw.GetComponentInParent<Panel>().isA() == RemovableObjects.Removable.Panel)
+            {
+                Debug.Log("screw begone");
+                screw.GetComponentInParent<Panel>().RemoveScrewFromList(screw);
+                screw.GetComponent<Screw>().Remove();
+            }
         }
 
     }
