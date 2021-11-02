@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManipulableObject : MonoBehaviour
+public abstract class PickUpObject :MonoBehaviour 
 {
+    public abstract void Use(GameObject obj);
     public Manipulable manipulable;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
     public enum Manipulable
     {
-        screw
+        Screw,
+        ScrewDriver
+
+
     }
 }

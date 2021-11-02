@@ -936,7 +936,6 @@ GameObject:
   - component: {fileID: 615191132}
   - component: {fileID: 615191131}
   - component: {fileID: 615191130}
-  - component: {fileID: 615191134}
   m_Layer: 0
   m_Name: Screw
   m_TagString: Manipulable
@@ -1038,19 +1037,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615191128}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &615191134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615191128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed27f0ddb338a34bbc9b55131490de3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manipulable: 0
 --- !u!4 &622386282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6363009910325059853, guid: 8089e73a45be86f41ac475f1c94916bd, type: 3}
@@ -1831,7 +1817,6 @@ GameObject:
   - component: {fileID: 1303012440}
   - component: {fileID: 1303012439}
   - component: {fileID: 1303012438}
-  - component: {fileID: 1303012442}
   m_Layer: 0
   m_Name: Screw
   m_TagString: Manipulable
@@ -1933,19 +1918,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303012436}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1303012442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303012436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed27f0ddb338a34bbc9b55131490de3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manipulable: 0
 --- !u!1001 &1312635694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3083,7 +3055,6 @@ GameObject:
   - component: {fileID: 1988332397}
   - component: {fileID: 1988332396}
   - component: {fileID: 1988332395}
-  - component: {fileID: 1988332399}
   m_Layer: 0
   m_Name: Screw
   m_TagString: Manipulable
@@ -3185,19 +3156,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988332393}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1988332399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1988332393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed27f0ddb338a34bbc9b55131490de3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manipulable: 0
 --- !u!1001 &1991094636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3780,7 +3738,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screw
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6363009910325059848, guid: 8089e73a45be86f41ac475f1c94916bd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8089e73a45be86f41ac475f1c94916bd, type: 3}
 --- !u!1001 &6862034126971094971
 PrefabInstance:

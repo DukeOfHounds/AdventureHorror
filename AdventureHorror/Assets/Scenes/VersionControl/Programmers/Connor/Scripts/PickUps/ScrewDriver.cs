@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrewDriver : MonoBehaviour, PickUpObject
+public class ScrewDriver : PickUpObject
 {
     private Animator screwAnimator;
     private Animator screwDriverAnimator;
+    Manipulable canManipulate = Manipulable.Screw;
+    //private Screw S;
 
     // Start is called before the first frame update
     void Start()
@@ -17,16 +19,17 @@ public class ScrewDriver : MonoBehaviour, PickUpObject
     /// Unscrews the screw you are currently looking at and interacting with. 
     /// </summary>
     /// <param name="screw"></param>
-    public void Use(GameObject screw)
+    public override void Use(GameObject screw)
     {
-        //if (screw.name.Contains("Screw"))
-        if(screw.GetComponent<ManipulableObject>().manipulable ==ManipulableObject.Manipulable.screw)
+        //S = screw.GetComponent<Screw>();
+        if (screw.name.Contains("Screw"))
+        //if (canManipulate.Equals(S.isA))//
         {
             screwAnimator = screw.GetComponent<Animator>();// gets screw animations
                                                            // unsrew somehow idk yet
             Debug.Log("screw begone");
             screw.SetActive(false);
         }
-        
+
     }
 }
