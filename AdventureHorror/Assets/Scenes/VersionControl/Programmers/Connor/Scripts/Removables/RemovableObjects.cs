@@ -4,17 +4,24 @@ using UnityEngine;
 
 public abstract class RemovableObjects : MonoBehaviour
 {
+    /// <summary>
+    ///Removes object from scene 
+    ///Later will give it an animation and possibly dorp to the floor. 
+    /// </summary>
+    /// <param name="obj"></param>
     public abstract void Remove();
-    public Removable removable;
+    //public Removable removable;
+    protected MeshRenderer meshRenderer;
+    protected Collider collider;
 
-    public enum Removable
-    {
-       Panel,
-        Wire,
-        Screw
-    }
-    public Removable isA()
-    {
-        return removable;
-    }
+    //public enum Removable
+    //{
+    //   Panel,
+    //    Wire,
+    //    Screw
+    //}
+    //public Removable isA()
+    //{
+    //    return removable;
+    //}
 }

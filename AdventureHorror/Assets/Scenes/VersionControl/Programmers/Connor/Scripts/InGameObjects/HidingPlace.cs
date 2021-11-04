@@ -67,13 +67,6 @@ public class HidingPlace : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
     }
-    //Player presses "left click"
-    //switch on off
-    //off
-
-
-    //on
-
 
     IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {

@@ -9,7 +9,9 @@ public class Wire : RemovableObjects
 
     public void Awake()
     {
-        removable = Removable.Wire;
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        collider = gameObject.GetComponent<Collider>();
+        //removable = Removable.Wire;
         //wireAnimator = gameObject.GetComponent<Animator>();
     }
     public void Start()
@@ -18,9 +20,9 @@ public class Wire : RemovableObjects
     }
     public override void Remove()
     {
-        Debug.Log("remove wire");
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<Collider>().enabled = false;
+        door.RemoveWire(this);
+        meshRenderer.enabled = false;
+        collider.enabled = false;
     }
 
 }

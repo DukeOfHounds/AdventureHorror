@@ -73,11 +73,17 @@ public class Door : MonoBehaviour
     public void RemoveWire(Wire wire)
     {
         wires.Remove(wire);
+        if (wires.Count == 0)
+        {
+            Unlock();
+            Open();
+        }
 
     }
 
     public void AddWire(Wire wire)
     {
         wires.Add(wire);
+        Lock();
     }
 }
