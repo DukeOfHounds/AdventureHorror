@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     private bool canOpen = true;
     private Collider collider;
     public Animator doorAnimator;
+    private List<Wire> wires = new List<Wire>();
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class Door : MonoBehaviour
         {
             Open();
         }
+
     }
     public void Open()
     {
@@ -67,5 +69,15 @@ public class Door : MonoBehaviour
         {
             Close();
         }
+    }
+    public void RemoveWire(Wire wire)
+    {
+        wires.Remove(wire);
+
+    }
+
+    public void AddWire(Wire wire)
+    {
+        wires.Add(wire);
     }
 }

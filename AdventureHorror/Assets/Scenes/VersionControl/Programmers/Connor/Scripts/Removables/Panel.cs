@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Panel : RemovableObjects
 {
-    private List<GameObject> screws;
+    private List<Screw> screws = new List<Screw>();
+    private Animator panelAnimator;
+
     public void Awake()
     {
+        //panelAnimator = gameObject.GetComponent<Animator>();
         removable = Removable.Panel;
-        screws = new List<GameObject>();
-
     }
     public override void Remove()
     {
@@ -23,12 +24,12 @@ public class Panel : RemovableObjects
         }
 
     } 
-    public void AddScrewToList(GameObject screw)
+    public void AddScrewToList(Screw screw)
     {
         screws.Add(screw);
         Debug.Log("adding screw");
     }
-    public void RemoveScrewFromList(GameObject screw)
+    public void RemoveScrewFromList(Screw screw)
     {
         screws.Remove(screw);
 
