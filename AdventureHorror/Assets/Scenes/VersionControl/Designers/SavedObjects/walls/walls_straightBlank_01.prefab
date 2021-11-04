@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8125180861965109925}
   - component: {fileID: 3433323753151029209}
   - component: {fileID: 3665060381028201123}
+  - component: {fileID: -4677085819236242882}
   m_Layer: 0
   m_Name: walls_straightBlank_01
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-4677085819236242882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146942047526663704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.53672, y: 0.17320172, z: 4}
+  m_Center: {x: 2.76836, y: -0.08660086, z: 2}
