@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 283459564157648200}
   - component: {fileID: 1517230443514882175}
   m_Layer: 0
-  m_Name: WallPanel
+  m_Name: BigWallPanel
   m_TagString: Removable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

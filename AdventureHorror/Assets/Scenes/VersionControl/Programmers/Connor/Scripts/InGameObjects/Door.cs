@@ -11,9 +11,13 @@ public class Door : MonoBehaviour
     private Collider collider;
     public Animator doorAnimator;
 
-    private void Awake()
+    private void Start()
     {
         collider = gameObject.GetComponent<Collider>();
+        if(isOpen)
+        {
+            Open();
+        }
     }
     public void Open()
     {
