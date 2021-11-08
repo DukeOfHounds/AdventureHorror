@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 881605316257215980}
   m_Layer: 0
   m_Name: VentPortal
-  m_TagString: Untagged
+  m_TagString: Vent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VentOfExit: {fileID: 0}
+  ExitPosition: {fileID: 0}
+  PD: {fileID: 0}

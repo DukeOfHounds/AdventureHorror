@@ -10,6 +10,7 @@ TagManager:
   - PickUpAble
   - Screw
   - Removable
+  - Vent
   layers:
   - Default
   - TransparentFX
