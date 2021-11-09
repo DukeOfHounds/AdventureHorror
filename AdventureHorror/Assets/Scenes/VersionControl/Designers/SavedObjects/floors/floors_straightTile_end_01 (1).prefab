@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7871547226680206965}
   - component: {fileID: 8728676612194913939}
   - component: {fileID: 6542069903362507592}
-  - component: {fileID: -3238956950096727892}
-  m_Layer: 9
+  - component: {fileID: 8390047630231660669}
+  m_Layer: 0
   m_Name: floors_straightTile_end_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-3238956950096727892
+--- !u!65 &8390047630231660669
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5699933086239648948}
   - component: {fileID: 3766564704158056203}
   - component: {fileID: 8074406108201969130}
-  - component: {fileID: 6234091880245568224}
-  m_Layer: 9
+  - component: {fileID: -5485217035997328804}
+  m_Layer: 0
   m_Name: floors_cornerTile_hard_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6234091880245568224
+--- !u!65 &-5485217035997328804
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

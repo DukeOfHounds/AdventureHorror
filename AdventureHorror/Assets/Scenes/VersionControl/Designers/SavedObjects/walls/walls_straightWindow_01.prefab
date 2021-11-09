@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6176167188975995432}
   - component: {fileID: 7970993643220368761}
   - component: {fileID: 7486089525727002396}
+  - component: {fileID: -4954546094755705115}
   m_Layer: 0
   m_Name: walls_straightWindow_01
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-4954546094755705115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000925585783095398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.53672, y: 0.26020172, z: 4}
+  m_Center: {x: 2.76836, y: -0.043100864, z: 2}
