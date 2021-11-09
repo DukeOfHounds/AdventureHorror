@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     private bool canOpen = true;
     private Collider collider;
     public Animator doorAnimator;
+    public PuzzlePoster poster;
     private List<Wire> wires = new List<Wire>();
 
     private void Start()

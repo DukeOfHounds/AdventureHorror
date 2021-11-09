@@ -7,6 +7,7 @@ public class VentPortal : MonoBehaviour
     public VentPortal VentOfExit;
     public Transform ExitPosition;
     public PlayerData PD;
+    public bool canExit = false;
 
     private static bool TP = true;
     public void Teleport()
@@ -20,16 +21,19 @@ public class VentPortal : MonoBehaviour
     }
     IEnumerator TeleportPosition(Transform targetPosition, float duration)
     {
-        float time = 0;
-        Vector3 startPosition = PD.player.gameObject.transform.position;
-        while (time < duration)
+        if (VentOfExit.canExit)
         {
-            PD.player.gameObject.transform.position = targetPosition.position;
-            //rotating the player is headache indusing so maybe wait until later
-            time += Time.deltaTime;
-            yield return null;
+            float time = 0;
+            Vector3 startPosition = PD.player.gameObject.transform.position;
+            while (time < duration)
+            {
+                PD.player.gameObject.transform.position = targetPosition.position;
+                //rotating the player is headache indusing so maybe wait until later
+                time += Time.deltaTime;
+                yield return null;
+            }
         }
-
-        TP = true;
+            TP = true;
+        
     }
 }

@@ -6,6 +6,8 @@ public class Panel : RemovableObjects
 {
     private List<Screw> screws = new List<Screw>();
     private Animator panelAnimator;
+    public VentPortal VentPortal;
+
 
     public void Awake()
     {
@@ -20,8 +22,10 @@ public class Panel : RemovableObjects
         {
             meshRenderer.enabled = false;
             collider.enabled = false;
+            if (VentPortal != null)
+                VentPortal.canExit = true;
         }
-    } 
+    }
     public void AddScrewToList(Screw screw)
     {
         screws.Add(screw);

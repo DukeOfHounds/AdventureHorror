@@ -27,6 +27,7 @@ public class PlayerData : ScriptableObject
 
     [Header("Camera Variables")]
     public float mouseSensitivity = 33;
+    public Canvas HUD;
 
     [Header("Fear Variables")]
     public int fear;
