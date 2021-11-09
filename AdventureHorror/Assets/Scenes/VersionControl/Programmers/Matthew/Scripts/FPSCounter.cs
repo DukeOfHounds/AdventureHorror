@@ -11,14 +11,16 @@ public class FPSCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(UpdateFPS());
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    IEnumerator UpdateFPS()
     {
-        fps = (int)(1f / Time.unscaledDeltaTime);
-        fpsCounter.text = fps + "FRAMES";
-        Debug.Log(fps + "FRAMES");
+    yield return new WaitForSeconds(.2f);
+    fps = (int)(1f / Time.unscaledDeltaTime);
+    fpsCounter.text = fps + "FRAMES";
+    StartCoroutine(UpdateFPS());
     }
 }

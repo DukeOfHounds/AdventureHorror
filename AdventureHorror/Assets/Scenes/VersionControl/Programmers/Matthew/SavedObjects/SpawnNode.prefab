@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5083889265128834054}
   - component: {fileID: 1370994377637600549}
   - component: {fileID: 7137886030326028115}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: SearchNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: ea168c8198e8c624c9b606d166978f3c, type: 3}
+  - {fileID: 2100000, guid: 9eaf4f5f527f16242b7dec62d253d716, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,9 +122,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3982599406496524017}
-  - component: {fileID: 4418829048439054071}
-  m_Layer: 10
-  m_Name: TimeOutNode
+  - component: {fileID: 5621260286024290100}
+  m_Layer: 11
+  m_Name: SpawnNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4418829048439054071
+--- !u!114 &5621260286024290100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8246334854623858561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44a269b8128448c4db4eb962243adf21, type: 3}
+  m_Script: {fileID: 11500000, guid: 67723d35931354c41befbd27253dff28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r: {fileID: 0}
+  r: {fileID: 5083889265128834054}

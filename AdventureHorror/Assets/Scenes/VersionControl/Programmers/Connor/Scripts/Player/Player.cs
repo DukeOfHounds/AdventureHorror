@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;// locks cursor to game window
     }
 
+
     void Update()
     {
         movment.UpdateCamera(mouseX, mouseY);
@@ -46,7 +47,6 @@ public class Player : MonoBehaviour
     }
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////
-
 
 
 

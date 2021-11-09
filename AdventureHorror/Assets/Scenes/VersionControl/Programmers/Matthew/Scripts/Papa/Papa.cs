@@ -7,6 +7,7 @@ public class Papa : MonoBehaviour
 {
 
     public PapaData ppD;
+    public PlayerData pD;
     public PP_LOS los;
     public PP_Movement ppM;
     public NavMeshAgent agent;
@@ -17,6 +18,7 @@ public class Papa : MonoBehaviour
     {
         //ppD = ScriptableObject.CreateInstance<PapaData>();
         ppD.Papa = gameObject;
+        ppD.timesSearched = 0;
         los = new PP_LOS(ppD, this);
         ppM = new PP_Movement(ppD, this);
         ppM.currentState = PP_Movement.State.StartSearch;
@@ -25,10 +27,15 @@ public class Papa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(ppM.currentState);
         if (ppD.isActive)
         {
             los.LineOfSightCheck();
             ppM.HandleMovement();
+            if (ppD.timesSearched > 10)
+            {
+                ppM.currentState = PP_Movement.State.Despawn;
+            }
         }
     }
 
@@ -39,6 +46,10 @@ public class Papa : MonoBehaviour
     }
     public IEnumerator SM(float wait)
     {
+        if(ppD.canSeeTarget)
+        {
+            yield break;
+        }
         agent.isStopped = true;
         yield return new WaitForSeconds(wait);
         agent.isStopped = false;
@@ -48,8 +59,8 @@ public class Papa : MonoBehaviour
     {
         //ppD = ScriptableObject.CreateInstance<PapaData>();
         ppD.Papa = gameObject;
-        los = new PP_LOS(ppD, this);
-        ppM = new PP_Movement(ppD, this);
+        //los = new PP_LOS(ppD, this);
+        //ppM = new PP_Movement(ppD, this);
         ppM.currentState = PP_Movement.State.StartSearch;
     }
 

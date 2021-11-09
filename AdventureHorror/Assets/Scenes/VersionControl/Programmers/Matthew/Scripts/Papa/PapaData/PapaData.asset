@@ -31,8 +31,13 @@ MonoBehaviour:
   adjustCone: {x: 0, y: 0, z: 0}
   papaBaseSpeed: 2
   chaseSpeedMultiplier: 3
+  timesSearched: 0
   searchNodeLayer:
     serializedVersion: 2
     m_Bits: 1024
+  spawnNodeLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   papaMinDespawnDist: 50
   papaMaxDespawnDist: 60
+  currentDest: {x: 0, y: 0, z: 0}
