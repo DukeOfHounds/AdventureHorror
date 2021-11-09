@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
         PD.inHand = null;
     }
 
+
     void Update()
     {
         movment.UpdateCamera(mouseX, mouseY);
@@ -51,7 +52,6 @@ public class Player : MonoBehaviour
     }
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////
-
 
 
 

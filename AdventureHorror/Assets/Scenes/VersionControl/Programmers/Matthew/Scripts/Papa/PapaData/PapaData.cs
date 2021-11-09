@@ -9,9 +9,12 @@ public class PapaData : ScriptableObject
     [Header("Papa")]
     public GameObject Papa; //Papa object
     public Vector3 targetLastSeen;
-    public GameObject player;
-    
-    
+    public bool isActive = false;
+    public Vector3 timeOut;
+    public bool despawning;
+
+
+
     [Header("Sight Variables")]
     
     [Range(0, 360)]
@@ -27,8 +30,12 @@ public class PapaData : ScriptableObject
     [Header("Movement")]
     public float papaBaseSpeed = 3.5f;
     public float chaseSpeedMultiplier = 2f;
+    public int timesSearched = 0;
     public LayerMask searchNodeLayer;
-
+    public LayerMask spawnNodeLayer;
+    public float papaMinDespawnDist;
+    public float papaMaxDespawnDist;
+    public Vector3 currentDest;
 
 
 }
