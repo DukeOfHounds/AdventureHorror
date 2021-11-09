@@ -16,7 +16,7 @@ public class PP_LOS
         this.papa = papa;
         this.paparef = papaData.Papa;
     }
-    //Running on Cooroutine instead of update
+
 
     //Main Method
     public void LineOfSightCheck()

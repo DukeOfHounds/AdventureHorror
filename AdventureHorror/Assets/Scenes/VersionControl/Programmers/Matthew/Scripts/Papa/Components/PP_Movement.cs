@@ -10,7 +10,6 @@ public class PP_Movement
     private GameObject cSNode;
     private int index;
     private bool searching = false;
-    public Vector3 currentDest;
 
     public enum State
     { StartSearch, Search, Chase, Despawn }
@@ -19,7 +18,7 @@ public class PP_Movement
     private List<GameObject> searchNodes = new List<GameObject>();
     Collider[] colliders = new Collider[10];
 
-    int count = 69;
+    int count;
 
     public PP_Movement(PapaData papaData, Papa papa)
     {
@@ -32,8 +31,8 @@ public class PP_Movement
     
     public void HandleMovement()
     {
-
-        Debug.Log(papaData.canSeeTarget);
+       
+        Debug.Log(papa.pD.player.gameObject.transform.position);
         if (papaData.canSeeTarget)
         {
             currentState = State.Chase;
@@ -62,56 +61,58 @@ public class PP_Movement
     private void StartSearch()
     {
         papa.agent.speed = papaData.papaBaseSpeed;
-        currentDest = papaData.player.transform.position;
-        Vector3 distanceToDest = paparef.transform.position - currentDest;
+        papaData.currentDest = papa.pD.player.gameObject.transform.position;
+        Vector3 distanceToDest = papa.pD.player.gameObject.transform.position - papaData.currentDest;
+        papa.agent.SetDestination(papaData.currentDest);
         if (distanceToDest.magnitude < 20f)
         {
             currentState = State.Search;
-            papa.StopMovement(2f);
+            //papa.StopMovement(2f);
         }
-        papa.agent.SetDestination(currentDest);
 
     }
 
     private void Search()
     {
-        Debug.Log(cSNode);
         if (searchNodes.Count == 0)
         {
             searching = true;
             papa.agent.speed = papaData.papaBaseSpeed;
             count = Physics.OverlapSphereNonAlloc(paparef.transform.position, 30f, colliders, papaData.searchNodeLayer, QueryTriggerInteraction.Collide);
-            Debug.Log(count);
             for (int i = 0; i < count; ++i)
             {
-                    
-                GameObject obj = colliders[i++].gameObject;
-                
-                Vector3 distanceToDest = paparef.transform.position - obj.transform.position;
-                if (distanceToDest.magnitude > 3)
+                if (papaData.canSeeTarget)
                 {
-                    searchNodes.Add(obj);
+                    break;
                 }
+                else
+                {
+                    GameObject obj = colliders[i++].gameObject;
 
+                    Vector3 distanceToDest = paparef.transform.position - obj.transform.position;
+                    if (distanceToDest.magnitude > 3)
+                    {
+                        searchNodes.Add(obj);
+                    }
+                }
 
             }
 
         }
         else
         {
-            Debug.Log(searchNodes.Count);
             int random = Mathf.Abs(Random.Range(0, searchNodes.Count -1));
         if (cSNode == null)
             {
+                papaData.timesSearched = papaData.timesSearched + 1;
                 index = random;
-                Debug.Log(index);
                 cSNode = searchNodes[index];
-                currentDest = cSNode.transform.position;
-                papa.agent.SetDestination(currentDest);
+                papaData.currentDest = cSNode.transform.position;
+                papa.agent.SetDestination(papaData.currentDest);
             }
             else
             {
-                Vector3 distanceToDest = paparef.transform.position - currentDest;
+                Vector3 distanceToDest = paparef.transform.position - papaData.currentDest;
                 if (distanceToDest.magnitude < 1.5)
                 {
                     searchNodes.RemoveAt(index);
@@ -128,9 +129,12 @@ public class PP_Movement
     private void Chase()
     {
 
-        currentDest = papaData.targetLastSeen;
-        Vector3 distanceToDest = paparef.transform.position - currentDest;
-        Vector3 distanceToPlayer = paparef.transform.position - papaData.player.transform.position;
+        papaData.currentDest = papaData.targetLastSeen;
+        Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
+        if(!papaData.canSeeTarget)
+        {
+            
+        }
         if (distanceToPlayer.magnitude < 3)
         {
             //if(playerIsHiding)
@@ -145,18 +149,43 @@ public class PP_Movement
         {
             if(papa.agent.velocity.magnitude < 1)
             {
-                currentState = State.StartSearch;
-                papa.StopMovement(2f);
+                if (distanceToPlayer.magnitude < 15)
+                {
+                    papaData.currentDest = papa.pD.player.transform.position;
+                }
+                else
+                {
+                    currentState = State.StartSearch;
+                    papa.StopMovement(2f);
+                }
             }
 
-            papa.agent.SetDestination(currentDest);
+            papa.agent.SetDestination(papaData.currentDest);
             papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
         }
     }
 
     private void Despawn()
     {
+        papaData.despawning = true;
         papa.agent.speed = papaData.papaBaseSpeed;
+        float distanceToPlayer = Vector3.Distance(papa.agent.transform.position, papa.pD.player.gameObject.transform.position);
+        Vector3 directionOfTarget = (papa.pD.player.gameObject.transform.position - papa.agent.transform.position).normalized;
+        if ((distanceToPlayer > 30f) && (!Physics.Raycast(papa.agent.transform.position, directionOfTarget, distanceToPlayer, papaData.occlusionLayers)))
+        {
+            papaData.isActive = false;
+            paparef.transform.position = papaData.timeOut;
+            papaData.despawning = false;
+
+        }
+
+
+
     }
+
+
+
+
+
 
 }

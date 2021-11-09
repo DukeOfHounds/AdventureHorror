@@ -39,7 +39,10 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;// locks cursor to game window
         PD.isHiding = false;
         PD.inHand = null;
+        Instantiate(PD.HUD);
+
     }
+
 
     void Update()
     {
@@ -51,7 +54,6 @@ public class Player : MonoBehaviour
     }
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////
-
 
 
 

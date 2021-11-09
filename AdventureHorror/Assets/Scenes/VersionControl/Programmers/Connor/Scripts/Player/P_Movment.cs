@@ -54,4 +54,9 @@ public class P_Movment
             velocity.y = Mathf.Sqrt(PD.jumpHeight * -2f * PD.gravity);
         }
     }
+
+    //public void UpdateLook(Vector3 lookSTarget)
+    //{
+
+    //}
 }
