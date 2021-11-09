@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BairHearts: []
   inHand: {fileID: 0}
-  player: {fileID: 0}
   hand: {fileID: 8319401244205666855, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
   speed: 2
   jumpHeight: 0.5
   gravity: -9.81
+  throwForce: 3
   mouseSensitivity: 15
   fear: 0
   fearThreshold: 0
   cam: {fileID: 0}
+  isHiding: 1
+  player: {fileID: 0}

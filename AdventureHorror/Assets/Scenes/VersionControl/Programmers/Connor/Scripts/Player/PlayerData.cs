@@ -11,7 +11,6 @@ public class PlayerData : ScriptableObject
     [Header("Player")]
     public List<GameObject> BairHearts;
     public GameObject inHand = null;
-    public Player player;//the player object
     public P_Input input;
     public P_Interact interact;
     public P_Inventory inventory;
@@ -33,8 +32,11 @@ public class PlayerData : ScriptableObject
     public int fear;
     public int fearThreshold;
 
-    [Header("Ignore")]
+    [Header("IgnoreDoNotTouch")]
     public Camera cam;// the camera following the player
+    public bool isHiding = false;
+    public Player player;//the player object
+
 
     private void OnEnable()
     {

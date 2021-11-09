@@ -37,13 +37,18 @@ public class Player : MonoBehaviour
         interact = new P_Interact(PD);
         Cursor.visible = false; // hides cursor 
         Cursor.lockState = CursorLockMode.Confined;// locks cursor to game window
+        PD.isHiding = false;
+        PD.inHand = null;
     }
 
 
     void Update()
     {
         movment.UpdateCamera(mouseX, mouseY);
-        movment.UpdatePosition(horizontal1D, vertical1D);
+        if (!PD.isHiding)
+        {
+            movment.UpdatePosition(horizontal1D, vertical1D);
+        }
     }
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////
