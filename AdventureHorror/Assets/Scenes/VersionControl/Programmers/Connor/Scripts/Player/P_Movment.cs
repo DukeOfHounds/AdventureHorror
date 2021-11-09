@@ -55,8 +55,8 @@ public class P_Movment
         }
     }
 
-    public void UpdateLook(Vector3 lookSTarget)
-    {
+    //public void UpdateLook(Vector3 lookSTarget)
+    //{
 
-    }
+    //}
 }

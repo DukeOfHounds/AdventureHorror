@@ -15,7 +15,6 @@ public class ScrewDriver : PickUpObject
     void Start()
     {
         screwDriverAnimator = gameObject.GetComponent<Animator>();// gets screwdriver animations
-        manipulable = PickUp.ScrewDriver;
     }
 
     

@@ -9,16 +9,6 @@ public abstract class PickUpObject :MonoBehaviour
     /// </summary>
     /// <param name="obj"></param>
     public abstract void Use(GameObject obj);
-    public PickUp manipulable;   
-    public enum PickUp
-    {
-        WireCutter,
-        ScrewDriver
-
-
-    }
-    public PickUp isA()
-    {
-        return manipulable;
-    }
+    
+    
 }

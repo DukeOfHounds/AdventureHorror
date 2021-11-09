@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 283459564157648203, guid: cf046e5518e196e458409f4eb1cf4ed3, type: 3}
       propertyPath: m_Name
-      value: WallPanel
+      value: SmallWallPanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf046e5518e196e458409f4eb1cf4ed3, type: 3}

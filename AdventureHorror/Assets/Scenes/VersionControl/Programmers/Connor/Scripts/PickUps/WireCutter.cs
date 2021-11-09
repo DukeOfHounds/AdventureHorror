@@ -13,7 +13,6 @@ public class WireCutter : PickUpObject
     void Start()
     {
         wireCutterAnimator = gameObject.GetComponent<Animator>();// gets screwdriver animations
-        manipulable = PickUp.WireCutter;
     }
 
     /// <summary>
