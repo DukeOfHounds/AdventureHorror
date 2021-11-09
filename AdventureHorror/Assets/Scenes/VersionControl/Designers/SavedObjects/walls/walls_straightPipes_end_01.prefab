@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 998682760155088502}
   - component: {fileID: 3880481837484341196}
   - component: {fileID: 391552663068680127}
-  - component: {fileID: -446174796962507764}
   m_Layer: 0
   m_Name: walls_straightPipes_end_01
   m_TagString: Untagged
@@ -83,16 +82,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-446174796962507764
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956855712507764764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.005396, y: 5.53672, z: 0.5246446}
-  m_Center: {x: -2.002698, y: 2.76836, z: 0.07438905}
