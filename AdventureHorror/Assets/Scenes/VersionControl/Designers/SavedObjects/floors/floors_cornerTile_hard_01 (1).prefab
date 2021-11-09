@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2497554314227212924}
   - component: {fileID: 3950230502912358121}
   - component: {fileID: -3965268932609017850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floors_cornerTile_hard_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
