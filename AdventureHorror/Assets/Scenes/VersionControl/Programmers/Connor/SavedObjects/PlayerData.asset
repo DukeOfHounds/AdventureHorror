@@ -15,7 +15,7 @@ MonoBehaviour:
   BairHearts: []
   inHand: {fileID: 0}
   hand: {fileID: 8319401244205666855, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
-  speed: 2
+  speed: 8
   jumpHeight: 0.5
   gravity: -9.81
   throwForce: 3
