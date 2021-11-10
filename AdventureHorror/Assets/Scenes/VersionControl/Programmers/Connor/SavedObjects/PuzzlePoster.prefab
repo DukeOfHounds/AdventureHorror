@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32731c958f61a314298dbcbed7ef2b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WD: {fileID: 11400000, guid: 9659a7b3fa3e4e84a8d284558ddd364f, type: 2}
+  colorOrderArray: []

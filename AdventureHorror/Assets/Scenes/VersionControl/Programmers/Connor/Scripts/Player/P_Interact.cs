@@ -22,6 +22,7 @@ public class P_Interact
         Physics.Raycast(ray, out hit, 2);// finds what is infront of the player
         if (hit.collider != null)
         {
+            Debug.Log(hit.collider.gameObject.name);
             switch (hit.collider.tag) //determins if hit is interactable
             {
                 case "Door":
@@ -38,6 +39,7 @@ public class P_Interact
                     Manipulate(hit.collider.gameObject);
                     break;
                 case "Removable":
+                    Debug.Log("hit removable");
                     RemoveObject(hit.collider.gameObject);
                     break;
                 case "Vent":
