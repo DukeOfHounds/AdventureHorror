@@ -255,10 +255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade4b02a28693c340aa9940fc1d1abbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WD: {fileID: 0}
   isOpen: 0
   locked: 0
   doorAnimator: {fileID: 5609591372367969388}
-  poster: {fileID: 0}
 --- !u!95 &5609591372367969388
 Animator:
   serializedVersion: 3
