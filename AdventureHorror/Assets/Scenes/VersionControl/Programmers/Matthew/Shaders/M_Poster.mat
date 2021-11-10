@@ -90,7 +90,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Normal_Strength: 1.59
-    - Smoothness: 0.62
+    - Smoothness: 0.1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -118,10 +118,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Wire1Color: {r: 0, g: 0.5496156, b: 0.4276431, a: 1}
-    - Wire2Color: {r: 0, g: 0.32442272, b: 0.7247149, a: 1}
-    - Wire3Color: {r: 0.9405281, g: 0, b: 0.20916511, a: 1}
-    - Wire4Color: {r: 0.5700733, g: 0.09338781, b: 0, a: 1}
+    - Wire1Color: {r: 0.47949484, g: 0.62322867, b: 0, a: 1}
+    - Wire2Color: {r: 0.3055061, g: 0, b: 0.6040083, a: 1}
+    - Wire3Color: {r: 0.28524616, g: 0.5958676, b: 0, a: 1}
+    - Wire4Color: {r: 0.49893597, g: 0, b: 0.6441128, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
