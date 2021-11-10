@@ -32,10 +32,16 @@ public class P_Interact
                     break;
                 case "HidingPlace":
                     //Debug.Log("so hidden wow");
-                    InteractWithHidingPlace(hit.collider.gameObject);
+                    HideInHidingPlace(hit.collider.gameObject);
                     break;
                 case "Manipulable":
                     Manipulate(hit.collider.gameObject);
+                    break;
+                case "Removable":
+                    RemoveObject(hit.collider.gameObject);
+                    break;
+                case "Vent":
+                    EnterVent(hit.collider.gameObject);
                     break;
                 default:
                     break;
@@ -48,13 +54,14 @@ public class P_Interact
     {
         door.GetComponent<Door>().interactWith();
     }
-    public void InteractWithHidingPlace(GameObject HP)
+    private void HideInHidingPlace(GameObject HP)
     {
         HP.GetComponent<HidingPlace>().interactWith(PD);
 
     }
-    public void Manipulate(GameObject obj)
-    {  
+    private void Manipulate(GameObject obj)
+    {
+        if (PD.inHand != null)
             PD.inHand.GetComponent<PickUpObject>().Use(obj);
     }
     private void PickUpObject(GameObject obj)
@@ -77,6 +84,20 @@ public class P_Interact
         }
         //allows you to throw something
     }
+
+    private void RemoveObject(GameObject obj)
+    {
+        obj.GetComponent<RemovableObjects>().Remove();
+    }
+    private void EnterVent(GameObject obj)
+    {
+        obj.GetComponent<VentPortal>().Teleport();
+    }
+    //public void PlaceObject()
+    //{
+
+    //}
+
     public void ThrowHandObj()
     {
         GameObject obj = PD.inHand;
@@ -90,9 +111,4 @@ public class P_Interact
 
     }
 
-    
-    public void PlaceObject()
-    {
-
-    }
 }

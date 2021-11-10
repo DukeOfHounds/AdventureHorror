@@ -47,11 +47,15 @@ public class P_Movment
         PD.player.GetComponent<CharacterController>().Move(velocity * Time.deltaTime); // actually moves the player
     }
     public void Jump()
-    {
-
-        if (isGrounded)
+    {     
+        if (Physics.Raycast(PD.player.gameObject.transform.position, PD.player.gameObject.transform.up *-1,.75f))
         {
             velocity.y = Mathf.Sqrt(PD.jumpHeight * -2f * PD.gravity);
         }
     }
+
+    //public void UpdateLook(Vector3 lookSTarget)
+    //{
+
+    //}
 }

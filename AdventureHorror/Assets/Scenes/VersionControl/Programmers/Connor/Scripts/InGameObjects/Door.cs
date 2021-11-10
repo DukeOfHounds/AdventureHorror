@@ -10,10 +10,17 @@ public class Door : MonoBehaviour
     private bool canOpen = true;
     private Collider collider;
     public Animator doorAnimator;
+    public PuzzlePoster poster;
+    private List<Wire> wires = new List<Wire>();
 
-    private void Awake()
+    private void Start()
     {
         collider = gameObject.GetComponent<Collider>();
+        if(isOpen)
+        {
+            Open();
+        }
+
     }
     public void Open()
     {
@@ -63,5 +70,21 @@ public class Door : MonoBehaviour
         {
             Close();
         }
+    }
+    public void RemoveWire(Wire wire)
+    {
+        wires.Remove(wire);
+        if (wires.Count == 0)
+        {
+            Unlock();
+            Open();
+        }
+
+    }
+
+    public void AddWire(Wire wire)
+    {
+        wires.Add(wire);
+        Lock();
     }
 }

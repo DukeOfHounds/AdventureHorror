@@ -4,31 +4,27 @@ using UnityEngine;
 
 public class ScrewDriver : PickUpObject
 {
-    private Animator screwAnimator;
     private Animator screwDriverAnimator;
-    Manipulable canManipulate = Manipulable.Screw;
-    //private Screw S;
 
+
+    private void Awake()
+    {
+        //screwDriverAnimator = GetComponent<Animator>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         screwDriverAnimator = gameObject.GetComponent<Animator>();// gets screwdriver animations
     }
 
-    /// <summary>
-    /// Unscrews the screw you are currently looking at and interacting with. 
-    /// </summary>
-    /// <param name="screw"></param>
+    
     public override void Use(GameObject screw)
     {
-        //S = screw.GetComponent<Screw>();
-        if (screw.name.Contains("Screw"))
-        //if (canManipulate.Equals(S.isA))//
+
+        if (screw.TryGetComponent<Screw>(out Screw screwComponent))
         {
-            screwAnimator = screw.GetComponent<Animator>();// gets screw animations
-                                                           // unsrew somehow idk yet
-            Debug.Log("screw begone");
-            screw.SetActive(false);
+            
+            screwComponent.Remove();// unsrew somehow idk yet
         }
 
     }

@@ -9,6 +9,8 @@ TagManager:
   - Manipulable
   - PickUpAble
   - Screw
+  - Removable
+  - Vent
   layers:
   - Default
   - TransparentFX
