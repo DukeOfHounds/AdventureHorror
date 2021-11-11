@@ -81,14 +81,18 @@ public class Door : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (!isOpen)
+        Debug.Log(collider.tag);
+        if ((collider.tag == "Player" || collider.tag == "Papa") && !isOpen)
         {
             Open();
         }
     }
     public void OnTriggerExit(Collider other)
     {
-        
+        if ((collider.tag == "Player" || collider.tag == "Papa") && isOpen)
+        {
+            Close();
+        }
     }
 
 

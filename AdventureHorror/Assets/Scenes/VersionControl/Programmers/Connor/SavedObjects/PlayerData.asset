@@ -23,6 +23,6 @@ MonoBehaviour:
   HUD: {fileID: 4197089807440806321, guid: 81032fd666b1c844b8068db265b8df9d, type: 3}
   fear: 0
   fearThreshold: 0
-  cam: {fileID: 0}
+  cam: {fileID: 1626118939937770608, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
   isHiding: 0
   player: {fileID: 0}

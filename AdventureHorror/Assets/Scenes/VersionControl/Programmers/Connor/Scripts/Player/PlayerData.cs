@@ -37,17 +37,4 @@ public class PlayerData : ScriptableObject
     public Camera cam;// the camera following the player
     public bool isHiding = false;
     public Player player;//the player object
-
-
-    private void OnEnable()
-    {
-        cam = Camera.main; // assigns camera 
-    }
-
-
-
-
-
-
-
 }
