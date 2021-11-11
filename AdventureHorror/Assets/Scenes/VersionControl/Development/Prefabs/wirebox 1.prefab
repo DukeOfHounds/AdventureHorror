@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92593b79f8e466d44ac50d6eaec3a6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WD: {fileID: 0}
+  WD: {fileID: 11400000, guid: 9659a7b3fa3e4e84a8d284558ddd364f, type: 2}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4860528794393064748
 GameObject:
