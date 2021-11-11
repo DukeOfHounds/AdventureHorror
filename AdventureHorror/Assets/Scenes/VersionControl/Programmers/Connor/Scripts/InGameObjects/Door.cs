@@ -17,7 +17,10 @@ public class Door : MonoBehaviour
     private void Start()
     {
         if (WD != null)
+        {
             WD.door = this;
+            Lock();
+        }
         collider = gameObject.GetComponent<Collider>();
         if (isOpen)
         {
@@ -79,6 +82,24 @@ public class Door : MonoBehaviour
             Close();
         }
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
+        {
+            Open();
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if ((other.tag == "Player" || other.tag == "Papa") && isOpen)
+        {
+            Close();
+        }
+    }
+
+
+
+
     //public void RemoveWire(Wire wire)
     //{
     //    wires.Remove(wire);
