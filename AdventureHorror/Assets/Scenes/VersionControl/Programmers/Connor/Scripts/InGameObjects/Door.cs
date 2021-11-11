@@ -79,6 +79,21 @@ public class Door : MonoBehaviour
             Close();
         }
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (!isOpen)
+        {
+            Open();
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        
+    }
+
+
+
+
     //public void RemoveWire(Wire wire)
     //{
     //    wires.Remove(wire);
