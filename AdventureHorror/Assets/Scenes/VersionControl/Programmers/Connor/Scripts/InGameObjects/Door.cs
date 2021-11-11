@@ -17,7 +17,10 @@ public class Door : MonoBehaviour
     private void Start()
     {
         if (WD != null)
+        {
             WD.door = this;
+            Lock();
+        }
         collider = gameObject.GetComponent<Collider>();
         if (isOpen)
         {
@@ -81,15 +84,14 @@ public class Door : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(collider.tag);
-        if ((collider.tag == "Player" || collider.tag == "Papa") && !isOpen)
+        if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
         {
             Open();
         }
     }
     public void OnTriggerExit(Collider other)
     {
-        if ((collider.tag == "Player" || collider.tag == "Papa") && isOpen)
+        if ((other.tag == "Player" || other.tag == "Papa") && isOpen)
         {
             Close();
         }
