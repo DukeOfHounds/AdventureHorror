@@ -48,7 +48,7 @@ public class P_Movment
     }
     public void Jump()
     {     
-        if (Physics.Raycast(PD.player.gameObject.transform.position, PD.player.gameObject.transform.up *-1,.75f))
+        if (isGrounded)
         {
             velocity.y = Mathf.Sqrt(PD.jumpHeight * -2f * PD.gravity);
         }
