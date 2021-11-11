@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c307adccf3163ee40bea26c1bd075fa3, type: 3}
-  m_Name: PlayerData
+  m_Name: Connor'sPlayerData
   m_EditorClassIdentifier: 
   BairHearts: []
   inHand: {fileID: 0}
   hand: {fileID: 8319401244205666855, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
   speed: 8
-  jumpHeight: 0.5
+  jumpHeight: 5
   gravity: -9.81
   throwForce: 3
   mouseSensitivity: 15
   HUD: {fileID: 4197089807440806321, guid: 81032fd666b1c844b8068db265b8df9d, type: 3}
   fear: 0
   fearThreshold: 0
-  cam: {fileID: 1626118939937770608, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+  cam: {fileID: 0}
   isHiding: 0
   player: {fileID: 0}
