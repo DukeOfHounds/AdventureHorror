@@ -12,23 +12,24 @@ public class Overwatch : MonoBehaviour
     public GameObject papaPref;
     public GameObject timeOut;
 
-    // Start is called before the first frame update
-    void Awake()
+    // Stop is called before the first frame update
+    void Start()
     {
         //ppD = ScriptableObject.CreateInstance<PapaData>();              
         timeOut = GameObject.Find("TimeOutNode");
-        Instantiate(papaPref, timeOut.transform);
+        Instantiate(papaPref, timeOut.transform.position, timeOut.transform.transform.rotation);
         ppS = papaPref.GetComponent<Papa>();
         ppD.Papa = papaPref;
         oW = new PO_Overwatch(ppD, ppS, this);
-        ppD.isActive = true;
+        ppD.isActive = false;
     }
+
 
 
     void Update()
     {
+        Debug.Log(ppD.isActive);
         FearCheck();
-        Debug.Log(ppD.timesSearched);
     }
     private void FearCheck()
     {
@@ -52,7 +53,6 @@ public class Overwatch : MonoBehaviour
 
     public void RespawnPapa()
     {
-        //ppD.Papa.transform = ;
-        ppD.isActive = true;
+        oW.GetLocation();
     }
 }

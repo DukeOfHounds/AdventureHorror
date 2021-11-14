@@ -12,13 +12,13 @@ public class PP_Movement
     private bool searching = false;
 
     public enum State
-    { StartSearch, Search, Chase, Despawn }
+    { StartSearch, Search, Chase, ResetWires, Respawn, Despawn };
 
     public State currentState;
     private List<GameObject> searchNodes = new List<GameObject>();
     Collider[] colliders = new Collider[10];
 
-    int count;
+    int count = 0;
 
     public PP_Movement(PapaData papaData, Papa papa)
     {
@@ -32,7 +32,6 @@ public class PP_Movement
     public void HandleMovement()
     {
        
-        Debug.Log(papa.pD.player.gameObject.transform.position);
         if (papaData.canSeeTarget)
         {
             currentState = State.Chase;
@@ -52,19 +51,29 @@ public class PP_Movement
                 Chase();
                 break;
 
+            case State.ResetWires:
+                ResetWires();
+                break;
+
+            case State.Respawn:
+                Respawn();
+                break;
+
             case State.Despawn:
                 Despawn();
                 break;
         }       
     }
-
+    /// <summary>
+    /// This does something... maybe...
+    /// </summary>
     private void StartSearch()
     {
         papa.agent.speed = papaData.papaBaseSpeed;
         papaData.currentDest = papa.pD.player.gameObject.transform.position;
-        Vector3 distanceToDest = papa.pD.player.gameObject.transform.position - papaData.currentDest;
+        Vector3 distanceToPlayer = papa.pD.player.gameObject.transform.position - papaData.currentDest;
         papa.agent.SetDestination(papaData.currentDest);
-        if (distanceToDest.magnitude < 20f)
+        if (distanceToPlayer.magnitude < 20f)
         {
             currentState = State.Search;
             //papa.StopMovement(2f);
@@ -89,8 +98,8 @@ public class PP_Movement
                 {
                     GameObject obj = colliders[i++].gameObject;
 
-                    Vector3 distanceToDest = paparef.transform.position - obj.transform.position;
-                    if (distanceToDest.magnitude > 3)
+                    Vector3 distanceToNode = paparef.transform.position - obj.transform.position;
+                    if (distanceToNode.magnitude > 3)
                     {
                         searchNodes.Add(obj);
                     }
@@ -104,7 +113,7 @@ public class PP_Movement
             int random = Mathf.Abs(Random.Range(0, searchNodes.Count -1));
         if (cSNode == null)
             {
-                papaData.timesSearched = papaData.timesSearched + 1;
+                ++papaData.timesSearched;
                 index = random;
                 cSNode = searchNodes[index];
                 papaData.currentDest = cSNode.transform.position;
@@ -112,8 +121,8 @@ public class PP_Movement
             }
             else
             {
-                Vector3 distanceToDest = paparef.transform.position - papaData.currentDest;
-                if (distanceToDest.magnitude < 1.5)
+                Vector3 distanceToNode = paparef.transform.position - papaData.currentDest;
+                if (distanceToNode.magnitude < 1.5)
                 {
                     searchNodes.RemoveAt(index);
                     cSNode = null;
@@ -164,6 +173,18 @@ public class PP_Movement
             papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
         }
     }
+
+    
+    private void ResetWires()
+    {
+
+    }
+
+    private void Respawn()
+    {
+
+    }
+
 
     private void Despawn()
     {
