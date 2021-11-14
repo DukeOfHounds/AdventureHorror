@@ -16,7 +16,6 @@ public class Overwatch : MonoBehaviour
     void Start()
     {
         //ppD = ScriptableObject.CreateInstance<PapaData>();              
-        timeOut = GameObject.Find("TimeOutNode");
         Instantiate(papaPref, timeOut.transform.position, timeOut.transform.transform.rotation);
         ppS = papaPref.GetComponent<Papa>();
         ppD.Papa = papaPref;
