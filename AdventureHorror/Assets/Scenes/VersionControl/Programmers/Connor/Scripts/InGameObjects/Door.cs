@@ -63,6 +63,7 @@ public class Door : MonoBehaviour
     }
     IEnumerator waitThenClose()
     {
+        Debug.Log("wait then close");
         yield return new WaitForSeconds(1f);
         Close();
     }
