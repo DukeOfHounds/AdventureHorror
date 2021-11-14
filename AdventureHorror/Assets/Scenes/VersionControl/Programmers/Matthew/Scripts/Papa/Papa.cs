@@ -64,4 +64,12 @@ public class Papa : MonoBehaviour
         ppM.currentState = PP_Movement.State.StartSearch;
     }
 
+    public void TeleportPapa(Vector3 spawnPoint)
+    {
+
+        agent.Warp(spawnPoint);
+        Debug.Log("Teleport wooosh wooosh wooosh");
+        Debug.Log(spawnPoint);
+    }
+
 }

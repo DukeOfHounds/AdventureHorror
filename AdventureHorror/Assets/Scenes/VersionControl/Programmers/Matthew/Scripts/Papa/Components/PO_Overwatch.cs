@@ -35,7 +35,6 @@ public class PO_Overwatch
 
     public void GetLocation()
     {
-        Debug.Log(spawnNodes.Count);
         if (!spawnPointSet)
         {
             SearchSpawnPoint();
@@ -49,11 +48,13 @@ public class PO_Overwatch
             else
             {
                 //papa.agent.updatePosition = false;
-                Debug.Log("Teleport wooosh wooosh wooosh");
-                paparef.transform.position = papa.pD.player.transform.position;
-                //papa.agent.Warp(spawnPoint);
+                //papa.agent.isStopped = true;
+                //papa.agent.ResetPath();
+                //Debug.Log("Teleport wooosh wooosh wooosh");
+                //papa.agent.Warp(papa.pD.player.transform.position);
                 //papa.agent.updatePosition = true;
-                papaData.isActive = true;
+                //papa.TeleportPapa(spawnPoint);
+                //papaData.isActive = true;
 
             }
         }
@@ -82,13 +83,24 @@ public class PO_Overwatch
         else
         {
             int random = Mathf.Abs(Random.Range(0, spawnNodes.Count - 1));
+            NavMeshHit hit;
             if (sNode == null)
             {
 
                 index = random;
                 sNode = spawnNodes[index];
                 spawnPoint = sNode.transform.position;
-                spawnPointSet = true;
+                if (NavMesh.SamplePosition(spawnPoint, out hit, 10f, NavMesh.AllAreas))
+                {
+                    spawnPoint = hit.position;
+                    spawnPointSet = true;
+                    if (!papaData.isActive)
+                    {
+                        papa.TeleportPapa(spawnPoint);
+                        //papaData.isActive = true;
+                    }
+                }
+
                 //papaData.currentDest = sNode.transform.position;
                 //papa.agent.SetDestination(papaData.currentDest);
             }
