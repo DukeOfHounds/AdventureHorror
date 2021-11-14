@@ -5607,6 +5607,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb121b8767d65e84fa7cba6556360d43, type: 3}
+--- !u!1 &1298023928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298023930}
+  - component: {fileID: 1298023929}
+  m_Layer: 0
+  m_Name: Overwatch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1298023929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298023928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296151e69cb8897429cc8728dbf10db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ppD: {fileID: 11400000, guid: d7be2d4fc721d364a94a6b5349b26621, type: 2}
+  ppS: {fileID: 0}
+  papaPref: {fileID: 3898064118609060921, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
+  timeOut: {fileID: 0}
+--- !u!4 &1298023930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298023928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.36850843, y: 4.0275865, z: 0.7879719}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1310333959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8117,60 +8164,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb121b8767d65e84fa7cba6556360d43, type: 3}
---- !u!1001 &6954323651674481619
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.36850843
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.0275865
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.7879719
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026921, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6954323650388026923, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
-      propertyPath: m_Name
-      value: Overwatch
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0570b18905012724cb0c7f98bac8d752, type: 3}
