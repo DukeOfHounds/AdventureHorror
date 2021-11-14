@@ -27,8 +27,9 @@ public class PlayerData : ScriptableObject
 
     [Header("Camera Variables")]
     public float mouseSensitivity = 33;
+    public float InteractRange = 3;
     public Canvas HUD;
-
+  
     [Header("Fear Variables")]
     public int fear;
     public int fearThreshold;
@@ -37,17 +38,4 @@ public class PlayerData : ScriptableObject
     public Camera cam;// the camera following the player
     public bool isHiding = false;
     public Player player;//the player object
-
-
-    private void OnEnable()
-    {
-        cam = Camera.main; // assigns camera 
-    }
-
-
-
-
-
-
-
 }

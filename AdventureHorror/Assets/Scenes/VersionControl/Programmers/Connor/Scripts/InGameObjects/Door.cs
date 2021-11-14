@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
     public WireData WD;
     public bool isOpen = false;
     public bool locked = false;
-    private bool canOpen = true;
+    private bool canOpenOrClose = true;
     private Collider collider;
     public Animator doorAnimator;
     //public PuzzlePoster poster;
@@ -17,7 +17,10 @@ public class Door : MonoBehaviour
     private void Start()
     {
         if (WD != null)
+        {
             WD.door = this;
+            Lock();
+        }
         collider = gameObject.GetComponent<Collider>();
         if (isOpen)
         {
@@ -29,7 +32,7 @@ public class Door : MonoBehaviour
     {
 
 
-        if (!locked && canOpen)
+        if (!locked && canOpenOrClose)
         {
             Debug.Log("door is opening");
             isOpen = true;
@@ -42,7 +45,7 @@ public class Door : MonoBehaviour
     }
     public void Close()
     {
-        if (canOpen)
+        if (canOpenOrClose)
         {
             doorAnimator.SetBool("doorOpen", false);
             isOpen = false;
@@ -52,11 +55,16 @@ public class Door : MonoBehaviour
     }
     IEnumerator CanOpenOrClose()
     {
-        canOpen = false;
+        canOpenOrClose = false;
         collider.enabled = false;
         yield return new WaitForSeconds(1f);
-        canOpen = true;
+        canOpenOrClose = true;
         collider.enabled = true;
+    }
+    IEnumerator waitThenClose()
+    {
+        yield return new WaitForSeconds(1f);
+        Close();
     }
     public void Unlock()
     {
@@ -79,6 +87,27 @@ public class Door : MonoBehaviour
             Close();
         }
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
+        {
+            Open();
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        Debug.Log(isOpen);
+        if ((other.tag == "Player" || other.tag == "Papa") && isOpen)
+        {
+            Debug.Log(canOpenOrClose);
+            if (canOpenOrClose) Close();
+            else waitThenClose();
+        }
+    }
+
+
+
+
     //public void RemoveWire(Wire wire)
     //{
     //    wires.Remove(wire);

@@ -118,10 +118,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Wire1Color: {r: 0, g: 0.17899871, b: 0.71733844, a: 1}
-    - Wire2Color: {r: 0, g: 0.89185137, b: 0.59461164, a: 1}
-    - Wire3Color: {r: 0.20788993, g: 0.52496964, b: 0, a: 1}
-    - Wire4Color: {r: 0, g: 0.42955863, b: 0.8485446, a: 1}
+    - Wire1Color: {r: 0, g: 1, b: 0, a: 1}
+    - Wire2Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    - Wire3Color: {r: 0, g: 0, b: 1, a: 1}
+    - Wire4Color: {r: 1, g: 0, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

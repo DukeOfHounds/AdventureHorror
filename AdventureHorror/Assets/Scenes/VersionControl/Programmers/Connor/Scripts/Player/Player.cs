@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
     ////////////////Update/Start/Awake////////////////
 
     public void Awake()
-    {
+    {   
+        PD.cam = Camera.main;
         PD.player = this;
         //input = new P_Input(PD, this);
         movment = new P_Movment(PD);
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
         PD.isHiding = false;
         PD.inHand = null;
         Instantiate(PD.HUD);
+ 
 
     }
 

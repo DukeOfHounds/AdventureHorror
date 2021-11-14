@@ -10,6 +10,8 @@ public class PP_Movement
     private GameObject cSNode;
     private int index;
     private bool searching = false;
+    private bool initialResetWires = true;
+    private float blindsight = 10f;
 
     public enum State
     { StartSearch, Search, Chase, ResetWires, Respawn, Despawn };
@@ -28,10 +30,10 @@ public class PP_Movement
 
     }
 
-    
+
     public void HandleMovement()
     {
-       
+
         if (papaData.canSeeTarget)
         {
             currentState = State.Chase;
@@ -62,7 +64,7 @@ public class PP_Movement
             case State.Despawn:
                 Despawn();
                 break;
-        }       
+        }
     }
     /// <summary>
     /// This does something... maybe...
@@ -110,8 +112,8 @@ public class PP_Movement
         }
         else
         {
-            int random = Mathf.Abs(Random.Range(0, searchNodes.Count -1));
-        if (cSNode == null)
+            int random = Mathf.Abs(Random.Range(0, searchNodes.Count - 1));
+            if (cSNode == null)
             {
                 ++papaData.timesSearched;
                 index = random;
@@ -130,23 +132,23 @@ public class PP_Movement
                 }
             }
         }
-        
+
 
         //currentState = State.Despawn;
     }
 
     private void Chase()
     {
-
-        papaData.currentDest = papaData.targetLastSeen;
+        if (papaData.canSeeTarget)
+            papaData.currentDest = papaData.targetLastSeen;
         Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
-        if(!papaData.canSeeTarget)
+        if (!papaData.canSeeTarget)
         {
-            
+
         }
         if (distanceToPlayer.magnitude < 3)
         {
-            //if(playerIsHiding)
+            if(papa.pD.isHiding)
             {
                 //if(sawPlayerHiding)
                 {
@@ -156,11 +158,12 @@ public class PP_Movement
         }
         else
         {
-            if(papa.agent.velocity.magnitude < 1)
+            if (papa.agent.velocity.magnitude < 1f)
             {
-                if (distanceToPlayer.magnitude < 15)
+                if (distanceToPlayer.magnitude < blindsight)
                 {
                     papaData.currentDest = papa.pD.player.transform.position;
+
                 }
                 else
                 {
@@ -174,10 +177,31 @@ public class PP_Movement
         }
     }
 
-    
+
     private void ResetWires()
     {
 
+         if (initialResetWires) // handles various start situations when player fails wire puzzle.
+        {
+            InitialResetWires();
+        }
+        
+        
+        // for each wire box
+            // if papa sees player 
+            // travel to wire box location 
+            // fix wire
+            
+
+    }
+
+    private void InitialResetWires()
+    {
+        initialResetWires = false;
+        //if papa sees player attack regardless of wire status
+        if (papaData.canSeeTarget)
+            papaData.currentDest = papaData.targetLastSeen;
+        //else TP to a location near player and travel to nearest wire box
     }
 
     private void Respawn()

@@ -19,7 +19,7 @@ public class P_Interact
     {
         Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;// holds data on what is infront of the player
-        Physics.Raycast(ray, out hit, 2);// finds what is infront of the player
+        Physics.Raycast(ray, out hit, PD.InteractRange);// finds what is infront of the player
         if (hit.collider != null)
         {
             Debug.Log(hit.collider.gameObject.name);
