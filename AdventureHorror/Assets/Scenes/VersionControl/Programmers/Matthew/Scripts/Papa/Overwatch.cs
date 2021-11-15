@@ -16,14 +16,19 @@ public class Overwatch : MonoBehaviour
     // Stop is called before the first frame update
     void Start()
     {
+        Vector3 spawnPoint;
+        NavMeshHit hit;
         //ppD = ScriptableObject.CreateInstance<PapaData>();              
         Debug.Log(timeOut);
-        Instantiate(papaPref, timeOut.transform.position, timeOut.transform.transform.rotation);
-        ppS = papaPref.GetComponent<Papa>();
-        oW = new PO_Overwatch(ppD, pD, ppS, this);
-        ppD.isActive = false;
+        if (NavMesh.SamplePosition(timeOut.transform.transform.position, out hit, 10f, NavMesh.AllAreas))
+        {
+            spawnPoint = hit.position;
+            Instantiate(papaPref, spawnPoint, timeOut.transform.transform.rotation);
+            ppS = papaPref.GetComponent<Papa>();
+            oW = new PO_Overwatch(ppD, pD, ppS, this);
+            ppD.isActive = false;
+        }
     }
-
 
 
     void Update()
