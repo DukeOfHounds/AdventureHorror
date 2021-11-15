@@ -86,7 +86,9 @@ public class PP_Movement
 
     private void Search()
     {
-        if (searchNodes.Count == 0 && timesSearched > 0)
+        if (papa.agent.velocity.magnitude < 1f)
+            currentState = State.StartSearch;
+        else if (searchNodes.Count == 0 && timesSearched > 0)
         {
             StartSearch();
             timesSearched = 0;

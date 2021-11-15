@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Papa: {fileID: 3898064118609060921, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
   targetLastSeen: {x: 21.441757, y: 1.030005, z: 3.8559866}
-  player: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
   isActive: 1
   timeOut: {x: 0, y: 0, z: 0}
   despawning: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
   angle: 88
   radius: 10000
   targetLayer:
