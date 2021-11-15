@@ -7,6 +7,10 @@ public class P_Inventory
 {
     private PlayerData PD;
     private Player player;
+    private List<GameObject> tools = new List<GameObject>();
+    private Vector3 rotation = new Vector3(0, 0, 0);
+    private MeshRenderer mr;
+
     public P_Inventory(PlayerData PD)
     {
         this.PD = PD;
@@ -17,5 +21,42 @@ public class P_Inventory
     {
         GameObject obj = PD.inHand;
 
+    }
+
+    public void AddTool(GameObject tool)
+    {  
+            tools.Add(tool);
+    }
+    public void DisplayTool(string toolName)
+    {
+        foreach(GameObject tool in tools)
+        {
+            Tools t = tool.GetComponent<Tools>();
+            if (t.IsTool().Equals(toolName))
+            {
+                mr = tool.GetComponent<MeshRenderer>();
+                PD.inToolHand = tool;
+                mr.enabled = true;
+            }
+        }
+    }
+    public void HideTool()
+    {
+        mr.enabled = false;
+        PD.inToolHand = null;
+    }
+
+    public bool hasTool(string toolName)
+    {
+        foreach (GameObject tool in tools)
+        {
+            Tools t = tool.GetComponent<Tools>();
+            if (t.IsTool().Equals(toolName))
+            {
+                return true;
+                
+            }
+        }
+        return false;
     }
 }

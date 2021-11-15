@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour
     public float lightIntensity;
     public void Use()
     {
-        Debug.Log(lightIntensity);
+        //Debug.Log(lightIntensity);
         if (light.intensity == 0)
         {
             light.intensity = lightIntensity;// turns flashlight on

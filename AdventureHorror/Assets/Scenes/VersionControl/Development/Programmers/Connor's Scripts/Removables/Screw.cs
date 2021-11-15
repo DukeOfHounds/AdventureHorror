@@ -6,7 +6,11 @@ public class Screw : RemovableObjects
 {
     private Animator screwAnimator;
     private Panel panel;
-
+    public string neededTool = "ScrewDriver";
+    public override string NeededTool()
+    {
+        return neededTool;
+    }
     public void Awake()
     {
         panel = GetComponentInParent<Panel>();

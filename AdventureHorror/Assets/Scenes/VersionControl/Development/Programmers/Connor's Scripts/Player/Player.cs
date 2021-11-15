@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     public Transform hand;
-
+    public Transform toolHand;
+    public GameObject deathMenu;
 
 
     public PlayerData PD;
@@ -23,13 +24,16 @@ public class Player : MonoBehaviour
     public P_Movment movment;
     public P_Inventory inventory;
     public P_Interact interact;
+    public bool dead = false;
 
 
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////
 
     public void Awake()
-    {   
+    {
+        PD.hand = hand;
+        PD.toolHand = toolHand;
         PD.cam = Camera.main;
         PD.player = this;
         //input = new P_Input(PD, this);
@@ -49,16 +53,25 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        movment.UpdateCamera(mouseX, mouseY);
-        if (!PD.isHiding)
+        if (!dead)
         {
-            movment.UpdatePosition(horizontal1D, vertical1D);
+            Cursor.visible = false;
+            movment.UpdateCamera(mouseX, mouseY);
+            if (!PD.isHiding)
+            {
+                movment.UpdatePosition(horizontal1D, vertical1D);
+            }
         }
     }
     ////////////////Update/Start/Awake////////////////
     ////////////////Update/Start/Awake////////////////
 
-
+    public void Death()
+    {
+        dead = true;
+        Instantiate(deathMenu);
+        Cursor.visible = true;
+    }
 
 
 

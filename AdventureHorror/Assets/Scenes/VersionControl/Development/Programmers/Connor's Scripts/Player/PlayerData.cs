@@ -15,7 +15,7 @@ public class PlayerData : ScriptableObject
     public P_Interact interact;
     public P_Inventory inventory;
     public P_Movment movment;
-    public Transform hand;
+    public GameObject inToolHand;
 
 
 
@@ -38,4 +38,6 @@ public class PlayerData : ScriptableObject
     public Camera cam;// the camera following the player
     public bool isHiding = false;
     public Player player;//the player object
+    public Transform hand;
+    public Transform toolHand;
 }

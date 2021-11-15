@@ -43,8 +43,8 @@ public class PuzzlePoster : MonoBehaviour
        
         //wire.setColor(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
         int r = Random.Range(0, colors.Count);
-        Debug.Log(colors.Count);
-        Debug.Log(r);
+        //Debug.Log(colors.Count);
+        //Debug.Log(r);
 
         switch (colors[r])
         {
@@ -61,7 +61,7 @@ public class PuzzlePoster : MonoBehaviour
                 wire.setColor(Color.yellow);
                 break;
         }
-        Debug.Log(wire.color);
+        //Debug.Log(wire.color);
         colors.RemoveAt(r);
     }
 }

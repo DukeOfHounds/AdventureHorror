@@ -8,8 +8,11 @@ public class Wire : RemovableObjects
     private Animator wireAnimator;
     public Color color;
     public MeshRenderer cutWireMeshRender;
-
-
+    public string neededTool = "WireCutter";
+    public override string NeededTool()
+    {
+        return neededTool;
+    }
 
     public void Awake()
     {

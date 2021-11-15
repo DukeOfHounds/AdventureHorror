@@ -10,9 +10,11 @@ public abstract class RemovableObjects : MonoBehaviour
     /// </summary>
     /// <param name="obj"></param>
     public abstract void Remove();
+    public abstract string NeededTool();
     //public Removable removable;
     protected MeshRenderer meshRenderer;
     protected Collider collider;
+    
 
     //public enum Removable
     //{
