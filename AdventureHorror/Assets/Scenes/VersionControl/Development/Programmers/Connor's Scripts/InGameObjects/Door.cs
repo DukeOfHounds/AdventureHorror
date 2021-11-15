@@ -11,9 +11,26 @@ public class Door : MonoBehaviour
     private bool canOpenOrClose = true;
     private Collider collider;
     public Animator doorAnimator;
+    float doorOpenTime = 0;
+    bool stayOpen = false;
     //public PuzzlePoster poster;
     //private List<Wire> wires = new List<Wire>();
 
+    private void Update()
+    {
+        //if (isOpen && !stayOpen)
+        //{
+        //    //doorOpenTime += Time.deltaTime;
+        //    //if (doorOpenTime >= 10f)
+        //    //{
+        //    Close();
+        //    doorOpenTime = 0;
+        //    //}
+
+
+        //}
+        //else StartCoroutine(wait());
+    }
     private void Start()
     {
         if (WD != null)
@@ -34,7 +51,6 @@ public class Door : MonoBehaviour
 
         if (!locked && canOpenOrClose)
         {
-            Debug.Log("door is opening");
             isOpen = true;
             doorAnimator.SetBool("doorOpen", true);
             StartCoroutine(CanOpenOrClose());
@@ -50,6 +66,7 @@ public class Door : MonoBehaviour
             doorAnimator.SetBool("doorOpen", false);
             isOpen = false;
             StartCoroutine(CanOpenOrClose());
+            doorOpenTime = 0;
         }
 
     }
@@ -61,17 +78,16 @@ public class Door : MonoBehaviour
         canOpenOrClose = true;
         collider.enabled = true;
     }
-    IEnumerator waitThenClose()
-    {
-        Debug.Log("wait then close");
-        yield return new WaitForSeconds(1f);
-        Close();
-    }
+    //IEnumerator wait()
+    //{
+    //    stayOpen = false;
+    //    yield return new WaitForSeconds(1f);
+       
+
+    //}
     public void Unlock()
     {
-        Debug.Log("door is unlocking");
         locked = false;
-        Debug.Log(locked);
     }
     public void Lock()
     {
@@ -90,39 +106,30 @@ public class Door : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
+        
         if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
         {
+            stayOpen = true;
             Open();
         }
+        //else if(other.tag != "Player" && other.tag != "Papa" && isOpen)
+        //{
+        //    stayOpen = false;
+        //}
     }
     public void OnTriggerExit(Collider other)
     {
-        Debug.Log(isOpen);
         if ((other.tag == "Player" || other.tag == "Papa") && isOpen)
         {
-            Debug.Log(canOpenOrClose);
-            if (canOpenOrClose) Close();
-            else waitThenClose();
+            Close();
         }
+        
     }
-
-
-
-
-    //public void RemoveWire(Wire wire)
+    //public void OnTriggerStay(Collider other)
     //{
-    //    wires.Remove(wire);
-    //    if (wires.Count == 0)
+    //    if (other.tag == "Player" || other.tag == "Papa")
     //    {
-    //        Unlock();
-    //        Open();
+    //        stayOpen = true;
     //    }
-
-    //}
-
-    //public void AddWire(Wire wire)
-    //{
-    //    wires.Add(wire);
-    //    Lock();
     //}
 }
