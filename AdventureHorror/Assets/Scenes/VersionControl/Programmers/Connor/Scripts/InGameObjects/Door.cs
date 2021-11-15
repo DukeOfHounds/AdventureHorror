@@ -63,6 +63,7 @@ public class Door : MonoBehaviour
     }
     IEnumerator waitThenClose()
     {
+        Debug.Log("wait then close");
         yield return new WaitForSeconds(1f);
         Close();
     }
@@ -87,7 +88,7 @@ public class Door : MonoBehaviour
             Close();
         }
     }
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
         {

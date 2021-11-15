@@ -11,6 +11,7 @@ TagManager:
   - Screw
   - Removable
   - Vent
+  - PoweredLight
   layers:
   - Default
   - TransparentFX
