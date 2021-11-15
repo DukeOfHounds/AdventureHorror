@@ -98,6 +98,7 @@ public class PO_Overwatch
                 if (distanceToDest.magnitude < 1.5)
                 {
                     spawnNodes.RemoveAt(index);
+                    papaData.spawnPoint = Vector3.zero;
                     sNode = null;
                     spawnPointSet = false;
 
