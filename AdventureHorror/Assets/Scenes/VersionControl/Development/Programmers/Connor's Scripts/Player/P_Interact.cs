@@ -8,11 +8,31 @@ public class P_Interact
     private PlayerData PD;
     private Player player;
     private Vector3 rotation = new Vector3(0, 0, 0);
-
+    private RemovableObjects rm;
     public P_Interact(PlayerData PD)
     {
         this.PD = PD;
         this.player = PD.player;
+    }
+
+    public void InteractCheck()
+    {
+        Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;// holds data on what is infront of the player
+        Physics.Raycast(ray, out hit, PD.InteractRange);// finds what is infront of the player
+        switch (hit.collider.tag) //determins if hit is interactable
+        {
+            case "Manipulable":
+                rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
+                if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
+                {
+                    PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
+                }
+                break;     
+            default:
+                break;
+
+        }
     }
 
     public void Interact()
@@ -25,9 +45,9 @@ public class P_Interact
             Debug.Log(hit.collider.gameObject.name);
             switch (hit.collider.tag) //determins if hit is interactable
             {
-                case "Door":
-                    InteractWithDoor(hit.collider.gameObject); // opens or closes door (if you can)
-                    break;
+                //case "Door":
+                //    InteractWithDoor(hit.collider.gameObject); // opens or closes door (if you can)
+                //    break;
                 case "PickUpAble":
                     PickUpObject(hit.collider.gameObject);// picks up PickUp
                     break;
@@ -45,9 +65,11 @@ public class P_Interact
                 case "Vent":
                     EnterVent(hit.collider.gameObject);
                     break;
+                case "Tool":
+                    AddTool(hit.collider.gameObject);
+                    break;
                 default:
                     break;
-
             }
         }
         else if(PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
@@ -56,10 +78,10 @@ public class P_Interact
         }
 
     }
-    private void InteractWithDoor(GameObject door)
-    {
-        door.GetComponent<Door>().interactWith();
-    }
+    //private void InteractWithDoor(GameObject door)
+    //{
+    //    door.GetComponent<Door>().interactWith();
+    //}
     private void HideInHidingPlace(GameObject HP)
     {
         HP.GetComponent<HidingPlace>().interactWith(PD);
@@ -67,8 +89,8 @@ public class P_Interact
     }
     private void Manipulate(GameObject obj)
     {
-        if (PD.inHand != null)
-            PD.inHand.GetComponent<PickUpObject>().Use(obj);
+        if (PD.inToolHand != null)
+            PD.inToolHand.GetComponent<Tools>().Use(obj);
     }
     private void PickUpObject(GameObject obj)
     {
@@ -99,10 +121,20 @@ public class P_Interact
     {
         obj.GetComponent<VentPortal>().Teleport();
     }
-    //public void PlaceObject()
-    //{
-
-    //}
+    public void AddTool(GameObject obj)
+    {
+        Debug.Log("add tool to hand");
+        PD.inventory.AddTool(obj);
+        GameObject toolHand = GameObject.Find("ToolHand");
+        obj.GetComponent<MeshRenderer>().enabled = false;// turns it invisible until needed
+        obj.GetComponent<Collider>().enabled = false;// turns off object collisions
+        obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
+        obj.transform.SetPositionAndRotation(player.toolHand.position, PD.cam.transform.rotation);
+        obj.GetComponent<Rigidbody>().freezeRotation = true;
+        obj.GetComponent<Rigidbody>().velocity = rotation;
+        //obj.transform.position = player.hand.position; // fixes object to player hand position
+        obj.transform.parent = toolHand.transform;// fixes object to players position/movment
+    }
 
     public void ThrowHandObj()
     {

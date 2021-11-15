@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WireCutter : PickUpObject
+public class WireCutter : Tools
 {
     private Animator wireAnimator;
     private Animator wireCutterAnimator;
+    public string isTool = "WireCutter";
 
     //private Screw S;
 
@@ -31,5 +32,10 @@ public class WireCutter : PickUpObject
             wire.SetActive(false);
         }
 
+    }
+
+    public override string IsTool()
+    {
+        return isTool;
     }
 }

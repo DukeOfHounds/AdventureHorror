@@ -7,7 +7,7 @@ public class Panel : RemovableObjects
     private List<Screw> screws = new List<Screw>();
     private Animator panelAnimator;
     public VentPortal VentPortal;
-
+    public string neededTool = "none";
 
     public void Awake()
     {
@@ -34,5 +34,10 @@ public class Panel : RemovableObjects
     {
         screws.Remove(screw);
 
+    }
+
+    public override string NeededTool()
+    {
+        return neededTool;
     }
 }

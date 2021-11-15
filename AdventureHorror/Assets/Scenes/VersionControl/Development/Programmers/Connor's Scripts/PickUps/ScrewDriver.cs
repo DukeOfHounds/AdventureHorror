@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrewDriver : PickUpObject
+public class ScrewDriver : Tools
 {
     private Animator screwDriverAnimator;
-
+    public string isTool = "WireCutter";
 
     private void Awake()
     {
@@ -27,5 +27,10 @@ public class ScrewDriver : PickUpObject
             screwComponent.Remove();// unsrew somehow idk yet
         }
 
+    }
+
+    public override string IsTool()
+    {
+        return isTool;
     }
 }

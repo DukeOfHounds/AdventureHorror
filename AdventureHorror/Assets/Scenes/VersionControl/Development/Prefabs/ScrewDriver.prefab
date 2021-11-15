@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3179120554178414571}
   m_Layer: 0
   m_Name: Screwdriver 1
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1425249097623536640}
   m_Layer: 0
   m_Name: ScrewDriver
-  m_TagString: PickUpAble
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,3 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d46c7387169f834da8edeb5a89fa3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTool: WireCutter
