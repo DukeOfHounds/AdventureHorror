@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
         movment = new P_Movment(PD);
         inventory = new P_Inventory(PD);
         interact = new P_Interact(PD);
+
         Cursor.visible = false; // hides cursor 
         Cursor.lockState = CursorLockMode.Confined;// locks cursor to game window
         PD.isHiding = false;

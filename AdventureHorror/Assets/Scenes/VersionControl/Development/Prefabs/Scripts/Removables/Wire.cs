@@ -9,6 +9,7 @@ public class Wire : RemovableObjects
     public Color color;
 
 
+
     public void Awake()
     {
         WD.count = 0;
@@ -42,7 +43,9 @@ public class Wire : RemovableObjects
         }
         else // ressets all the wires;
         {
-            Debug.Log("papa has reset the wires try again");
+            Debug.Log("Oh no cuting the wires in the wrong order cut the power");
+            WD.puzzlePoster.lightManager.changeLightInt(0);
+            Debug.Log("papa will reset the wires afterwords try again");
             WD.count = 0;
             foreach(Wire w in WD.WireOrder)
             {
