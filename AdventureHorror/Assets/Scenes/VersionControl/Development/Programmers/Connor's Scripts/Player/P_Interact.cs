@@ -50,6 +50,10 @@ public class P_Interact
 
             }
         }
+        else if(PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
+        {
+            PD.inHand.GetComponent<Flashlight>().Use();
+        }
 
     }
     private void InteractWithDoor(GameObject door)
