@@ -12,6 +12,7 @@ TagManager:
   - Removable
   - Vent
   - PoweredLight
+  - Papa
   layers:
   - Default
   - TransparentFX

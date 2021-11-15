@@ -88,7 +88,7 @@ public class Door : MonoBehaviour
             Close();
         }
     }
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
         {

@@ -7,6 +7,7 @@ public class Wire : RemovableObjects
     public WireData WD;
     private Animator wireAnimator;
     public Color color;
+    public MeshRenderer cutWireMeshRender;
 
 
 
@@ -28,6 +29,7 @@ public class Wire : RemovableObjects
     {
         Debug.Log("removing wire");
         meshRenderer.enabled = false;
+        cutWireMeshRender.enabled = true;
         collider.enabled = false;
         if (WD.WireOrder[WD.count]== this)
         {
@@ -50,6 +52,7 @@ public class Wire : RemovableObjects
             foreach(Wire w in WD.WireOrder)
             {
                 w.meshRenderer.enabled = true;
+                w.cutWireMeshRender.enabled = false;
                 w.collider.enabled = true;
             }
         }
@@ -59,6 +62,7 @@ public class Wire : RemovableObjects
     {
         this.color = color;
         meshRenderer.material.color = color;
+        cutWireMeshRender.material.color = color;
     }
     
 }

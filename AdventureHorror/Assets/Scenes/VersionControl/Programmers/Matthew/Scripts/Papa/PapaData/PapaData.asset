@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00adeb3161d3a0e4db2ce6bd6bc29a28, type: 3}
   m_Name: PapaData
   m_EditorClassIdentifier: 
-  Papa: {fileID: 3898064118609060921, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
-  targetLastSeen: {x: 21.441757, y: 1.030005, z: 3.8559866}
-  player: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+  Papa: {fileID: 0}
+  targetLastSeen: {x: 0.00419909, y: 0.70955455, z: -1.8990024}
   isActive: 1
   timeOut: {x: 0, y: 0, z: 0}
   despawning: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
   angle: 88
   radius: 10000
   targetLayer:
@@ -26,12 +26,12 @@ MonoBehaviour:
   occlusionLayers:
     serializedVersion: 2
     m_Bits: 512
-  canSeeTarget: 1
+  canSeeTarget: 0
   isAgro: 1
   adjustCone: {x: 0, y: 0, z: 0}
   papaBaseSpeed: 2
   chaseSpeedMultiplier: 3
-  timesSearched: 0
+  timesSearched: 1
   searchNodeLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -40,4 +40,4 @@ MonoBehaviour:
     m_Bits: 2048
   papaMinDespawnDist: 50
   papaMaxDespawnDist: 60
-  currentDest: {x: 0, y: 0, z: 0}
+  currentDest: {x: 7.294793, y: 3.7489705, z: -10.1451645}
