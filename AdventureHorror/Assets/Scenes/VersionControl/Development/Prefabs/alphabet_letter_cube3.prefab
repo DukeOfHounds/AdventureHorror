@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2299597945527032372}
   m_Layer: 0
   m_Name: alphabet_letter_cube3
-  m_TagString: Untagged
+  m_TagString: PickUpAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
