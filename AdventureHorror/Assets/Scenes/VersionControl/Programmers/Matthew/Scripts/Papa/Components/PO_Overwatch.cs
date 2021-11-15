@@ -11,7 +11,6 @@ public class PO_Overwatch
     private float spawnPointRange;
     //Scriptable Object Variables 
     public PapaData papaData;
-    public PlayerData pD;
     public Papa papa;
     private GameObject paparef;
     private Overwatch overwatch;
@@ -25,10 +24,9 @@ public class PO_Overwatch
     int count;
 
     //Constructor
-    public PO_Overwatch(PapaData papaData, PlayerData pD, Papa papa, Overwatch overwatch)
+    public PO_Overwatch(PapaData papaData, Papa papa, Overwatch overwatch)
     {
         this.papaData = papaData;
-        this.pD = pD;
         this.papa = papa;
         this.paparef = papaData.Papa;
         this.overwatch = overwatch;
@@ -41,10 +39,25 @@ public class PO_Overwatch
         {
             SearchSpawnPoint();
         }
-        //else
-        //{
-                //papa.agent.SetDestination(spawnPoint);
-        //}
+        else
+        {
+            if (papaData.isActive)
+            {
+                papa.agent.SetDestination(spawnPoint);
+            }
+            else
+            {
+                //papa.agent.updatePosition = false;
+                //papa.agent.isStopped = true;
+                //papa.agent.ResetPath();
+                //Debug.Log("Teleport wooosh wooosh wooosh");
+                //papa.agent.Warp(papa.pD.player.transform.position);
+                //papa.agent.updatePosition = true;
+                //papa.TeleportPapa(spawnPoint);
+                //papaData.isActive = true;
+
+            }
+        }
 
     }
 
@@ -53,11 +66,11 @@ public class PO_Overwatch
 
         if (spawnNodes.Count == 0)
         {
-            count = Physics.OverlapSphereNonAlloc(pD.player.gameObject.transform.position, 500f, colliders, papaData.spawnNodeLayer, QueryTriggerInteraction.Collide);
+            count = Physics.OverlapSphereNonAlloc(papa.pD.player.gameObject.transform.position, 500f, colliders, papaData.spawnNodeLayer, QueryTriggerInteraction.Collide);
             for (int i = 0; i < count; ++i)
             {
                 GameObject obj = colliders[i++].gameObject;
-                Vector3 distanceToDest = pD.player.gameObject.transform.position - obj.transform.position;
+                Vector3 distanceToDest = papa.pD.player.gameObject.transform.position - obj.transform.position;
                 if (distanceToDest.magnitude > 0)
                 {
                     spawnNodes.Add(obj);
@@ -70,24 +83,23 @@ public class PO_Overwatch
         else
         {
             int random = Mathf.Abs(Random.Range(0, spawnNodes.Count - 1));
-            //NavMeshHit hit;
+            NavMeshHit hit;
             if (sNode == null)
             {
 
                 index = random;
                 sNode = spawnNodes[index];
-                papaData.spawnPoint = sNode.transform.position;
-                //if (NavMesh.SamplePosition(spawnPoint, out hit, 10f, NavMesh.AllAreas))
-                //{
-                    //spawnPoint = hit.position;
-                    //spawnPointSet = true;
-                    //if (!papaData.isActive)
-                    //{
-                        //papa.gameObject.transform.position = spawnPoint;
-                        //papa.TeleportPapa(spawnPoint);
+                spawnPoint = sNode.transform.position;
+                if (NavMesh.SamplePosition(spawnPoint, out hit, 10f, NavMesh.AllAreas))
+                {
+                    spawnPoint = hit.position;
+                    spawnPointSet = true;
+                    if (!papaData.isActive)
+                    {
+                        papa.TeleportPapa(spawnPoint);
                         //papaData.isActive = true;
-                    //}
-                //}
+                    }
+                }
 
                 //papaData.currentDest = sNode.transform.position;
                 //papa.agent.SetDestination(papaData.currentDest);
