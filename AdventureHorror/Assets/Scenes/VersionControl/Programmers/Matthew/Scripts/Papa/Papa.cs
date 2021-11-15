@@ -22,6 +22,7 @@ public class Papa : MonoBehaviour
         los = new PP_LOS(ppD, this);
         ppM = new PP_Movement(ppD, this);
         ppM.currentState = PP_Movement.State.StartSearch;
+        ppD.isActive = true;
     }
 
     // Update is called once per frame

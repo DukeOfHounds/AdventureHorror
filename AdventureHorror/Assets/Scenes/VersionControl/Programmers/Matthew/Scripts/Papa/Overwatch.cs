@@ -7,6 +7,7 @@ public class Overwatch : MonoBehaviour
 {
 
     public PapaData ppD;
+    public PlayerData pD;
     public Papa ppS;
     public PO_Overwatch oW;
     public GameObject papaPref;
@@ -16,10 +17,10 @@ public class Overwatch : MonoBehaviour
     void Start()
     {
         //ppD = ScriptableObject.CreateInstance<PapaData>();              
+        Debug.Log(timeOut);
         Instantiate(papaPref, timeOut.transform.position, timeOut.transform.transform.rotation);
         ppS = papaPref.GetComponent<Papa>();
-        ppD.Papa = papaPref;
-        oW = new PO_Overwatch(ppD, ppS, this);
+        oW = new PO_Overwatch(ppD, pD, ppS, this);
         ppD.isActive = false;
     }
 
@@ -53,5 +54,19 @@ public class Overwatch : MonoBehaviour
     public void RespawnPapa()
     {
         oW.GetLocation();
+        if(ppD.spawnPoint == Vector3.zero)
+        {
+            oW.GetLocation();
+        }
+        else
+        {
+            ppD.Papa.transform.position = ppD.spawnPoint;
+            Debug.Log("Tele");
+            Debug.Log(ppD.spawnPoint);
+            ppD.isActive = true;
+
+        }
+
     }
+
 }
