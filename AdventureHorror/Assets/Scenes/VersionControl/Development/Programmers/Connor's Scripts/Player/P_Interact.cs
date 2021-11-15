@@ -80,7 +80,7 @@ public class P_Interact
         {
             GameObject hand = GameObject.Find("Hand");
             PD.inHand = obj;
-            obj.GetComponent<BoxCollider>().enabled = false;// turns off object collisions
+            obj.GetComponent<Collider>().enabled = false;// turns off object collisions
             obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
             obj.transform.SetPositionAndRotation(player.hand.position, PD.cam.transform.rotation);
             obj.GetComponent<Rigidbody>().freezeRotation = true;
@@ -110,7 +110,7 @@ public class P_Interact
         PD.inHand = null;
         obj.transform.parent = null;
         obj.GetComponent<Rigidbody>().useGravity = true;
-        obj.GetComponent<BoxCollider>().enabled = true;
+        obj.GetComponent<Collider>().enabled = true;
         obj.GetComponent<Rigidbody>().freezeRotation = false;
         obj.GetComponent<Rigidbody>().velocity = (obj.transform.forward * PD.throwForce);
 
