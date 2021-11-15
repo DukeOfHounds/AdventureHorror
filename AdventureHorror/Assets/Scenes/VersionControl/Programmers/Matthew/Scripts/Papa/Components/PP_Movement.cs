@@ -11,6 +11,7 @@ public class PP_Movement
     private int index;
     private bool searching = false;
     private bool initialResetWires = true;
+    private int timesSearched;
     private float blindsight = 10f;
 
     public enum State
@@ -73,7 +74,7 @@ public class PP_Movement
     {
         papa.agent.speed = papaData.papaBaseSpeed;
         papaData.currentDest = papa.pD.player.gameObject.transform.position;
-        Vector3 distanceToPlayer = papa.pD.player.gameObject.transform.position - papaData.currentDest;
+        Vector3 distanceToPlayer = papa.pD.player.gameObject.transform.position - papa.gameObject.transform.position;
         papa.agent.SetDestination(papaData.currentDest);
         if (distanceToPlayer.magnitude < 20f)
         {
@@ -85,7 +86,12 @@ public class PP_Movement
 
     private void Search()
     {
-        if (searchNodes.Count == 0)
+        if (searchNodes.Count == 0 && timesSearched > 0)
+        {
+            StartSearch();
+            timesSearched = 0;
+        }
+        else if (searchNodes.Count == 0)
         {
             searching = true;
             papa.agent.speed = papaData.papaBaseSpeed;
@@ -108,14 +114,16 @@ public class PP_Movement
                 }
 
             }
-
         }
+
+
         else
         {
             int random = Mathf.Abs(Random.Range(0, searchNodes.Count - 1));
             if (cSNode == null)
             {
                 ++papaData.timesSearched;
+                ++timesSearched;
                 index = random;
                 cSNode = searchNodes[index];
                 papaData.currentDest = cSNode.transform.position;
