@@ -87,7 +87,10 @@ public class PP_Movement
     private void Search()
     {
         if (papa.agent.velocity.magnitude < 1f)
+        { 
+            papa.agent.SetDestination(papa.pD.player.gameObject.transform.position);
             currentState = State.StartSearch;
+        }
         else if (searchNodes.Count == 0 && timesSearched > 0)
         {
             StartSearch();
