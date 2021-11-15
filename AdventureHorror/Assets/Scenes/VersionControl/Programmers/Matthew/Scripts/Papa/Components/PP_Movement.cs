@@ -158,6 +158,7 @@ public class PP_Movement
         }
         if (distanceToPlayer.magnitude < 3)
         {
+            TryAttack();
             if(papa.pD.isHiding)
             {
                 //if(sawPlayerHiding)
@@ -238,7 +239,15 @@ public class PP_Movement
 
     }
 
-
+    private void TryAttack()
+    {
+        float distanceToPlayer = Vector3.Distance(papa.agent.transform.position, papa.pD.player.gameObject.transform.position);
+        Vector3 directionOfTarget = (papa.pD.player.gameObject.transform.position - papa.agent.transform.position).normalized;
+        if ((!Physics.Raycast(papa.agent.transform.position, directionOfTarget, distanceToPlayer, papaData.occlusionLayers)))
+        {
+            papa.pD.player.Death();
+        }
+    }
 
 
 
