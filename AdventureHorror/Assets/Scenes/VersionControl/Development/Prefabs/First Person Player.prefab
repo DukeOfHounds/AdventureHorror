@@ -366,7 +366,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   hand: {fileID: 3757446117991891449}
-  toolHand: {fileID: 0}
+  toolHand: {fileID: 2815065637957994098}
   deathMenu: {fileID: 0}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   dead: 0
@@ -623,5 +623,10 @@ Camera:
 --- !u!4 &3757446117991891449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5890832023945130895, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+  m_PrefabInstance: {fileID: 7342364746780078710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2815065637957994098 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4824567539298759684, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
   m_PrefabInstance: {fileID: 7342364746780078710}
   m_PrefabAsset: {fileID: 0}
