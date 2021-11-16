@@ -86,7 +86,12 @@ public class PP_Movement
 
     private void Search()
     {
-        if (searchNodes.Count == 0 && timesSearched > 0)
+        if (papa.agent.velocity.magnitude < 1f)
+        { 
+            papa.agent.SetDestination(papa.pD.player.gameObject.transform.position);
+            currentState = State.StartSearch;
+        }
+        else if (searchNodes.Count == 0 && timesSearched > 0)
         {
             StartSearch();
             timesSearched = 0;
@@ -156,6 +161,7 @@ public class PP_Movement
         }
         if (distanceToPlayer.magnitude < 3)
         {
+            TryAttack();
             if(papa.pD.isHiding)
             {
                 //if(sawPlayerHiding)
@@ -176,7 +182,7 @@ public class PP_Movement
                 else
                 {
                     currentState = State.StartSearch;
-                    papa.StopMovement(2f);
+                    //papa.StopMovement(2f);
                 }
             }
 
@@ -236,7 +242,17 @@ public class PP_Movement
 
     }
 
+    private void TryAttack()
+    {
+        float distanceToPlayer = Vector3.Distance(papa.agent.transform.position, papa.pD.player.gameObject.transform.position);
+        Vector3 directionOfTarget = (papa.pD.player.gameObject.transform.position - papa.agent.transform.position).normalized;
+        if ((!Physics.Raycast(papa.agent.transform.position, directionOfTarget, distanceToPlayer, papaData.occlusionLayers)))
+        {
+            papa.pD.player.Death();
+        }
 
+
+    }
 
 
 

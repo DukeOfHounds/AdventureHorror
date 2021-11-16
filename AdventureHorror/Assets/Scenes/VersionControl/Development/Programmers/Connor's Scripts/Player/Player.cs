@@ -69,9 +69,13 @@ public class Player : MonoBehaviour
 
     public void Death()
     {
-        dead = true;
-        Instantiate(deathMenu);
-        Cursor.visible = true;
+        if (!dead)
+        {
+            dead = true;
+            Instantiate(deathMenu);
+            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);
+            Cursor.visible = true;
+        }
     }
 
 
