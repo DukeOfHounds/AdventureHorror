@@ -182,7 +182,7 @@ public class PP_Movement
                 else
                 {
                     currentState = State.StartSearch;
-                    papa.StopMovement(2f);
+                    //papa.StopMovement(2f);
                 }
             }
 
