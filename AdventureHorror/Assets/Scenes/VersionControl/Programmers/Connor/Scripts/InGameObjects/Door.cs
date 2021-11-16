@@ -5,18 +5,24 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public WireData WD;
     public bool isOpen = false;
     public bool locked = false;
     private bool canOpen = true;
     private Collider collider;
     public Animator doorAnimator;
-    public PuzzlePoster poster;
-    private List<Wire> wires = new List<Wire>();
+    //public PuzzlePoster poster;
+    //private List<Wire> wires = new List<Wire>();
 
     private void Start()
     {
+        if (WD != null)
+        {
+            WD.door = this;
+            Lock();
+        }
         collider = gameObject.GetComponent<Collider>();
-        if(isOpen)
+        if (isOpen)
         {
             Open();
         }
@@ -24,12 +30,15 @@ public class Door : MonoBehaviour
     }
     public void Open()
     {
+
+
         if (!locked && canOpen)
         {
+            Debug.Log("door is opening");
             isOpen = true;
             doorAnimator.SetBool("doorOpen", true);
             StartCoroutine(CanOpenOrClose());
-            
+
 
 
         }
@@ -54,7 +63,9 @@ public class Door : MonoBehaviour
     }
     public void Unlock()
     {
+        Debug.Log("door is unlocking");
         locked = false;
+        Debug.Log(locked);
     }
     public void Lock()
     {
@@ -71,20 +82,38 @@ public class Door : MonoBehaviour
             Close();
         }
     }
-    public void RemoveWire(Wire wire)
+    public void OnTriggerEnter(Collider other)
     {
-        wires.Remove(wire);
-        if (wires.Count == 0)
+        if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
         {
-            Unlock();
             Open();
         }
-
     }
-
-    public void AddWire(Wire wire)
+    public void OnTriggerExit(Collider other)
     {
-        wires.Add(wire);
-        Lock();
+        if ((other.tag == "Player" || other.tag == "Papa") && isOpen)
+        {
+            Close();
+        }
     }
+
+
+
+
+    //public void RemoveWire(Wire wire)
+    //{
+    //    wires.Remove(wire);
+    //    if (wires.Count == 0)
+    //    {
+    //        Unlock();
+    //        Open();
+    //    }
+
+    //}
+
+    //public void AddWire(Wire wire)
+    //{
+    //    wires.Add(wire);
+    //    Lock();
+    //}
 }

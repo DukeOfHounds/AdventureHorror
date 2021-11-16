@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92593b79f8e466d44ac50d6eaec3a6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WD: {fileID: 11400000, guid: 9659a7b3fa3e4e84a8d284558ddd364f, type: 2}
   door: {fileID: 0}
-  poster: {fileID: 0}
-  color: 0
-  BaseWireMaterial: {fileID: 2100000, guid: 34d8b476f90021943a63aca3b645d174, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 0}
