@@ -20,19 +20,22 @@ public class P_Interact
         Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;// holds data on what is infront of the player
         Physics.Raycast(ray, out hit, PD.InteractRange);// finds what is infront of the player
-        switch (hit.collider.tag) //determins if hit is interactable
-        {
-            case "Manipulable":
-                rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
-                if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
-                {
-                    PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
-                }
-                break;     
-            default:
-                break;
+        if (hit.collider != null)
+            switch (hit.collider.tag) //determins if hit is interactable
+            {
+                case "Manipulable":
+                    rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
+                    if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
+                    {
+                        Debug.Log("displaying tool " + rm.NeededTool());
+                        PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
+                    }
+                    break;
+                default:
+                    break;
 
-        }
+            }
+        else PD.inventory.HideTool();
     }
 
     public void Interact()
@@ -66,13 +69,14 @@ public class P_Interact
                     EnterVent(hit.collider.gameObject);
                     break;
                 case "Tool":
+                    Debug.Log(hit.collider.gameObject.tag);
                     AddTool(hit.collider.gameObject);
                     break;
                 default:
                     break;
             }
         }
-        else if(PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
+        else if (PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
         {
             PD.inHand.GetComponent<Flashlight>().Use();
         }
@@ -123,10 +127,11 @@ public class P_Interact
     }
     public void AddTool(GameObject obj)
     {
+
         Debug.Log("add tool to hand");
         PD.inventory.AddTool(obj);
         GameObject toolHand = GameObject.Find("ToolHand");
-        obj.GetComponent<MeshRenderer>().enabled = false;// turns it invisible until needed
+        obj.GetComponentInChildren<MeshRenderer>().enabled = false;// turns it invisible until needed
         obj.GetComponent<Collider>().enabled = false;// turns off object collisions
         obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
         obj.transform.SetPositionAndRotation(player.toolHand.position, PD.cam.transform.rotation);

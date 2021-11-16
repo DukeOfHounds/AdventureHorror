@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
             if (!PD.isHiding)
             {
                 movment.UpdatePosition(horizontal1D, vertical1D);
+                interact.InteractCheck();
             }
         }
     }

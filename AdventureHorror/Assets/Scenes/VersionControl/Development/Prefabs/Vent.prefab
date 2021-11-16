@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VentPortal: {fileID: 6579529034819369364}
+  neededTool: none
 --- !u!1 &1236499164902359627
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +789,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3854949512467506278, guid: b3eac2393cf78774fa512913ae782863, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5432915822926769200, guid: b3eac2393cf78774fa512913ae782863, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898636428886554608, guid: b3eac2393cf78774fa512913ae782863, type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
