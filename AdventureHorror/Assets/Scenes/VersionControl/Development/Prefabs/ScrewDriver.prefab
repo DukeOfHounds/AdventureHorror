@@ -158,4 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d46c7387169f834da8edeb5a89fa3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTool: WireCutter
+  isTool: ScrewDriver
