@@ -49,7 +49,7 @@ public class Wire : RemovableObjects
         else // ressets all the wires;
         {
             Debug.Log("Oh no cuting the wires in the wrong order cut the power");
-            WD.puzzlePoster.lightManager.changeLightInt(0);
+            GameObject.Find("LightManager").GetComponent<LightManager>().changeLightInt(0);
             Debug.Log("papa will reset the wires afterwords try again");
             WD.PPD.Papa.GetComponent<Papa>().ppM.WireAlert();
             WD.count = 0;

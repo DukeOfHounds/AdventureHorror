@@ -5,7 +5,6 @@ using UnityEngine;
 public class PuzzlePoster : MonoBehaviour
 {
     public WireData WD;
-    public LightManager lightManager;
     public Material mat;
 
     private ArrayList colors = new ArrayList { 0, 1, 2, 3 };
@@ -13,7 +12,6 @@ public class PuzzlePoster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lightManager = gameObject.GetComponentInChildren<LightManager>();
         WD.puzzlePoster = this;
         StartCoroutine(SetColor());
     }
