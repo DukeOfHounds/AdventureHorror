@@ -51,6 +51,7 @@ public class Wire : RemovableObjects
             Debug.Log("Oh no cuting the wires in the wrong order cut the power");
             WD.puzzlePoster.lightManager.changeLightInt(0);
             Debug.Log("papa will reset the wires afterwords try again");
+            WD.PPD.Papa.GetComponent<Papa>().ppM.WireAlert();
             WD.count = 0;
             foreach(Wire w in WD.WireOrder)
             {

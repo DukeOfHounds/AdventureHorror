@@ -12,4 +12,5 @@ public class WireData : ScriptableObject
     public List<Wire> Wires = new List<Wire>();
     public Door door;
     public PuzzlePoster puzzlePoster;
+    public PapaData PPD;
 }

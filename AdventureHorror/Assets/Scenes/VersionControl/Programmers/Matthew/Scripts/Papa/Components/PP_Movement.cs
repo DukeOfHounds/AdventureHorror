@@ -32,6 +32,12 @@ public class PP_Movement
     }
 
 
+    public void WireAlert()
+    {
+        papaData.currentDest = papa.pD.player.transform.position;
+        currentState = State.Chase;
+    }
+
     public void HandleMovement()
     {
 
