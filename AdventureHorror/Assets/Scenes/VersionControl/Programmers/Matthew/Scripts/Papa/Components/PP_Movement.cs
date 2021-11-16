@@ -160,15 +160,21 @@ public class PP_Movement
 
     private void Chase()
     {
+        Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
         if (papaData.canSeeTarget)
             papaData.currentDest = papaData.targetLastSeen;
-            Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
         if (!papaData.canSeeTarget)
         {
             if (fixingWires)
-            {
+            {                
                 papa.agent.SetDestination(papaData.currentDest);
                 papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
+                Vector3 distanceToWires = paparef.transform.position - papaData.currentDest;
+                if (distanceToWires.magnitude < 3)
+                {
+                    fixingWires = false;
+                    currentState = State.StartSearch;
+                }
             }
             else
             {
