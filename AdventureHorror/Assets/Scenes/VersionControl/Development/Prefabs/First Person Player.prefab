@@ -367,7 +367,7 @@ MonoBehaviour:
     m_Bits: 512
   hand: {fileID: 3757446117991891449}
   toolHand: {fileID: 2815065637957994098}
-  deathMenu: {fileID: 0}
+  deathMenu: {fileID: 2433278291422785610, guid: 651c55c2a21b2a546ab729ea05988fa8, type: 3}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   dead: 0
 --- !u!1 &8319401245316301282
