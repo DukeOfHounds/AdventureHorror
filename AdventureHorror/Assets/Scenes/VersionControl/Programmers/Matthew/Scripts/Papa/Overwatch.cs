@@ -19,7 +19,7 @@ public class Overwatch : MonoBehaviour
         Vector3 spawnPoint;
         NavMeshHit hit;
         //ppD = ScriptableObject.CreateInstance<PapaData>();              
-        Debug.Log(timeOut);
+        //Debug.Log(timeOut);
         if (NavMesh.SamplePosition(timeOut.transform.transform.position, out hit, 10f, NavMesh.AllAreas))
         {
             spawnPoint = hit.position;
@@ -65,7 +65,7 @@ public class Overwatch : MonoBehaviour
         }
         else
         {
-            ppD.Papa.transform.position = ppD.spawnPoint;
+            ppS.agent.Warp(ppD.spawnPoint);
             Debug.Log("Tele");
             Debug.Log(ppD.spawnPoint);
             ppD.isActive = true;
