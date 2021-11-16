@@ -164,17 +164,22 @@ public class PP_Movement
                 }
                 else
                 {
-                    Vector3 distanceToPlayer = papa.agent.transform.position - papa.pD.player.gameObject.transform.position;
-                    if (distanceToPlayer.magnitude > 15 && !papaData.canSeeTarget)
-                    {
-                        papaData.currentDest = cSNode.transform.position;
-                        papa.agent.SetDestination(papaData.currentDest);
-                    }
-                    else
-                    {
-                        papaData.currentDest = papa.pD.player.gameObject.transform.position;
-                        currentState = State.Chase;
-                    }
+                    //Vector3 distanceToPlayer = papa.agent.transform.position - papa.pD.player.gameObject.transform.position;
+                    //if (distanceToPlayer.magnitude > 15 && !papaData.canSeeTarget)
+                    //{
+                    //papaData.currentDest = cSNode.transform.position;
+                    //papa.agent.SetDestination(papaData.currentDest);
+                    //}
+                    //else
+                    //{
+                    //if (papa.agent.velocity.magnitude < .1 && !papa.waiting)
+                    //{
+                        
+                        //papaData.canSeeTarget = true;
+                        //papaData.currentDest = papa.pD.player.gameObject.transform.position;
+                        //currentState = State.Chase;
+                    //}
+                    //}
                 }
             }
         }
@@ -186,6 +191,8 @@ public class PP_Movement
     private void Chase()
     {
         Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
+        cSNode = null;
+        timesSearched = 0;
         if (papaData.canSeeTarget)
             papaData.currentDest = papaData.targetLastSeen;
         if (!papaData.canSeeTarget)
