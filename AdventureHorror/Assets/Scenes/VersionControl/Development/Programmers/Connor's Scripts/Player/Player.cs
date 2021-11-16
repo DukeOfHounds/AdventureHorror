@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         {
             dead = true;
             Instantiate(deathMenu);
-            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);
+            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);  
             Cursor.visible = true;
         }
     }
