@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VersionControl/Programmers/Matthew/Matthew.unity
     guid: aa135a7fa354803419a66bbbe56d5fb8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VersionControl/Development/Development.unity
     guid: c8fff26d3d840f44583593e646c27610
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VersionControl/Designers/Aryan/Level.unity
     guid: bfee763038900784d82566e91d7c7843
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   m_configObjects:
