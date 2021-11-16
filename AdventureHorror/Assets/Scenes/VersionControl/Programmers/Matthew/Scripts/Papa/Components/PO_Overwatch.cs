@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PO_Overwatch
 {
@@ -11,6 +11,7 @@ public class PO_Overwatch
     private float spawnPointRange;
     //Scriptable Object Variables 
     public PapaData papaData;
+    public PlayerData pD;
     public Papa papa;
     private GameObject paparef;
     private Overwatch overwatch;
@@ -24,9 +25,10 @@ public class PO_Overwatch
     int count;
 
     //Constructor
-    public PO_Overwatch(PapaData papaData, Papa papa, Overwatch overwatch)
+    public PO_Overwatch(PapaData papaData, PlayerData pD, Papa papa, Overwatch overwatch)
     {
         this.papaData = papaData;
+        this.pD = pD;
         this.papa = papa;
         this.paparef = papaData.Papa;
         this.overwatch = overwatch;
@@ -36,22 +38,13 @@ public class PO_Overwatch
     public void GetLocation()
     {
         if (!spawnPointSet)
-            SearchSpawnPoint();
-
-        else
         {
-            if(papaData.isActive)
-            {
-                papa.agent.SetDestination(spawnPoint);
-            }
-            else
-            {
-                paparef.transform.position = spawnPoint;
-                //papa.ppM.currentState = PP_Movement.State.StartSearch;
-                papaData.isActive = true;
-                papa.Refresh();
-            }
+            SearchSpawnPoint();
         }
+        //else
+        //{
+                //papa.agent.SetDestination(spawnPoint);
+        //}
 
     }
 
@@ -60,25 +53,15 @@ public class PO_Overwatch
 
         if (spawnNodes.Count == 0)
         {
-
-            papa.agent.speed = papaData.papaBaseSpeed;
-            count = Physics.OverlapSphereNonAlloc(papa.pD.player.gameObject.transform.position, 500f, colliders, papaData.spawnNodeLayer, QueryTriggerInteraction.Collide);
+            count = Physics.OverlapSphereNonAlloc(pD.player.gameObject.transform.position, 500f, colliders, papaData.spawnNodeLayer, QueryTriggerInteraction.Collide);
             for (int i = 0; i < count; ++i)
             {
-                if (papaData.canSeeTarget)
+                GameObject obj = colliders[i++].gameObject;
+                Vector3 distanceToDest = pD.player.gameObject.transform.position - obj.transform.position;
+                if (distanceToDest.magnitude > 0)
                 {
-                    break;
-                }
-                else
-                {
-                    GameObject obj = colliders[i++].gameObject;
+                    spawnNodes.Add(obj);
 
-                    Vector3 distanceToDest = papa.pD.player.gameObject.transform.position - obj.transform.position;
-                    if (distanceToDest.magnitude > 30)
-                    {
-                        spawnNodes.Add(obj);
-                        break;
-                    }
                 }
 
             }
@@ -87,12 +70,27 @@ public class PO_Overwatch
         else
         {
             int random = Mathf.Abs(Random.Range(0, spawnNodes.Count - 1));
+            //NavMeshHit hit;
             if (sNode == null)
             {
+
                 index = random;
                 sNode = spawnNodes[index];
-                papaData.currentDest = sNode.transform.position;
-                papa.agent.SetDestination(papaData.currentDest);
+                papaData.spawnPoint = sNode.transform.position;
+                //if (NavMesh.SamplePosition(spawnPoint, out hit, 10f, NavMesh.AllAreas))
+                //{
+                    //spawnPoint = hit.position;
+                    //spawnPointSet = true;
+                    //if (!papaData.isActive)
+                    //{
+                        //papa.gameObject.transform.position = spawnPoint;
+                        //papa.TeleportPapa(spawnPoint);
+                        //papaData.isActive = true;
+                    //}
+                //}
+
+                //papaData.currentDest = sNode.transform.position;
+                //papa.agent.SetDestination(papaData.currentDest);
             }
             else
             {
@@ -100,8 +98,10 @@ public class PO_Overwatch
                 if (distanceToDest.magnitude < 1.5)
                 {
                     spawnNodes.RemoveAt(index);
+                    papaData.spawnPoint = Vector3.zero;
                     sNode = null;
-                    
+                    spawnPointSet = false;
+
                 }
             }
         }

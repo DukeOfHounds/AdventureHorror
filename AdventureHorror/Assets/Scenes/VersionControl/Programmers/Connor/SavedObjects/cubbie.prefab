@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 333859183133560441}
   - component: {fileID: 4859007006933392971}
   - component: {fileID: 2889786214820663548}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7611316781677018791}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HidingSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293852343412836553}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ExitSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8780747099058551224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cubbie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 3109380856113047719}
   - component: {fileID: 2294738196240098874}
   - component: {fileID: 153477622531892908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: HidingPlace
   m_Icon: {fileID: 0}
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade4b02a28693c340aa9940fc1d1abbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WD: {fileID: 0}
   isOpen: 0
   locked: 0
   doorAnimator: {fileID: 3109380856113047719}
