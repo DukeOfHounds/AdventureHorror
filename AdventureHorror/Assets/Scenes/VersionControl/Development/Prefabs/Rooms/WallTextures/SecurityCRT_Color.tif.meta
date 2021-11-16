@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:AdventureHorror/Assets/Scenes/VersionControl/Development/Prefabs/Rooms/WallTextures/SecurityCRT_Color.tif.meta
 guid: 3dece7e0cd8dd8b49873384d5c72089c
+=======
+guid: 17c52b5a55e867042953351cf8150639
+>>>>>>> designer-Zach:AdventureHorror/Assets/3D/London'sAssets/SecurityCRT/SecurityCRT_Color.tif.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
