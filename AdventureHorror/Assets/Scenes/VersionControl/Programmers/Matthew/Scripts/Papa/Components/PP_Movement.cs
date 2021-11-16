@@ -165,8 +165,15 @@ public class PP_Movement
             Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
         if (!papaData.canSeeTarget)
         {
-            papa.agent.SetDestination(papaData.currentDest);
-            papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
+            if (fixingWires)
+            {
+                papa.agent.SetDestination(papaData.currentDest);
+                papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
+            }
+            else
+            {
+                currentState = State.StartSearch;
+            }
         }
         if (distanceToPlayer.magnitude < 3)
         {
