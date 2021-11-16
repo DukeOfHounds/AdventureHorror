@@ -12,6 +12,7 @@ public class PapaData : ScriptableObject
     public bool isActive = false;
     public Vector3 timeOut;
     public bool despawning;
+    public Vector3 spawnPoint = Vector3.zero;
 
 
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7575944351627099318}
   - component: {fileID: 1893522018961332190}
   - component: {fileID: 7874595211621968176}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: door_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4520560357737914889}
   - component: {fileID: 424164168843679100}
   - component: {fileID: 3408549459589444678}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: door_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 3201266281393731633}
   - component: {fileID: 5609591372367969388}
   - component: {fileID: 5664253109704246974}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DoubleDoor
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 8391197701089720956}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1.1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1.23728}
   m_Children:
   - {fileID: 6128772789331458184}
   - {fileID: 3327111491432708770}
@@ -241,8 +241,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5902305, y: 0.80776864, z: 1.4763986}
-  m_Center: {x: -0.23443274, y: 0.38046715, z: 0.0075165625}
+  m_Size: {x: 12.335255, y: 0.8077686, z: 2.3372996}
+  m_Center: {x: -0.17690921, y: 0.5, z: -2.8219243e-24}
 --- !u!114 &3201266281393731633
 MonoBehaviour:
   m_ObjectHideFlags: 0
