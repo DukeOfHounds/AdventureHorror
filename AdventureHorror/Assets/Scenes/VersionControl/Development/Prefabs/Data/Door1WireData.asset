@@ -13,24 +13,12 @@ MonoBehaviour:
   m_Name: Door1WireData
   m_EditorClassIdentifier: 
   count: 0
-  WireOrder: []
-  Wires:
+  WireOrder:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  Wires: []
   door: {fileID: 0}
   puzzlePoster: {fileID: 0}
+  PPD: {fileID: 0}
