@@ -13,6 +13,7 @@ public class PP_Movement
     private bool initialResetWires = true;
     private int timesSearched;
     private float blindsight = 10f;
+    private bool fixingWires = false;
 
     public enum State
     { StartSearch, Search, Chase, ResetWires, Respawn, Despawn };
@@ -34,6 +35,7 @@ public class PP_Movement
 
     public void WireAlert()
     {
+        fixingWires = true;
         papaData.currentDest = papa.pD.player.transform.position;
         currentState = State.Chase;
     }
@@ -160,10 +162,11 @@ public class PP_Movement
     {
         if (papaData.canSeeTarget)
             papaData.currentDest = papaData.targetLastSeen;
-        Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
+            Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
         if (!papaData.canSeeTarget)
         {
-
+            papa.agent.SetDestination(papaData.currentDest);
+            papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
         }
         if (distanceToPlayer.magnitude < 3)
         {
