@@ -21,4 +21,4 @@ MonoBehaviour:
   Wires: []
   door: {fileID: 0}
   puzzlePoster: {fileID: 0}
-  PPD: {fileID: 0}
+  PPD: {fileID: 11400000, guid: d7be2d4fc721d364a94a6b5349b26621, type: 2}
