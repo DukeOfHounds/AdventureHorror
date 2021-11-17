@@ -6,6 +6,7 @@ public class FriendBehavior : MonoBehaviour
 {
     public Friend friendType;
     public Animator friendAnimator;
+    private bool isPlaying;
 
     public enum Friend
     {
@@ -17,7 +18,7 @@ public class FriendBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Initialize();
     }
 
     // Update is called once per frame
@@ -25,32 +26,52 @@ public class FriendBehavior : MonoBehaviour
     {
         
     }
+    IEnumerator PlayAnimation(int index, float time)
+    {
+        //if (!isPlaying)
+        //{
+            isPlaying = true;
+            friendAnimator.SetInteger("State", index);
+            yield return new WaitForSeconds(time);
+            isPlaying = false;
+            Initialize();
+       // }
+        //else
+        //{
+            //yield return new WaitForSeconds(1f);
+            //StartCoroutine(PlayAnimation(index, time));
+        //}
+    }
 
     private void Initialize()
     {
         switch (friendType)
         {
             case Friend.Bair:
-                StartCoroutine(PlayAnimation(0,0));
+                StartCoroutine(PlayAnimation(0,1));
                 break;
             case Friend.Octopus:
-
+                StartCoroutine(PlayAnimation(0, 1));
                 break;
             case Friend.GuineaPig:
-
+                StartCoroutine(PlayAnimation(0, 1));
                 break;
         }
     }
 
-    IEnumerator PlayAnimation(int index, float time)
+    public void PlayPickUpAnimation()
     {
-        if (friendAnimator.GetBool("IsPlaying"))
+        switch (friendType)
         {
-            friendAnimator.SetBool("IsPlaying", true);
-            friendAnimator.SetInteger("state", index);
-            yield return new WaitForSeconds(time);
-            friendAnimator.SetBool("IsPlaying", false);
+            case Friend.Bair:
+                StartCoroutine(PlayAnimation(2, 1));
+                break;
+            case Friend.Octopus:
+                StartCoroutine(PlayAnimation(3, 1));
+                break;
+            case Friend.GuineaPig:
+                StartCoroutine(PlayAnimation(0, 1));
+                break;
         }
-        Initialize();
     }
 }
