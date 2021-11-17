@@ -106,7 +106,8 @@ public class Player : MonoBehaviour
     }
     public void OnLeftClick(InputAction.CallbackContext context)
     {
-        interact.Interact();
+        if(context.performed)// please work 
+            interact.Interact();
 
     }
     public void OnRightClick(InputAction.CallbackContext context)
