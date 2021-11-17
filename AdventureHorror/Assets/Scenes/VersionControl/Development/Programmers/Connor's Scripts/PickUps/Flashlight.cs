@@ -16,16 +16,21 @@ public class Flashlight : MonoBehaviour
         if (light.intensity == 0) // if flashlight is off
         {
 
-            light.intensity = lightIntensity;// turns flashlight on
+           
             if (!s.source.isPlaying)
                 audioManager.Play("flash_on_1");
+           // light.intensity = lightIntensity;
+            StartCoroutine(LightIntensity(lightIntensity));// turns flashlight on
 
         }
         else // if flashlight is on
         {
-            light.intensity = 0; // turns flashlight off
             if (!s.source.isPlaying)
                 audioManager.Play("flash_off_1");
+            StartCoroutine(LightIntensity(0));// turns flashlight off
+
+            //light.intensity = ; // turns flashlight off
+
         }
     }
 
@@ -37,5 +42,11 @@ public class Flashlight : MonoBehaviour
         if (lightIntensity == 0)
             lightIntensity = light.intensity; // finds default intensity
         light.intensity = 0; // turns off flashlight at start
+    }
+
+    IEnumerator LightIntensity( float intensity)
+    {
+        yield return new  WaitForSeconds(.5f);
+        light.intensity = intensity;
     }
 }
