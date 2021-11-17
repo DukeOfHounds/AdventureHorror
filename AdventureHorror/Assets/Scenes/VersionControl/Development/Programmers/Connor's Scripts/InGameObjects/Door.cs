@@ -63,8 +63,8 @@ public class Door : MonoBehaviour
     {
         if (canOpenOrClose)
         {
-            doorAnimator.SetBool("doorOpen", false);
             isOpen = false;
+            doorAnimator.SetBool("doorOpen", false);
             StartCoroutine(CanOpenOrClose());
             doorOpenTime = 0;
         }

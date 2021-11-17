@@ -34,7 +34,7 @@ public class PlayerData : ScriptableObject
     public int fear;
     public int fearThreshold;
 
-    [Header("IgnoreDoNotTouch")]
+    [HideInInspector]
     public Camera cam;// the camera following the player
     public bool isHiding = false;
     public Player player;//the player object
