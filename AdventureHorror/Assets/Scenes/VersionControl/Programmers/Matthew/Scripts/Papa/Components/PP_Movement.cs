@@ -13,6 +13,7 @@ public class PP_Movement
     private bool initialResetWires = true;
     private int timesSearched;
     private float blindsight = 10f;
+    private GameObject currentWire;
     private bool fixingWires = false;
 
     public enum State
@@ -33,11 +34,13 @@ public class PP_Movement
     }
 
 
-    public void WireAlert()
+    public void WireAlert(GameObject wire)
     {
-        fixingWires = true;
-        papaData.currentDest = papa.pD.player.transform.position;
-        currentState = State.Chase;
+            currentWire = wire;
+            fixingWires = true;
+            papaData.currentDest = currentWire.transform.position;
+            papa.agent.SetDestination(papaData.currentDest);
+            currentState = State.Chase;
     }
 
     public void HandleMovement()
@@ -45,6 +48,12 @@ public class PP_Movement
 
         if (papaData.canSeeTarget)
         {
+            currentState = State.Chase;
+        }
+
+        if (!papaData.canSeeTarget && fixingWires)
+        {
+            papaData.currentDest = currentWire.transform.position;
             currentState = State.Chase;
         }
 
@@ -198,14 +207,17 @@ public class PP_Movement
         if (!papaData.canSeeTarget)
         {
             if (fixingWires)
-            {                
+            {
+                papaData.currentDest = currentWire.transform.position;
                 papa.agent.SetDestination(papaData.currentDest);
                 papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
                 Vector3 distanceToWires = paparef.transform.position - papaData.currentDest;
                 if (distanceToWires.magnitude < 3)
                 {
+                    currentWire.GetComponent<Wire>().ResetWires();
                     fixingWires = false;
                     currentState = State.StartSearch;
+                        
                 }
             }
             else
@@ -244,7 +256,6 @@ public class PP_Movement
             papa.agent.speed = papaData.papaBaseSpeed * papaData.chaseSpeedMultiplier;
         }
     }
-
 
     private void ResetWires()
     {
