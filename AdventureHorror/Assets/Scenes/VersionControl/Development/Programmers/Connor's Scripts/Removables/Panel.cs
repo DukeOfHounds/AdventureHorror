@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Panel : RemovableObjects
@@ -20,10 +21,14 @@ public class Panel : RemovableObjects
     {
         if (screws.Count == 0)
         {
-            meshRenderer.enabled = false;
-            collider.enabled = false;
-            if (VentPortal != null)
-                VentPortal.canExit = true;
+           
+            Sound s = Array.Find(FindObjectOfType<AudioManager>().sounds, sound => sound.name == "flash_on_1");
+            if (!s.source.isPlaying)
+            {
+                FindObjectOfType<AudioManager>().Play("vent_grate_2");
+                StartCoroutine(DropPanel());
+            }
+
         }
     }
     public void AddScrewToList(Screw screw)
@@ -39,5 +44,15 @@ public class Panel : RemovableObjects
     public override string NeededTool()
     {
         return neededTool;
+    }
+    IEnumerator DropPanel()
+    {
+        yield return new WaitForSeconds(.5f);
+        //meshRenderer.enabled = false;
+        //collider.enabled = false;
+        this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        this.gameObject.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * 200);
+        if (VentPortal != null)
+            VentPortal.canExit = true;
     }
 }

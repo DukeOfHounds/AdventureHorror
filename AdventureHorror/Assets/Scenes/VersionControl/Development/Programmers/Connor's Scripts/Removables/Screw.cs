@@ -27,11 +27,16 @@ public class Screw : RemovableObjects
     }
     public override void Remove()
     {
+        FindObjectOfType<AudioManager>().Play("unscrewing_2");
+        StartCoroutine(Unscrew());
+    }
+
+    IEnumerator Unscrew()
+    {
+        yield return new WaitForSeconds(.5f);
         panel.RemoveScrewFromList(this);
         //animation of screw being turned. 
         meshRenderer.enabled = false;
         collider.enabled = false;
     }
-
-    // maybe IEnumerator() to have this take longer to remove screw and to have steps
 }

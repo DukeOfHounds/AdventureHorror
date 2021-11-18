@@ -11,9 +11,8 @@ public class Flashlight : MonoBehaviour
     public void Use()
     {
         Sound s = Array.Find(audioManager.sounds, sound => sound.name == "flash_on_1");
-
-        //Debug.Log(lightIntensity);
-        if (light.intensity == 0) // if flashlight is off
+            //Debug.Log(lightIntensity);
+            if (light.intensity == 0) // if flashlight is off
         {
 
            

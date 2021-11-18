@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     [Header("Player")]
     public List<GameObject> BairHearts;
+    public List<GameObject> tools;
     public GameObject inHand = null;
     public P_Input input;
     public P_Interact interact;
