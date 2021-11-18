@@ -6,6 +6,8 @@ public class Screw : RemovableObjects
 {
     private Animator screwAnimator;
     private Panel panel;
+    AudioSource sound;
+
     public string neededTool = "ScrewDriver";
     public override string NeededTool()
     {
@@ -13,6 +15,7 @@ public class Screw : RemovableObjects
     }
     public void Awake()
     {
+        sound = GetComponent<AudioSource>();
         panel = GetComponentInParent<Panel>();
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         collider = gameObject.GetComponent<Collider>();
@@ -27,11 +30,16 @@ public class Screw : RemovableObjects
     }
     public override void Remove()
     {
+        sound.Play();
+        StartCoroutine(Unscrew());
+    }
+
+    IEnumerator Unscrew()
+    {
+        yield return new WaitForSeconds(1.5f);
         panel.RemoveScrewFromList(this);
         //animation of screw being turned. 
         meshRenderer.enabled = false;
         collider.enabled = false;
     }
-
-    // maybe IEnumerator() to have this take longer to remove screw and to have steps
 }

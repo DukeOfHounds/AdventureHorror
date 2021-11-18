@@ -7,7 +7,9 @@ public class PP_LOS
     //Scriptable Object Variables 
     public PapaData papaData;
     public Papa papa;
-    private GameObject paparef; 
+    private GameObject paparef;
+    private bool lostSight = true;
+    private int count = 0;
 
     //Constructor
     public PP_LOS(PapaData papaData, Papa papa)
@@ -38,12 +40,27 @@ public class PP_LOS
                     papaData.targetLastSeen = target.position;
                     papaData.canSeeTarget = true;
                     papaData.isAgro = true;
+                    lostSight = false;
                     Debug.Log(papaData.canSeeTarget);
                     Debug.DrawLine(paparef.transform.position, target.position, Color.red, 5f);
 
                 }
                 else
-                    papaData.canSeeTarget = false; 
+                {
+                    if (!lostSight)
+                    {
+                        ++count;
+                        papaData.targetLastSeen = papa.pD.player.transform.position;
+                        Vector3 distanceToPlayer = papaData.targetLastSeen - papa.gameObject.transform.position;
+                        if (count/500 > distanceToPlayer.magnitude)
+                        {
+                            count = 0;
+                            lostSight = false;
+                        }
+                    }
+                    else
+                    papaData.canSeeTarget = false;
+                }
             }
             else
                 papaData.canSeeTarget = false;

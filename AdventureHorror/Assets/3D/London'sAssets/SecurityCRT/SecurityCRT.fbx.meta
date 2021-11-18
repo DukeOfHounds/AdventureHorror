@@ -3,7 +3,12 @@ guid: 8f777cef7fbb5bc4e876dd21a62d58b6
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecurityCRT
+    second: {fileID: 2100000, guid: 23ac36eed0f73c440bd7bd24353080c6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

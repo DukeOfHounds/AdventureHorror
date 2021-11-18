@@ -105,6 +105,10 @@ public class P_Interact
         if (PD.inHand == null)
         {
             GameObject hand = GameObject.Find("Hand");
+            if (obj.TryGetComponent(out FriendBehavior fB))
+            {
+                fB.PlayPickUpAnimation();
+            }
             PD.inHand = obj;
             obj.GetComponent<Collider>().enabled = false;// turns off object collisions
             obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
