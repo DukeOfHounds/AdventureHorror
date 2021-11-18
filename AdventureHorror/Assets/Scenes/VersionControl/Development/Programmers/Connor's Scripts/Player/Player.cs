@@ -32,6 +32,9 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+        PD.audioManager = FindObjectOfType<AudioManager>();
+        PD.inToolHand = null;
+        PD.inHand = null;
         PD.hand = hand;
         PD.toolHand = toolHand;
         PD.cam = Camera.main;

@@ -1798,72 +1798,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.size
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[20].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1e95ddca5a2abf84eb81b1183165ea6d, type: 3}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[20].name
-      value: unscrewing_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[21].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: efa779c30ad9c5a47819616466b26bb7, type: 3}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[21].name
-      value: vent_grate_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[22].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ed1275e40dbe5534a95538cc0ccd375c, type: 3}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[22].name
-      value: vent_grate_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[23].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3fd5a7f823ef5aa418f677e6a2effd23, type: 3}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[23].name
-      value: vent_grate_3
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[20].pitch
+      propertyPath: sounds.Array.data[3].loop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[21].pitch
+      propertyPath: sounds.Array.data[3].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[22].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[23].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[20].volume
+      propertyPath: sounds.Array.data[3].volume
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[21].volume
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[22].volume
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 633823891311589224, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
-      propertyPath: sounds.Array.data[23].volume
-      value: 0.75
+      propertyPath: sounds.Array.data[13].source
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5865050840195347408, guid: 00aa707868333c84ca20bc985e74a4de, type: 3}
       propertyPath: m_Name
@@ -3336,6 +3284,18 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 337081956359713777, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 337081956359713777, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 337081956359713777, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 339044495733107349, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
@@ -4555,6 +4515,10 @@ PrefabInstance:
     - target: {fileID: 2339711501332833798, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: isTool
       value: ScrewDriver
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344209638172779479, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2352771962846835346, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_NavMeshLayer

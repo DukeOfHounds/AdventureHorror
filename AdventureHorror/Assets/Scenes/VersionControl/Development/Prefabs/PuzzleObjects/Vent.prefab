@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VentPortal: {fileID: 6579529034819369364}
-  neededTool: none
+  neededTool: None
 --- !u!1 &1236499164902359627
 GameObject:
   m_ObjectHideFlags: 0

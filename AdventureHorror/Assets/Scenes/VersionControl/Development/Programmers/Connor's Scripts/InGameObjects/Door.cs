@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 
@@ -11,8 +12,11 @@ public class Door : MonoBehaviour
     private bool canOpenOrClose = true;
     private Collider collider;
     public Animator doorAnimator;
+    AudioSource sound;
     float doorOpenTime = 0;
     bool stayOpen = false;
+    //AudioManager audioManager;
+    //Sound s;
     //public PuzzlePoster poster;
     //private List<Wire> wires = new List<Wire>();
 
@@ -33,6 +37,10 @@ public class Door : MonoBehaviour
     }
     private void Start()
     {
+        sound = GetComponent<AudioSource>();
+        //audioManager = FindObjectOfType<AudioManager>();
+        // s = Array.Find(audioManager.sounds, sound => sound.name == "Metal sliding door 2");
+
         if (WD != null)
         {
             WD.door = this;
@@ -51,8 +59,10 @@ public class Door : MonoBehaviour
 
         if (!locked && canOpenOrClose)
         {
+
             isOpen = true;
             doorAnimator.SetBool("doorOpen", true);
+            StartCoroutine(PlaySound());
             StartCoroutine(CanOpenOrClose());
 
 
@@ -65,6 +75,7 @@ public class Door : MonoBehaviour
         {
             isOpen = false;
             doorAnimator.SetBool("doorOpen", false);
+            StartCoroutine(PlaySound());
             StartCoroutine(CanOpenOrClose());
             doorOpenTime = 0;
         }
@@ -78,13 +89,19 @@ public class Door : MonoBehaviour
         canOpenOrClose = true;
         collider.enabled = true;
     }
-    //IEnumerator wait()
-    //{
-    //    stayOpen = false;
-    //    yield return new WaitForSeconds(1f);
-       
+    IEnumerator PlaySound()
+    {
+        if (sound.isPlaying)
+        {
+            sound.Stop();
 
-    //}
+        }
+        sound.Play();
+        yield return new WaitForSeconds(1f);
+        sound.Stop();
+
+
+    }
     public void Unlock()
     {
         locked = false;
@@ -106,7 +123,7 @@ public class Door : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        
+
         if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
         {
             stayOpen = true;
@@ -123,8 +140,9 @@ public class Door : MonoBehaviour
         {
             Close();
         }
-        
+
     }
+
     //public void OnTriggerStay(Collider other)
     //{
     //    if (other.tag == "Player" || other.tag == "Papa")

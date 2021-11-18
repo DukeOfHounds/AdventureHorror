@@ -9,6 +9,7 @@ public class Panel : RemovableObjects
     private Animator panelAnimator;
     public VentPortal VentPortal;
     public string neededTool = "none";
+    private bool removed = false;
 
     public void Awake()
     {
@@ -21,11 +22,10 @@ public class Panel : RemovableObjects
     {
         if (screws.Count == 0)
         {
-           
-            Sound s = Array.Find(FindObjectOfType<AudioManager>().sounds, sound => sound.name == "flash_on_1");
-            if (!s.source.isPlaying)
+            if (!removed)
             {
-                FindObjectOfType<AudioManager>().Play("vent_grate_2");
+                removed = true;
+                FindObjectOfType<AudioManager>().Play("vent_grate_3");
                 StartCoroutine(DropPanel());
             }
 
@@ -51,7 +51,7 @@ public class Panel : RemovableObjects
         //meshRenderer.enabled = false;
         //collider.enabled = false;
         this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        this.gameObject.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * 200);
+        this.gameObject.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * 800);
         if (VentPortal != null)
             VentPortal.canExit = true;
     }

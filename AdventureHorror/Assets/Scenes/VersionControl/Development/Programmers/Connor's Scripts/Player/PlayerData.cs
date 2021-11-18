@@ -41,4 +41,6 @@ public class PlayerData : ScriptableObject
     public Player player;//the player object
     public Transform hand;
     public Transform toolHand;
+    public AudioManager audioManager;
+
 }
