@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3332779198682837359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9117002230397802921}
+  - component: {fileID: 5938945007745030767}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9117002230397802921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332779198682837359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5938945007745030767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332779198682837359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1629c96971da68d4aac91056b4831134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Creaky Door
+    clip: {fileID: 8300000, guid: a2bd6d42071ea9941a8adfe998bc06a5, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Footsteps creaky wood floor
+    clip: {fileID: 8300000, guid: 1a980fd84cda223419e8160b1ae69dc9, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Footsteps leaves dirt
+    clip: {fileID: 8300000, guid: 14aee800d7b65e54d8732fb7f65585ce, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Footsteps on metal
+    clip: {fileID: 8300000, guid: 9e5d542c310b3f74b8dce29713df44ed, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Footsteps wood floor
+    clip: {fileID: 8300000, guid: d59dc42867c101c45b306ab8a297e8fb, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Metal sliding door 1
+    clip: {fileID: 8300000, guid: 4434f627b5c71024ab10f6ae75bc3fd9, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Metal sliding door 2
+    clip: {fileID: 8300000, guid: 364280f7c1bf9514badc60594e642a9b, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Metal sliding door 3
+    clip: {fileID: 8300000, guid: c904e925e155b4a49a41fafe94ea82a9, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Wooden door quick
+    clip: {fileID: 8300000, guid: af297b12bd580074c9b2877262b3d5e9, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: papa_breath_1_1
+    clip: {fileID: 8300000, guid: 19e9c1b5d69ff954ea11cd174c7c8379, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: papa_breath_2_1
+    clip: {fileID: 8300000, guid: f21f8b09d61d32d44a9dd299416e134a, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: papa_breath_3_1
+    clip: {fileID: 8300000, guid: 036dcc4ad2fe10442b44373d21640654, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: breathing_hiding_active_1
+    clip: {fileID: 8300000, guid: af297b12bd580074c9b2877262b3d5e9, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: breathing_hiding_inactive_1
+    clip: {fileID: 8300000, guid: 0db8a03b1b903194cad53d6a71db60ca, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Gasp_1_1
+    clip: {fileID: 8300000, guid: b284cdd10ede7dc42a96113eee6ce823, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Gasp_2_1
+    clip: {fileID: 8300000, guid: e5987d75095ec914db8a2946d3362cea, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Gasp_3_1
+    clip: {fileID: 8300000, guid: 56f9c361bd87ca94a98c8d0ac78838a9, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: flash_off_1
+    clip: {fileID: 8300000, guid: c93bbc7ea47f44a4985d6045ebb21f31, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: flash_on_1
+    clip: {fileID: 8300000, guid: 954baf8f299f2da40ab55232fa14d253, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: unscrewing_1
+    clip: {fileID: 8300000, guid: 848816b9af757de4ba7c468e3bfb72a2, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: unscrewing_2
+    clip: {fileID: 8300000, guid: 1e95ddca5a2abf84eb81b1183165ea6d, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: vent_grate_1
+    clip: {fileID: 8300000, guid: efa779c30ad9c5a47819616466b26bb7, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: vent_grate_2
+    clip: {fileID: 8300000, guid: ed1275e40dbe5534a95538cc0ccd375c, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: vent_grate_3
+    clip: {fileID: 8300000, guid: 3fd5a7f823ef5aa418f677e6a2effd23, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

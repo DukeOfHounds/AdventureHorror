@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     [Header("Player")]
     public List<GameObject> BairHearts;
+    public List<GameObject> tools;
     public GameObject inHand = null;
     public P_Input input;
     public P_Interact interact;
@@ -34,10 +35,12 @@ public class PlayerData : ScriptableObject
     public int fear;
     public int fearThreshold;
 
-    [Header("IgnoreDoNotTouch")]
+    [HideInInspector]
     public Camera cam;// the camera following the player
     public bool isHiding = false;
     public Player player;//the player object
     public Transform hand;
     public Transform toolHand;
+    public AudioManager audioManager;
+
 }
