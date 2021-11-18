@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7575944351627099318}
   - component: {fileID: 1893522018961332190}
   - component: {fileID: 7874595211621968176}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: door_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4520560357737914889}
   - component: {fileID: 424164168843679100}
   - component: {fileID: 3408549459589444678}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: door_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5609591372367969388}
   - component: {fileID: 5664253109704246974}
   - component: {fileID: 7166041040035153278}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: DoubleDoor
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!82 &7166041040035153278
 AudioSource:
   m_ObjectHideFlags: 0

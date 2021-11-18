@@ -123,7 +123,7 @@ public class Door : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-
+        //Debug.Log("opensaysme: " + other.name);
         if ((other.tag == "Player" || other.tag == "Papa") && !isOpen)
         {
             stayOpen = true;
@@ -136,6 +136,8 @@ public class Door : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
+        //Debug.Log("CLOSE DAMN IT: "+ other.name);
+
         if ((other.tag == "Player" || other.tag == "Papa") && isOpen)
         {
             Close();
@@ -145,9 +147,10 @@ public class Door : MonoBehaviour
 
     //public void OnTriggerStay(Collider other)
     //{
-    //    if (other.tag == "Player" || other.tag == "Papa")
-    //    {
-    //        stayOpen = true;
-    //    }
+    //    Debug.Log(other.name);
+    //    //if (other.tag == "Player" || other.tag == "Papa")
+    //    //{
+    //    //    stayOpen = true;
+    //    //}
     //}
 }
