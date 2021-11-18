@@ -10,9 +10,6 @@ scopes = {
 	"last_search.7F95D817" = "Assets/Scenes/VersionControl/Programmers/Connor/SavedObjects/PlayerData.asset"
 	"InspectorPreview.7F95D817" = "0"
 	"currentGroup.7F95D817" = "scene"
-	"last_search.785D90A9" = "lighting"
-	"InspectorPreview.785D90A9" = "0"
-	"currentGroup.785D90A9" = "all"
 }
 providers = {
 	asset = {
@@ -52,7 +49,6 @@ providers = {
 	}
 }
 recentSearches = [
-	"lighting"
 	"Assets/Scenes/VersionControl/Programmers/Connor/SavedObjects/PlayerData.asset"
 ]
 searchItemFavorites = [

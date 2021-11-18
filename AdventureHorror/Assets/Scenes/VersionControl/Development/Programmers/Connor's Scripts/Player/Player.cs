@@ -32,9 +32,6 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-        PD.audioManager = FindObjectOfType<AudioManager>();
-        PD.inToolHand = null;
-        PD.inHand = null;
         PD.hand = hand;
         PD.toolHand = toolHand;
         PD.cam = Camera.main;
@@ -109,8 +106,7 @@ public class Player : MonoBehaviour
     }
     public void OnLeftClick(InputAction.CallbackContext context)
     {
-        if(context.performed)// please work 
-            interact.Interact();
+        interact.Interact();
 
     }
     public void OnRightClick(InputAction.CallbackContext context)

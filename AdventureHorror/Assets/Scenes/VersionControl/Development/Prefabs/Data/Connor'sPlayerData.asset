@@ -16,7 +16,7 @@ MonoBehaviour:
   inHand: {fileID: 0}
   inToolHand: {fileID: 0}
   speed: 8
-  jumpHeight: 0
+  jumpHeight: 2.5
   gravity: -9.81
   throwForce: 5
   mouseSensitivity: 15

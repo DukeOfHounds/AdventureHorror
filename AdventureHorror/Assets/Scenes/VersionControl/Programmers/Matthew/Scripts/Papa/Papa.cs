@@ -12,7 +12,6 @@ public class Papa : MonoBehaviour
     public PP_Movement ppM;
     public NavMeshAgent agent;
     public Animator animator;
-    public bool waiting;
 
     // Start is called before the first frame update
     void Awake()
@@ -36,7 +35,7 @@ public class Papa : MonoBehaviour
             ppM.HandleMovement();
             if (ppD.timesSearched > 10)
             {
-                //ppM.currentState = PP_Movement.State.Despawn;
+                ppM.currentState = PP_Movement.State.Despawn;
             }
         }
     }
@@ -44,9 +43,7 @@ public class Papa : MonoBehaviour
     //Stops movement along navMesh for "wait" seconds
     public void StopMovement(float wait)
     {
-        waiting = true;
         StartCoroutine(SM(wait));
-        waiting = false;
     }
     public IEnumerator SM(float wait)
     {

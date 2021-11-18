@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 public class Panel : RemovableObjects
@@ -9,7 +8,6 @@ public class Panel : RemovableObjects
     private Animator panelAnimator;
     public VentPortal VentPortal;
     public string neededTool = "none";
-    private bool removed = false;
 
     public void Awake()
     {
@@ -22,13 +20,10 @@ public class Panel : RemovableObjects
     {
         if (screws.Count == 0)
         {
-            if (!removed)
-            {
-                removed = true;
-                FindObjectOfType<AudioManager>().Play("vent_grate_3");
-                StartCoroutine(DropPanel());
-            }
-
+            meshRenderer.enabled = false;
+            collider.enabled = false;
+            if (VentPortal != null)
+                VentPortal.canExit = true;
         }
     }
     public void AddScrewToList(Screw screw)
@@ -44,15 +39,5 @@ public class Panel : RemovableObjects
     public override string NeededTool()
     {
         return neededTool;
-    }
-    IEnumerator DropPanel()
-    {
-        yield return new WaitForSeconds(.5f);
-        //meshRenderer.enabled = false;
-        //collider.enabled = false;
-        this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        this.gameObject.GetComponent<Rigidbody>().AddForce(this.gameObject.transform.forward * 800);
-        if (VentPortal != null)
-            VentPortal.canExit = true;
     }
 }

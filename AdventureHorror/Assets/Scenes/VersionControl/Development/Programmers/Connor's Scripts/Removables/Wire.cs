@@ -9,7 +9,6 @@ public class Wire : RemovableObjects
     public Color color;
     public MeshRenderer cutWireMeshRender;
     public string neededTool = "WireCutter";
-    public bool isCut = false;
     public override string NeededTool()
     {
         return neededTool;
@@ -32,7 +31,6 @@ public class Wire : RemovableObjects
     public override void Remove()
     {
         Debug.Log("removing wire");
-        isCut = true;
         meshRenderer.enabled = false;
         cutWireMeshRender.enabled = true;
         collider.enabled = false;
@@ -53,27 +51,16 @@ public class Wire : RemovableObjects
             Debug.Log("Oh no cuting the wires in the wrong order cut the power");
             GameObject.Find("LightManager").GetComponent<LightManager>().changeLightInt(0);
             Debug.Log("papa will reset the wires afterwords try again");
-            WD.PPD.Papa.GetComponent<Papa>().ppM.WireAlert(this.gameObject);
-        //    WD.count = 0;
-        //    foreach(Wire w in WD.WireOrder)
-        //    {
-        //        w.meshRenderer.enabled = true;
-        //        w.cutWireMeshRender.enabled = false;
-        //        w.collider.enabled = true;
-        //    }
+            WD.PPD.Papa.GetComponent<Papa>().ppM.WireAlert();
+            WD.count = 0;
+            foreach(Wire w in WD.WireOrder)
+            {
+                w.meshRenderer.enabled = true;
+                w.cutWireMeshRender.enabled = false;
+                w.collider.enabled = true;
+            }
         }
         
-    }
-
-    public void ResetWires()
-    {
-        WD.count = 0;
-        foreach (Wire w in WD.WireOrder)
-        {
-            w.meshRenderer.enabled = true;
-            w.cutWireMeshRender.enabled = false;
-            w.collider.enabled = true;
-        }
     }
     public void setColor(Color color)
     {
@@ -82,8 +69,4 @@ public class Wire : RemovableObjects
         cutWireMeshRender.material.color = color;
     }
     
-    public void ResetThisWire()
-    {
-
-    }
 }

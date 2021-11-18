@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 public class P_Movment
@@ -16,10 +15,9 @@ public class P_Movment
     private bool isGrounded;
     private float groundDistance = .4f;
     private Vector3 velocity;
-    private Sound s;
+
     public P_Movment(PlayerData PD)
     {
-         s = Array.Find(PD.audioManager.sounds, sound => sound.name == "Footsteps on metal");
         this.PD = PD;
         this.player = PD.player;
         this.groundCheck = player.groundCheck;
@@ -35,15 +33,6 @@ public class P_Movment
     }
     public void UpdatePosition(float horizontal1D, float vertical1D)
     {
-        if(horizontal1D != 0 || vertical1D != 0)
-        {
-            if (!s.source.isPlaying)
-                PD.audioManager.Play("Footsteps on metal");
-        }
-        else
-        {
-            PD.audioManager.Stop("Footsteps on metal");
-        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
         {

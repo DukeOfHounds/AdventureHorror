@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VentPortal: {fileID: 0}
-  neededTool: None
+  neededTool: none
 --- !u!65 &353083542986104733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -229,7 +229,6 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   cutWireMeshRender: {fileID: 5083144940348832066}
   neededTool: WireCutter
-  isCut: 0
 --- !u!1 &4860528794393064748
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +409,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6927959834232891982}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
