@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Door
+  - HidingPlace
+  - Manipulable
+  - PickUpAble
+  - Screw
+  - Removable
+  - Vent
+  - PoweredLight
+  - Papa
+  - Tool
   layers:
   - Default
   - TransparentFX
@@ -13,11 +23,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - SearchNode
+  - SpawnNode
+  - doors
   - 
   - 
   - 
