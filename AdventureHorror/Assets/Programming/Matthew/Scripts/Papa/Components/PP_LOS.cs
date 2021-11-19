@@ -10,7 +10,7 @@ public class PP_LOS
     private GameObject paparef;
     private bool lostSight = true;
     private float cD = 0f;
-    private float timer = 4f;
+    private float timer = 6f;
 
 
     //Constructor
@@ -59,6 +59,8 @@ public class PP_LOS
                         {
                             cD = Mathf.Clamp(cD - Time.deltaTime, 0.0f, timer);
                         }
+                        else
+                            lostSight = true;
                     }
                     else
                         papaData.canSeeTarget = false;
@@ -74,6 +76,8 @@ public class PP_LOS
                     {
                         cD = Mathf.Clamp(cD - Time.deltaTime, 0.0f, timer);
                     }
+                    else
+                        lostSight = true;
                 }
                 else
                     papaData.canSeeTarget = false;
@@ -89,6 +93,8 @@ public class PP_LOS
                 {
                     cD = Mathf.Clamp(cD - Time.deltaTime, 0.0f, timer);
                 }
+                else
+                    lostSight = true;
             }
             else
                 papaData.canSeeTarget = false;
