@@ -14,6 +14,7 @@ TagManager:
   - PoweredLight
   - Papa
   - Tool
+  - Friend
   layers:
   - Default
   - TransparentFX

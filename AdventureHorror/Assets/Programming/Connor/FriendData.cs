@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BairData", menuName = "BairData/Generic")]
 
 
-public class BairData : ScriptableObject
+public class FriendData : ScriptableObject
 {
     [SerializeField]
     [Header("Bair Stuff")]

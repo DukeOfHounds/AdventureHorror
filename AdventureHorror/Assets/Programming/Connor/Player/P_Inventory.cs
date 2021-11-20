@@ -33,7 +33,7 @@ public class P_Inventory
     {
         foreach (GameObject tool in PD.tools)
         {
-            Tools t = tool.GetComponent<Tools>();
+            Tool t = tool.GetComponent<Tool>();
             if (t.IsTool().Equals(toolName))
             {
                 mr = tool.GetComponentInChildren<MeshRenderer>();
@@ -57,7 +57,7 @@ public class P_Inventory
     {
         foreach (GameObject tool in PD.tools)
         {
-            Tools t = tool.GetComponent<Tools>();
+            Tool t = tool.GetComponent<Tool>();
             if (t.IsTool().Equals(toolName))
             {
                 return true;

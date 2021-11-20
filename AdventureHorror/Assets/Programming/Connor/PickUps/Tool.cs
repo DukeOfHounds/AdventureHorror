@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Tools :MonoBehaviour 
+public abstract class Tool :MonoBehaviour 
 {
     /// <summary>
     /// uses object in hand to interact with environment. 
