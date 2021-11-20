@@ -223,4 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242bf0736f1b7a549802ec837c9b44a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sD: {fileID: 11400000, guid: edf21f25428d4ee44a7fd8d14bc7dbb3, type: 2}
+  collisionSounds:
+  - clip: {fileID: 8300000, guid: 01440ef343821f641a0b0dc2d9a6f4a6, type: 3}
+  - clip: {fileID: 8300000, guid: 40ffc87ec695cb047a2f0d051f762a5f, type: 3}
+  - clip: {fileID: 8300000, guid: 8cddd35581ff9374aaa82a9ed201e48d, type: 3}
