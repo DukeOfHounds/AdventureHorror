@@ -1184,6 +1184,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5497572041615739834, guid: 73e110c7aa5c81144ac559b47736dce2, type: 3}
+      propertyPath: sounds.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8594549423261341168, guid: 73e110c7aa5c81144ac559b47736dce2, type: 3}
       propertyPath: m_Name
       value: alphabet_cube_Variant
@@ -9881,6 +9885,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 178924262339335862, guid: 4f538605d63c1b24bb036a2b0637d641, type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 178924262339335862, guid: 4f538605d63c1b24bb036a2b0637d641, type: 3}
+      propertyPath: collisionSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 178924262339335862, guid: 4f538605d63c1b24bb036a2b0637d641, type: 3}
+      propertyPath: collisionSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 178924262339335862, guid: 4f538605d63c1b24bb036a2b0637d641, type: 3}
+      propertyPath: collisionSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 178924262339335862, guid: 4f538605d63c1b24bb036a2b0637d641, type: 3}
+      propertyPath: collisionSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2481098884621073290, guid: 4f538605d63c1b24bb036a2b0637d641, type: 3}
       propertyPath: m_Name
       value: alphabet_letter_cube1
