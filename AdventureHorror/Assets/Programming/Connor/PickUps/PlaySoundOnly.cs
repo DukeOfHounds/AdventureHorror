@@ -4,24 +4,40 @@ using UnityEngine;
 
 public class PlaySoundOnly : MonoBehaviour
 {
-    AudioSource clip;
-    bool clipPlaying; 
+    //public SoundData sD;
+    public AudioClip[] collisionSounds;
+    AudioSource source;
+    AudioClip currentSound;
+    bool clipPlaying;
+    int index;
 
     void Start()
     {
-        clip = GetComponent<AudioSource>();
+        
+        source = GetComponent<AudioSource>();
     }
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (!clip.isPlaying)
+        int random = Random.Range(0, collisionSounds.Length - 1);
+        if(collisionSounds.Length > 1)
         {
-            clip.time = .2f;
-            clip.Play();
+            if(collisionSounds[random] = currentSound)
+            {
+                random = Random.Range(0, collisionSounds.Length - 1);
+            }
+        }
+        Debug.Log(collisionSounds[random]);
+        currentSound = collisionSounds[random];
+        if (!source.isPlaying)
+        {
+            source.clip = currentSound;
+            source.time = .2f;
+            source.Play();
         }
         else
         {
-            AudioSource temp = clip;
+            source.clip = currentSound;
+            AudioSource temp = source;
             temp.Play();
         }
     }
