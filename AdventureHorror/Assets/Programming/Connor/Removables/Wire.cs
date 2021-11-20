@@ -8,6 +8,7 @@ public class Wire : RemovableObjects
     private Animator wireAnimator;
     public Color color;
     public MeshRenderer cutWireMeshRender;
+    public AudioSource ZapSound;
     public string neededTool = "WireCutter";
     public bool isCut = false;
     public override string NeededTool()
@@ -51,6 +52,8 @@ public class Wire : RemovableObjects
         else // ressets all the wires;
         {
             Debug.Log("Oh no cuting the wires in the wrong order cut the power");
+            //GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("");
+            ZapSound.Play();
             GameObject.Find("LightManager").GetComponent<LightManager>().changeLightInt(0);
             Debug.Log("papa will reset the wires afterwords try again");
             WD.PPD.Papa.GetComponent<Papa>().ppM.WireAlert(this.gameObject);
@@ -80,10 +83,5 @@ public class Wire : RemovableObjects
         this.color = color;
         meshRenderer.material.color = color;
         cutWireMeshRender.material.color = color;
-    }
-    
-    public void ResetThisWire()
-    {
-
     }
 }
