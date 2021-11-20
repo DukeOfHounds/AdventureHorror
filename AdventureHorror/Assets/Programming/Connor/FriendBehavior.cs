@@ -8,14 +8,15 @@ public class FriendBehavior : MonoBehaviour
     public Friend friendType;
     public Animator friendAnimator;
     private bool isPlaying;
-    public FriendData FD;
+    //public FriendData FD;
     PlayerData PD;
 
     public enum Friend
     {
         Bair,
         Octopus,
-        GuineaPig
+        GuineaPig,
+        Snake
 
     }
     // Start is called before the first frame update
