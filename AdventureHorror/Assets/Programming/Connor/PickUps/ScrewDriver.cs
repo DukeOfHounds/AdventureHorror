@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrewDriver : Tools
+public class ScrewDriver : Tool
 {
     private Animator screwDriverAnimator;
     public string isTool = "WireCutter";

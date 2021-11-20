@@ -62,15 +62,27 @@ public class P_Interact
                     Manipulate(hit.collider.gameObject);
                     break;
                 case "Removable":
-                    Debug.Log("hit removable");
+                    //Debug.Log("hit removable");
                     RemoveObject(hit.collider.gameObject);
                     break;
                 case "Vent":
                     EnterVent(hit.collider.gameObject);
                     break;
                 case "Tool":
-                    Debug.Log(hit.collider.gameObject.tag);
+                    //Debug.Log(hit.collider.gameObject.tag);
                     AddTool(hit.collider.gameObject);
+                    break;
+                case "Friend":
+                    Debug.Log(hit.collider.gameObject.tag);
+                    PickUpObject(hit.collider.gameObject);
+                    try
+                    {
+                        AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+                    }
+                    catch
+                    {
+                        Debug.LogWarning("Friend Has No tool");
+                    }
                     break;
                 default:
                     break;
@@ -94,7 +106,7 @@ public class P_Interact
     private void Manipulate(GameObject obj)
     {
         if (PD.inToolHand != null)
-            PD.inToolHand.GetComponent<Tools>().Use(obj);
+            PD.inToolHand.GetComponent<Tool>().Use(obj);
     }
     private void PickUpObject(GameObject obj)
     {
