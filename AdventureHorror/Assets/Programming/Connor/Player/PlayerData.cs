@@ -30,7 +30,8 @@ public class PlayerData : ScriptableObject
     public float throwForce = 20;
 
     [Header("Camera Variables")]
-    public float mouseSensitivity = 33;
+    [Range(0, 1)]
+    public float mouseSensitivity = .1f;
     public float InteractRange = 3;
     public Canvas HUD;
   
