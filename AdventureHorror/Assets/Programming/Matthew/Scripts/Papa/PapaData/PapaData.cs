@@ -17,19 +17,24 @@ public class PapaData : ScriptableObject
 
 
     [Header("Sight Variables")]
-    
     [Range(0, 360)]
     public float angle;
-
-    public float radius;
-    public LayerMask targetLayer;
-    public LayerMask occlusionLayers;
+    [Range(0, 5)]
+    public float catchRange = 3;
     public bool canSeeTarget;
     public bool isAgro = false;
+    public float radius;
+
+    [HideInInspector]
+    public LayerMask targetLayer;
+    public LayerMask occlusionLayers;
     public Vector3 adjustCone;
+    
 
     [Header("Movement")]
+    [Range(0,12)]
     public float papaBaseSpeed = 3.5f;
+    [Range(0,5)]
     public float chaseSpeedMultiplier = 2f;
     public int timesSearched = 0;
     public LayerMask searchNodeLayer;

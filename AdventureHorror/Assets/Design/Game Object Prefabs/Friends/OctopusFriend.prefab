@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9022567266644793051}
   - component: {fileID: 7698867282618959714}
-  - component: {fileID: 9068360473221516965}
   - component: {fileID: 4121369499083089040}
+  - component: {fileID: 6684735444484786973}
   m_Layer: 0
   m_Name: OctopusFriend
   m_TagString: Friend
@@ -50,19 +50,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &9068360473221516965
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313924328121290966}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.76983315, y: 0.6063808, z: 0.80139464}
-  m_Center: {x: 0.006278068, y: 0.25441247, z: 0.004337698}
 --- !u!114 &4121369499083089040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +64,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   friendType: 1
   friendAnimator: {fileID: 1558867700169372710}
+--- !u!64 &6684735444484786973
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313924328121290966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6031396616607451065, guid: e604f9fc06b87a144a9f6dee48407fc9, type: 3}
 --- !u!1001 &4956387603766856119
 PrefabInstance:
   m_ObjectHideFlags: 0
