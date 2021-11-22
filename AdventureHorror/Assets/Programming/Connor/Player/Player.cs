@@ -89,8 +89,8 @@ public class Player : MonoBehaviour
     public void OnMouseLook(InputAction.CallbackContext context)
     {
 
-        mouseX = context.ReadValue<Vector2>().x * PD.mouseSensitivity * Time.deltaTime;
-        mouseY = context.ReadValue<Vector2>().y * PD.mouseSensitivity * Time.deltaTime;
+        mouseX = context.ReadValue<Vector2>().x * PD.mouseSensitivity;
+        mouseY = context.ReadValue<Vector2>().y * PD.mouseSensitivity;
     }
     public void OnHorizontalMove(InputAction.CallbackContext context)
     {
