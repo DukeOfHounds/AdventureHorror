@@ -15,6 +15,7 @@ public class PP_Movement
     private float blindsight = 10f;
     private GameObject currentWire;
     private bool fixingWires = false;
+    
 
     public enum State
     { StartSearch, Search, Chase, ResetWires, Respawn, Despawn };
@@ -225,7 +226,7 @@ public class PP_Movement
                 currentState = State.StartSearch;
             }
         }
-        if (distanceToPlayer.magnitude < 3)
+        if (distanceToPlayer.magnitude < papaData.catchRange)
         {
             TryAttack();
             if(papa.pD.isHiding)

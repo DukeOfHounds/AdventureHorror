@@ -21,9 +21,12 @@ public class PlayerData : ScriptableObject
 
 
     [Header("Movment Variables")]
+    [Range(0,20)]
     public float speed = 12f; // speed at which the player moves by default. 
+    [Range(0, 10)]
     public float jumpHeight = 3f;
     public float gravity = -9.81f;
+    [Range(0, 100)]
     public float throwForce = 20;
 
     [Header("Camera Variables")]

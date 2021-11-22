@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class LightManager : MonoBehaviour
 {
+    [SerializeField]
+    [Header("Settings")]
     public float defaltIntensity = 10;
+    [Range(0,200)]
+    public float currentIntesity = 0;
+    private float setIntensity;
+
     public GameObject[] Lights;
+
+    private void Update()
+    {
+        if (currentIntesity != 0 && currentIntesity != setIntensity)
+        {
+            setIntensity = currentIntesity;
+            changeLightInt(currentIntesity);
+        }
+    }
     public void Awake()
     {
+        setIntensity = defaltIntensity;
+        currentIntesity = defaltIntensity;
         Lights = GameObject.FindGameObjectsWithTag("PoweredLight");
-        foreach(GameObject light in Lights)
-        {
-            light.GetComponent<Light>().intensity = defaltIntensity;
-        }
+        changeLightInt(defaltIntensity);
     }
 
     public void changeLightInt(float intensity)
@@ -21,5 +35,14 @@ public class LightManager : MonoBehaviour
         {
             light.GetComponent<Light>().intensity = intensity;
         }
+    }
+
+    public void PowerOff()
+    {
+        changeLightInt(0);
+    }
+    public void PowerOn()
+    {
+        changeLightInt(currentIntesity);
     }
 }
