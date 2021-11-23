@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
 
     public PlayerData PD;
+    public PapaData ppD;
     // public P_Input input;
     public P_Movment movment;
     public P_Inventory inventory;

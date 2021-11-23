@@ -30,10 +30,18 @@ public class HidingPlace : MonoBehaviour
         if (!isHiding)
         {
             StartCoroutine(Hide());
+            if (PD.player.ppD.canSeeTarget)
+            {
+                PD.player.ppD.sawHiding = true;
+            }
         }
         else
         {
             StartCoroutine(Unhide());
+            if (PD.player.ppD.canSeeTarget)
+            {
+                PD.player.ppD.sawHiding = false;
+            }
         }
     }
     IEnumerator Unhide()

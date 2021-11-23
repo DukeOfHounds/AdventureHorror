@@ -201,6 +201,7 @@ public class PP_Movement
     private void Chase()
     {
         Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
+        searchNodes.Clear();
         cSNode = null;
         timesSearched = 0;
         if (papaData.canSeeTarget)
@@ -228,7 +229,6 @@ public class PP_Movement
         }
         if (distanceToPlayer.magnitude < papaData.catchRange)
         {
-            TryAttack();
             if(papa.pD.isHiding)
             {
                 //if(sawPlayerHiding)
@@ -236,6 +236,8 @@ public class PP_Movement
 
                 }
             }
+            else
+                TryAttack();
         }
         else
         {
