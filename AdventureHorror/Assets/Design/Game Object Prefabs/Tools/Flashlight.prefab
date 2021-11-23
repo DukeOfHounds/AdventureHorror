@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightIntensity: 0
+  audioManager: {fileID: 0}
 --- !u!136 &1719489417817221765
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -121,8 +122,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 15
-  m_Range: 15
+  m_Intensity: 20
+  m_Range: 30.009193
   m_SpotAngle: 106.121414
   m_InnerSpotAngle: 59.566353
   m_CookieSize: 10

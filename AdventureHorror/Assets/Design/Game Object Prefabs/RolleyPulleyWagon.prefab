@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7823257653530152575}
   - component: {fileID: 1918680626133907782}
   - component: {fileID: 3531739903005213073}
+  - component: {fileID: 8746208507305721156}
   m_Layer: 0
   m_Name: Wheels_B
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8746208507305721156
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465775183182332141}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2915926411232145374, guid: ee5b16d803254b041a83a73c6fb889ef, type: 3}
 --- !u!1 &3844723749255597022
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +108,7 @@ GameObject:
   - component: {fileID: 7626927949766193842}
   - component: {fileID: 6246591192625199775}
   - component: {fileID: 3127857412673407279}
+  - component: {fileID: 423198137472098468}
   m_Layer: 0
   m_Name: Wagon
   m_TagString: Untagged
@@ -164,6 +180,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &423198137472098468
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844723749255597022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6299455910856566172, guid: ee5b16d803254b041a83a73c6fb889ef, type: 3}
 --- !u!1 &3932822592261965964
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +205,7 @@ GameObject:
   - component: {fileID: 4469690631417110571}
   - component: {fileID: 8870926465647935904}
   - component: {fileID: 1881776272369164650}
+  - component: {fileID: 3067754425679690258}
   m_Layer: 0
   m_Name: Wheels_A
   m_TagString: Untagged
@@ -246,6 +277,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3067754425679690258
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932822592261965964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6500198787941873851, guid: ee5b16d803254b041a83a73c6fb889ef, type: 3}
 --- !u!1 &6367472574196543072
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +300,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5987006004069840090}
-  - component: {fileID: 3719692955820782269}
   - component: {fileID: 9077852988031137344}
   m_Layer: 0
   m_Name: RolleyPulleyWagon
@@ -281,20 +325,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &3719692955820782269
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6367472574196543072}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!54 &9077852988031137344
 Rigidbody:
   m_ObjectHideFlags: 0

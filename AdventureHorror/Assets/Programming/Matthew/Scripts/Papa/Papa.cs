@@ -14,6 +14,7 @@ public class Papa : MonoBehaviour
     public Animator animator;
     public bool waiting;
 
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,7 +30,7 @@ public class Papa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ppM.currentState);
+        //Debug.Log(ppM.currentState);
         if (ppD.isActive)
         {
             los.LineOfSightCheck();
@@ -72,8 +73,8 @@ public class Papa : MonoBehaviour
     {
 
         agent.Warp(spawnPoint);
-        Debug.Log("Teleport wooosh wooosh wooosh");
-        Debug.Log(spawnPoint);
+        //Debug.Log("Teleport wooosh wooosh wooosh");
+        //Debug.Log(spawnPoint);
     }
 
 }

@@ -21,13 +21,17 @@ public class PlayerData : ScriptableObject
 
 
     [Header("Movment Variables")]
+    [Range(0,20)]
     public float speed = 12f; // speed at which the player moves by default. 
+    [Range(0, 10)]
     public float jumpHeight = 3f;
     public float gravity = -9.81f;
+    [Range(0, 100)]
     public float throwForce = 20;
 
     [Header("Camera Variables")]
-    public float mouseSensitivity = 33;
+    [Range(0, 1)]
+    public float mouseSensitivity = .1f;
     public float InteractRange = 3;
     public Canvas HUD;
   
@@ -42,5 +46,5 @@ public class PlayerData : ScriptableObject
     public Transform hand;
     public Transform toolHand;
     public AudioManager audioManager;
-
+    public HidingPlace hidingPlace;
 }

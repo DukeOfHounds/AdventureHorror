@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: ec01b87a22d58494c804d849e76fa776
   - enabled: 1
-    path: Assets/Scenes/Connor'sDemoScene.unity
+    path: Assets/Scenes/Connor/Connor.unity
     guid: a037bbdedaa3e8240aa584ed438aaa5e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d66b49d13c36f7a4783b016f4150dad1, type: 2}

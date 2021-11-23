@@ -9,6 +9,7 @@ public class Panel : RemovableObjects
     private Animator panelAnimator;
     public VentPortal VentPortal;
     public string neededTool = "none";
+    public AudioSource PanelSound;
     private bool removed = false;
 
     public void Awake()
@@ -25,7 +26,7 @@ public class Panel : RemovableObjects
             if (!removed)
             {
                 removed = true;
-                FindObjectOfType<AudioManager>().Play("vent_grate_3");
+                PanelSound.Play();
                 StartCoroutine(DropPanel());
             }
 

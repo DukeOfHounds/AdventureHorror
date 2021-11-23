@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WireCutter : Tools
+public class WireCutter : Tool
 {
     private Animator wireAnimator;
     private Animator wireCutterAnimator;

@@ -15,6 +15,7 @@ public class PP_Movement
     private float blindsight = 10f;
     private GameObject currentWire;
     private bool fixingWires = false;
+    
 
     public enum State
     { StartSearch, Search, Chase, ResetWires, Respawn, Despawn };
@@ -200,6 +201,7 @@ public class PP_Movement
     private void Chase()
     {
         Vector3 distanceToPlayer = paparef.transform.position - papa.pD.player.gameObject.transform.position;
+        searchNodes.Clear();
         cSNode = null;
         timesSearched = 0;
         if (papaData.canSeeTarget)
@@ -225,16 +227,21 @@ public class PP_Movement
                 currentState = State.StartSearch;
             }
         }
-        if (distanceToPlayer.magnitude < 3)
+        if (distanceToPlayer.magnitude < papaData.catchRange)
         {
-            TryAttack();
             if(papa.pD.isHiding)
             {
-                //if(sawPlayerHiding)
+                if(papaData.sawHiding)
                 {
-
+                    if (distanceToPlayer.magnitude < 5)
+                    {
+                        papa.pD.hidingPlace.interactWith(papa.pD);
+                        TryAttack();
+                    }
                 }
             }
+            else
+                TryAttack();
         }
         else
         {

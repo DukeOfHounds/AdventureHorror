@@ -37,6 +37,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+
+
+        // instaniate new sound object, parent it to whatever calls this function?
+
     }
     public void Stop(string name)
     {

@@ -27,7 +27,7 @@ public class P_Interact
                     rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
                     if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
                     {
-                        Debug.Log("displaying tool " + rm.NeededTool());
+                        //Debug.Log("displaying tool " + rm.NeededTool());
                         PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
                     }
                     break;
@@ -62,17 +62,36 @@ public class P_Interact
                     Manipulate(hit.collider.gameObject);
                     break;
                 case "Removable":
-                    Debug.Log("hit removable");
+                    //Debug.Log("hit removable");
                     RemoveObject(hit.collider.gameObject);
                     break;
                 case "Vent":
                     EnterVent(hit.collider.gameObject);
                     break;
                 case "Tool":
-                    Debug.Log(hit.collider.gameObject.tag);
+                    //Debug.Log(hit.collider.gameObject.tag);
                     AddTool(hit.collider.gameObject);
                     break;
+                case "Friend":
+                    Debug.Log(hit.collider.gameObject.tag);
+                    PickUpObject(hit.collider.gameObject);
+                    try
+                    {
+                        if (PD.inHand == null)
+                        {
+                            AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+                        }
+                    }
+                    catch
+                    {
+                        Debug.LogWarning("Friend Has No tool");
+                    }
+                    break;
                 default:
+                    if (PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
+                    {
+                        PD.inHand.GetComponent<Flashlight>().Use();
+                    }
                     break;
             }
         }
@@ -94,7 +113,7 @@ public class P_Interact
     private void Manipulate(GameObject obj)
     {
         if (PD.inToolHand != null)
-            PD.inToolHand.GetComponent<Tools>().Use(obj);
+            PD.inToolHand.GetComponent<Tool>().Use(obj);
     }
     private void PickUpObject(GameObject obj)
     {
