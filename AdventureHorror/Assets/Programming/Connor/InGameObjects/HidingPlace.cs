@@ -32,7 +32,7 @@ public class HidingPlace : MonoBehaviour
     {
         PD.hidingPlace = this;
         this.PD = PD;
-
+        Debug.Log("something interacted with me.");
         if (!isHiding)
         {
             PlayHideSounds();

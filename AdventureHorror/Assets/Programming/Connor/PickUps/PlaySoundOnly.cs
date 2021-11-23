@@ -26,7 +26,7 @@ public class PlaySoundOnly : MonoBehaviour
                 random = Random.Range(0, collisionSounds.Count - 1);
             }
         }
-        Debug.Log(collisionSounds[random]);
+        //Debug.Log(collisionSounds[random]);
         currentSound = collisionSounds[random].clip;
         if (!s1.isPlaying)
         {
