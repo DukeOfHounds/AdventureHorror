@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
 
     public PlayerData PD;
+    public PapaData ppD;
     // public P_Input input;
     [HideInInspector]
     public P_Movment movment;
