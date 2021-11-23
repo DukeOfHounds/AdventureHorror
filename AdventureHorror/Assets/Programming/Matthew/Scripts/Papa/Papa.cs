@@ -30,7 +30,7 @@ public class Papa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ppM.currentState);
+        //Debug.Log(ppM.currentState);
         if (ppD.isActive)
         {
             los.LineOfSightCheck();

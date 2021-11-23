@@ -3731,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 248612052284363496, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 252146990636882765, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Convex
@@ -4039,7 +4039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631156652483923028, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 638787484635135572, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -7669,6 +7669,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5107047063690812002, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5112289399145623684, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -9387,7 +9391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203607919709495613, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7215219669241186853, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Convex
@@ -9695,7 +9699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7514596573752213377, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7520113964731947222, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_NavMeshLayer
@@ -10671,7 +10675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8689384731038163354, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8691983198776409499, guid: 211d5e6e8fe95804dbd8388b556e859d, type: 3}
       propertyPath: m_Convex
@@ -17951,6 +17955,10 @@ PrefabInstance:
     - target: {fileID: 5400359393325393671, guid: 891f3b19fc9a09c4abd37aecdeb01403, type: 3}
       propertyPath: m_Name
       value: RingToss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382273050486750851, guid: 891f3b19fc9a09c4abd37aecdeb01403, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 891f3b19fc9a09c4abd37aecdeb01403, type: 3}
