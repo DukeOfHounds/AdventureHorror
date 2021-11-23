@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlaySoundOnly : MonoBehaviour
 {
-    AudioSource source;
+    public AudioSource s1;
+    public AudioSource s2;
+    public AudioSource s3;
     AudioClip currentSound;
     public List<SoundStruct> collisionSounds;
     bool clipPlaying;
@@ -12,8 +14,7 @@ public class PlaySoundOnly : MonoBehaviour
 
     void Start()
     {
-        
-        source = GetComponent<AudioSource>();
+        //s1 = GetComponent<AudioSource>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,17 +28,24 @@ public class PlaySoundOnly : MonoBehaviour
         }
         Debug.Log(collisionSounds[random]);
         currentSound = collisionSounds[random].clip;
-        if (!source.isPlaying)
+        if (!s1.isPlaying)
         {
-            source.clip = currentSound;
-            source.time = .2f;
-            source.Play();
+            s1.clip = currentSound;
+            s1.time = .2f;
+            s1.Play();
         }
-        else
+        else if (!s2.isPlaying)
+        {            
+            s2.clip = currentSound;
+            s2.time = .2f;
+            s2.Play();
+        }
+        else if (!s3.isPlaying)
         {
-            source.clip = currentSound;
-            AudioSource temp = source;
-            temp.Play();
+            s3.clip = currentSound;
+            s3.time = .2f;
+            s3.Play();
         }
+
     }
 }
