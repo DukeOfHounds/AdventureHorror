@@ -8,6 +8,10 @@ public class HidingPlace : MonoBehaviour
     public Transform exitSpot;
     private Vector3 exitposition;
     private Vector3 hidingposition;
+    public AudioSource heartBeat;
+    public AudioSource activeBreath;
+    public AudioSource inactiveBreath;
+
     private PlayerData PD;
     float timeMultiplier = 0.4f;
 
@@ -29,6 +33,7 @@ public class HidingPlace : MonoBehaviour
 
         if (!isHiding)
         {
+            PlayHideSounds();
             StartCoroutine(Hide());
             if (PD.player.ppD.canSeeTarget)
             {
@@ -38,6 +43,8 @@ public class HidingPlace : MonoBehaviour
         else
         {
             StartCoroutine(Unhide());
+            StartCoroutine(StopHideSounds());
+
             if (PD.player.ppD.canSeeTarget)
             {
                 PD.player.ppD.sawHiding = false;
@@ -85,9 +92,33 @@ public class HidingPlace : MonoBehaviour
         {
             PD.player.gameObject.transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
             time += Time.deltaTime;
-            yield return null; 
+            yield return null;
+            yield return null;
         }
         PD.player.gameObject.transform.position = targetPosition;
     }
+    public void PlayHideSounds()
+    {
 
+        door.PlaySound();
+        activeBreath.loop = true;
+        heartBeat.loop = true;
+        Debug.Log("active Breathing exercies is: " + activeBreath.isPlaying);
+        if (!activeBreath.isPlaying)
+            activeBreath.Play();
+        Debug.Log("active Breathing exercies is: " + activeBreath.isPlaying);
+        if (!heartBeat.isPlaying)
+            heartBeat.Play();
+
+    }
+    IEnumerator StopHideSounds()
+    {
+
+        door.PlaySound();
+        activeBreath.loop = false;
+        heartBeat.loop = false;
+        activeBreath.Stop();
+        inactiveBreath.Play();
+        yield return new WaitForSeconds(0f);
+    }
 }
