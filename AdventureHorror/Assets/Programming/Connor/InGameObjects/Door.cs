@@ -94,7 +94,7 @@ public class Door : MonoBehaviour
         canOpenOrClose = true;
         collider.enabled = true;
     }
-    IEnumerator PlaySound()
+    public IEnumerator PlaySound()
     {
         if (sound.isPlaying)
         {
