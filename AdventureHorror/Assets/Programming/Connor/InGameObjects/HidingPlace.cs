@@ -23,12 +23,14 @@ public class HidingPlace : MonoBehaviour
         door = GetComponent<Door>();
         exitposition = exitSpot.position;
         hidingposition = hidingSpot.position;
+
     }
 
 
 
     public void interactWith(PlayerData PD)
     {
+        PD.hidingPlace = this;
         this.PD = PD;
 
         if (!isHiding)
