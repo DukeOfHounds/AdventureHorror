@@ -2,21 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySoundOnly : MonoBehaviour
+public class DeathSounds : MonoBehaviour
 {
     public AudioSource s1;
     public AudioSource s2;
     public AudioSource s3;
     AudioClip currentSound;
     public List<SoundStruct> collisionSounds;
-    bool clipPlaying;
-    int index;
 
-    void Start()
-    {
-        //s1 = GetComponent<AudioSource>();
-    }
-    private void OnCollisionEnter(Collision collision)
+    public void PlayDeathSound()
     {
         int random = Random.Range(0, collisionSounds.Count - 1);
         if (collisionSounds.Count > 1)
@@ -26,7 +20,7 @@ public class PlaySoundOnly : MonoBehaviour
                 random = Random.Range(0, collisionSounds.Count - 1);
             }
         }
-        //Debug.Log(collisionSounds[random]);
+        Debug.Log(collisionSounds[random]);
         currentSound = collisionSounds[random].clip;
         if (!s1.isPlaying)
         {
@@ -46,6 +40,6 @@ public class PlaySoundOnly : MonoBehaviour
             s3.time = .2f;
             s3.Play();
         }
-
     }
+
 }

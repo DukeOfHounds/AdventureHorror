@@ -22,6 +22,7 @@ public class PapaData : ScriptableObject
     [Range(0, 5)]
     public float catchRange = 3;
     public bool canSeeTarget;
+    public bool sawHiding;
     public bool isAgro = false;
     public float radius;
 

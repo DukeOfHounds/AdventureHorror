@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5609591372367969388}
   - component: {fileID: 5664253109704246974}
   - component: {fileID: 7166041040035153278}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: DoubleDoor
   m_TagString: Door
   m_Icon: {fileID: 0}

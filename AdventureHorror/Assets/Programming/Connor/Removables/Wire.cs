@@ -9,6 +9,7 @@ public class Wire : RemovableObjects
     public Color color;
     public MeshRenderer cutWireMeshRender;
     public AudioSource ZapSound;
+    public AudioSource SnipSound;
     public string neededTool = "WireCutter";
     public bool isCut = false;
     public override string NeededTool()
@@ -32,6 +33,7 @@ public class Wire : RemovableObjects
     }
     public override void Remove()
     {
+        SnipSound.Play();
         Debug.Log("removing wire");
         isCut = true;
         meshRenderer.enabled = false;

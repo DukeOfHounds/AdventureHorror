@@ -19,11 +19,15 @@ public class Player : MonoBehaviour
     public GameObject deathMenu;
 
 
+
     public PlayerData PD;
+    public PapaData ppD;
     // public P_Input input;
+    [HideInInspector]
     public P_Movment movment;
     public P_Inventory inventory;
     public P_Interact interact;
+    public DeathSounds deathsounds;
     public bool dead = false;
 
 
@@ -32,6 +36,7 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+        deathsounds = GetComponent<DeathSounds>();
         PD.audioManager = FindObjectOfType<AudioManager>();
         PD.inToolHand = null;
         PD.inHand = null;
@@ -74,6 +79,7 @@ public class Player : MonoBehaviour
     {
         if (!dead)
         {
+            deathsounds.PlayDeathSound();
             dead = true;
             Instantiate(deathMenu);
             deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);  

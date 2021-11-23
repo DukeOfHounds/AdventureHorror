@@ -23,24 +23,34 @@ public class HidingPlace : MonoBehaviour
         door = GetComponent<Door>();
         exitposition = exitSpot.position;
         hidingposition = hidingSpot.position;
+
     }
 
 
 
     public void interactWith(PlayerData PD)
     {
+        PD.hidingPlace = this;
         this.PD = PD;
-
+        Debug.Log("something interacted with me.");
         if (!isHiding)
         {
             PlayHideSounds();
             StartCoroutine(Hide());
+            if (PD.player.ppD.canSeeTarget)
+            {
+                PD.player.ppD.sawHiding = true;
+            }
         }
         else
         {
             StartCoroutine(Unhide());
             StartCoroutine(StopHideSounds());
 
+            if (PD.player.ppD.canSeeTarget)
+            {
+                PD.player.ppD.sawHiding = false;
+            }
         }
     }
     IEnumerator Unhide()
@@ -85,6 +95,7 @@ public class HidingPlace : MonoBehaviour
             PD.player.gameObject.transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
             time += Time.deltaTime;
             yield return null;
+            yield return null;
         }
         PD.player.gameObject.transform.position = targetPosition;
     }
@@ -110,6 +121,6 @@ public class HidingPlace : MonoBehaviour
         heartBeat.loop = false;
         activeBreath.Stop();
         inactiveBreath.Play();
-        yield return new  WaitForSeconds(0f);
+        yield return new WaitForSeconds(0f);
     }
 }

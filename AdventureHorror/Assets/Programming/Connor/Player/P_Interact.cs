@@ -27,7 +27,7 @@ public class P_Interact
                     rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
                     if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
                     {
-                        Debug.Log("displaying tool " + rm.NeededTool());
+                        //Debug.Log("displaying tool " + rm.NeededTool());
                         PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
                     }
                     break;
@@ -77,7 +77,10 @@ public class P_Interact
                     PickUpObject(hit.collider.gameObject);
                     try
                     {
-                        AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+                        if (PD.inHand == null)
+                        {
+                            AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+                        }
                     }
                     catch
                     {
@@ -85,6 +88,10 @@ public class P_Interact
                     }
                     break;
                 default:
+                    if (PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
+                    {
+                        PD.inHand.GetComponent<Flashlight>().Use();
+                    }
                     break;
             }
         }
