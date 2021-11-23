@@ -1175,6 +1175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecurityCRT
       objectReference: {fileID: 0}
+    - target: {fileID: 8756395128833201754, guid: 20703c6c9923b4541a772f12f39e351f, type: 3}
+      propertyPath: m_TagString
+      value: PickUpAble
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20703c6c9923b4541a772f12f39e351f, type: 3}
 --- !u!1001 &699995327

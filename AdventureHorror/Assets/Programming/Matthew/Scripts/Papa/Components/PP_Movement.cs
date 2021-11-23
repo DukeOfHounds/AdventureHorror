@@ -46,7 +46,7 @@ public class PP_Movement
 
     public void HandleMovement()
     {
-
+        Debug.Log(papaData.sawHiding);
         if (papaData.canSeeTarget)
         {
             currentState = State.Chase;
@@ -204,6 +204,12 @@ public class PP_Movement
         searchNodes.Clear();
         cSNode = null;
         timesSearched = 0;
+        if (papa.pD.isHiding && papaData.sawHiding && distanceToPlayer.magnitude < 10)
+        {
+            papa.pD.hidingPlace.interactWith(papa.pD);
+            TryAttack();
+
+        }
         if (papaData.canSeeTarget)
             papaData.currentDest = papaData.targetLastSeen;
         if (!papaData.canSeeTarget)
@@ -227,20 +233,10 @@ public class PP_Movement
                 currentState = State.StartSearch;
             }
         }
+
         if (distanceToPlayer.magnitude < papaData.catchRange)
         {
-            if(papa.pD.isHiding)
-            {
-                if(papaData.sawHiding)
-                {
-                    if (distanceToPlayer.magnitude < 5)
-                    {
-                        papa.pD.hidingPlace.interactWith(papa.pD);
-                        TryAttack();
-                    }
-                }
-            }
-            else
+            if(!papa.pD.isHiding)
                 TryAttack();
         }
         else

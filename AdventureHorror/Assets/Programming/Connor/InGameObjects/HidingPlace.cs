@@ -30,6 +30,7 @@ public class HidingPlace : MonoBehaviour
 
     public void interactWith(PlayerData PD)
     {
+        Debug.Log("Door Thingi");
         PD.hidingPlace = this;
         this.PD = PD;
 
