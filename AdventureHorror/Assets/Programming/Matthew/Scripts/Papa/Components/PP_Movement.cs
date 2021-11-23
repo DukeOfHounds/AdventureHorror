@@ -231,9 +231,13 @@ public class PP_Movement
         {
             if(papa.pD.isHiding)
             {
-                //if(sawPlayerHiding)
+                if(papaData.sawHiding)
                 {
-
+                    if (distanceToPlayer.magnitude < 5)
+                    {
+                        papa.pD.hidingPlace.interactWith(papa.pD);
+                        TryAttack();
+                    }
                 }
             }
             else

@@ -17376,7 +17376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3898064118609060924, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -52
+      value: -133.72
       objectReference: {fileID: 0}
     - target: {fileID: 3898064118609060924, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18064,6 +18064,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 650447697860333709, guid: 045658ad33ccd13489a965c0139c0540, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 650447697860333709, guid: 045658ad33ccd13489a965c0139c0540, type: 3}
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
@@ -18118,6 +18122,10 @@ PrefabInstance:
     - target: {fileID: 3238395863134727782, guid: 045658ad33ccd13489a965c0139c0540, type: 3}
       propertyPath: m_Name
       value: chalkboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238395863134727782, guid: 045658ad33ccd13489a965c0139c0540, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8705753645265068350, guid: 045658ad33ccd13489a965c0139c0540, type: 3}
       propertyPath: m_Convex
