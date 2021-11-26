@@ -206,8 +206,9 @@ public class PP_Movement
         timesSearched = 0;
         if (papa.pD.isHiding && papaData.sawHiding && distanceToPlayer.magnitude < 10)
         {
+            papa.StopMovement(2f);
             papa.pD.hidingPlace.interactWith(papa.pD);
-            TryAttack();
+            //TryAttack();
 
         }
         if (papaData.canSeeTarget)
