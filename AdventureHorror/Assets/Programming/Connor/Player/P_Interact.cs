@@ -35,7 +35,9 @@ public class P_Interact
                     break;
 
             }
-        else PD.inventory.HideTool();
+        else if (!PD.inToolHand.GetComponent<Tool>().IsTool().Equals("Flashlight")) {
+            PD.inventory.HideTool();
+        }
     }
 
     public void Interact()
@@ -45,7 +47,7 @@ public class P_Interact
         Physics.Raycast(ray, out hit, PD.InteractRange);// finds what is infront of the player
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
             switch (hit.collider.tag) //determins if hit is interactable
             {
                 //case "Door":
@@ -77,10 +79,9 @@ public class P_Interact
                     PickUpObject(hit.collider.gameObject);
                     try
                     {
-                        if (PD.inHand == null)
-                        {
+                        
                             AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
-                        }
+                        
                     }
                     catch
                     {
@@ -112,8 +113,8 @@ public class P_Interact
     }
     private void Manipulate(GameObject obj)
     {
-        if (PD.inToolHand != null)
-            PD.inToolHand.GetComponent<Tool>().Use(obj);
+        if (PD.inventory.hasTool(obj.GetComponent<RemovableObjects>().NeededTool()))
+            PD.inventory.getTool(obj.GetComponent<RemovableObjects>().NeededTool()).GetComponent<Tool>().Use(obj);
     }
     private void PickUpObject(GameObject obj)
     {
