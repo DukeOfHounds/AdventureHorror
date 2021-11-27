@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         PD.isHiding = false;
         PD.inHand = null;
         Instantiate(PD.HUD);
-
+ 
 
     }
 
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
             deathsounds.PlayDeathSound();
             dead = true;
             Instantiate(deathMenu);
-            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);
+            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);  
             Cursor.visible = true;
         }
     }
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
     }
     public void OnLeftClick(InputAction.CallbackContext context)
     {
-        if (context.performed)// please work 
+        if(context.performed)// please work 
             interact.Interact();
 
     }
@@ -126,26 +126,6 @@ public class Player : MonoBehaviour
             interact.ThrowHandObj();
         }
 
-    }
-    public void UseFlashlight(InputAction.CallbackContext context)
-    {
-        Debug.Log("flashlight Activate");
-        if (inventory.hasTool("Flashlight"))
-        {
-            Flashlight flahslight = inventory.getTool("Flashlight").GetComponent<Flashlight>();
-            if (inventory.GetDisplayedTool() == null)// don't want to display multiple tools at the same time. 
-            {
-                flahslight.Use(this.gameObject);//ignore input object, it is not used
-                if (PD.inToolHand != null)
-                    inventory.HideTool();
-                else
-                    inventory.DisplayTool("Flashlight");
-            }
-            else
-            {
-                flahslight.Use(this.gameObject);//ignore input object, it is not used
-            }
-        }
     }
     #endregion
 

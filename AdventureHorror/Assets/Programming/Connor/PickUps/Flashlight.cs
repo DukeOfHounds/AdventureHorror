@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Flashlight : Tool
+public class Flashlight : MonoBehaviour
 {
     private Light light;
     public float lightIntensity;
     public AudioManager audioManager;
-    private string isTool = "Flashlight";
     public void Use()
     {
         Sound s = Array.Find(audioManager.sounds, sound => sound.name == "flash_on_1");
-        //Debug.Log(lightIntensity);
-        if (light.intensity == 0) // if flashlight is off
+            //Debug.Log(lightIntensity);
+            if (light.intensity == 0) // if flashlight is off
         {
 
-
+           
             if (!s.source.isPlaying)
                 audioManager.Play("flash_on_1");
-            // light.intensity = lightIntensity;
+           // light.intensity = lightIntensity;
             StartCoroutine(LightIntensity(lightIntensity));// turns flashlight on
 
         }
@@ -44,19 +43,9 @@ public class Flashlight : Tool
         light.intensity = 0; // turns off flashlight at start
     }
 
-    IEnumerator LightIntensity(float intensity)
+    IEnumerator LightIntensity( float intensity)
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new  WaitForSeconds(.5f);
         light.intensity = intensity;
-    }
-
-    public override void Use(GameObject obj)
-    {
-        Use();
-    }
-
-    public override string IsTool()
-    {
-        return isTool;
     }
 }

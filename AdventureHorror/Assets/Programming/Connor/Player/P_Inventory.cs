@@ -10,7 +10,6 @@ public class P_Inventory
     private Vector3 rotation = new Vector3(0, 0, 0);
     private MeshRenderer mr;
     private bool toolHidden = true;
-    private Tool displayedTool = null;
 
     public P_Inventory(PlayerData PD)
     {
@@ -32,31 +31,15 @@ public class P_Inventory
     }
     public void DisplayTool(string toolName)
     {
-        if (displayedTool != null && displayedTool.IsTool().Equals("Flashlight"))
+        foreach (GameObject tool in PD.tools)
         {
-            foreach (GameObject tool in PD.tools)
+            Tool t = tool.GetComponent<Tool>();
+            if (t.IsTool().Equals(toolName))
             {
-                Tool t = tool.GetComponent<Tool>();
-                if (t.IsTool().Equals(toolName))
-                {
-                    PD.inToolHand = tool;
-                   
-                }
-            }
-        }
-        else
-        {
-            foreach (GameObject tool in PD.tools)
-            {
-                Tool t = tool.GetComponent<Tool>();
-                if (t.IsTool().Equals(toolName))
-                {
-                    mr = tool.GetComponentInChildren<MeshRenderer>();
-                    PD.inToolHand = tool;
-                    mr.enabled = true;
-                    toolHidden = false;
-                    displayedTool = t;
-                }
+                mr = tool.GetComponentInChildren<MeshRenderer>();
+                PD.inToolHand = tool;
+                mr.enabled = true;
+                toolHidden = false;
             }
         }
     }
@@ -67,7 +50,6 @@ public class P_Inventory
             mr.enabled = false;
             PD.inToolHand = null;
             toolHidden = true;
-            displayedTool = null;
         }
     }
 
@@ -83,22 +65,5 @@ public class P_Inventory
             }
         }
         return false;
-    }
-    public Tool getTool(string toolName)
-    {
-        foreach (GameObject tool in PD.tools)
-        {
-            Tool t = tool.GetComponent<Tool>();
-            if (t.IsTool().Equals(toolName))
-            {
-                return t;
-
-            }
-        }
-        return null;
-    }
-    public Tool GetDisplayedTool()
-    {
-        return displayedTool;
     }
 }

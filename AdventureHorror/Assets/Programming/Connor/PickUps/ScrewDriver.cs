@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScrewDriver : Tool
 {
     private Animator screwDriverAnimator;
-    private string isTool = "ScrewDriver";
+    public string isTool = "WireCutter";
 
     private void Awake()
     {
