@@ -13,7 +13,7 @@ public class HidingPlace : MonoBehaviour
     public AudioSource inactiveBreath;
 
     private PlayerData PD;
-    float timeMultiplier = 0.4f;
+    float timeMultiplier = 0.2f;
 
     private Door door;
     public bool isHiding;
@@ -33,7 +33,7 @@ public class HidingPlace : MonoBehaviour
         Debug.Log("Door Thingi");
         PD.hidingPlace = this;
         this.PD = PD;
-        Debug.Log("something interacted with me.");
+
         if (!isHiding)
         {
             PlayHideSounds();
@@ -82,7 +82,7 @@ public class HidingPlace : MonoBehaviour
         StartCoroutine(LerpPosition(hidingposition, duration));//Lerp player.transform to hidingPlace.transform
         yield return new WaitForSeconds(1f);
         door.Close();//door closes
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
 
     }
 
