@@ -170,7 +170,7 @@ public class PP_Movement
                     Debug.Log("Hello10");
                     searchNodes.RemoveAt(index);
                     cSNode = null;
-                    papa.StopMovement(2f);
+                    papa.StopMovement(3f);
                 }
                 else
                 {
@@ -206,7 +206,7 @@ public class PP_Movement
         timesSearched = 0;
         if (papa.pD.isHiding && papaData.sawHiding && distanceToPlayer.magnitude < 10)
         {
-            papa.StopMovement(2f);
+            papa.StopMovement(3f);
             papa.pD.hidingPlace.interactWith(papa.pD);
             //TryAttack();
 
@@ -223,6 +223,7 @@ public class PP_Movement
                 Vector3 distanceToWires = paparef.transform.position - papaData.currentDest;
                 if (distanceToWires.magnitude < 3)
                 {
+                    papa.AnimationTrigger(2, "wire");
                     currentWire.GetComponent<Wire>().ResetWires();
                     fixingWires = false;
                     currentState = State.StartSearch;
