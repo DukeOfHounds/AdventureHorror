@@ -155,7 +155,7 @@ public class P_Interact
     public void AddTool(GameObject obj)
     {
 
-        Debug.Log("add tool to hand");
+        Debug.Log("add tool to inventory");
         PD.inventory.AddTool(obj);
         GameObject toolHand = GameObject.Find("ToolHand");
         obj.GetComponentInChildren<MeshRenderer>().enabled = false;// turns it invisible until needed
