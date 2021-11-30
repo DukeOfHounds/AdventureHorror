@@ -17,27 +17,23 @@ public class P_Interact
 
     public void InteractCheck()
     {
-        
+
         Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;// holds data on what is infront of the player
         Physics.Raycast(ray, out hit, PD.InteractRange);// finds what is infront of the player
         if (hit.collider != null)
         {
-           
-            switch (hit.collider.tag) //determins if hit is interactable
+
+            if (hit.collider.tag.Equals("Manipulable")) //determins if hit is Manipulable
             {
-                case "Manipulable":
-                    rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
-                    Debug.Log(PD.inventory.hasTool(rm.NeededTool()) +"" + rm.NeededTool());
-                    if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
-                    {
-                        
-                        PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
-                    }
-                    break;
-                default:
-                    break;
+                rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
+                Debug.Log(PD.inventory.hasTool(rm.NeededTool()) + "" + rm.NeededTool());
+                if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
+                {
+                    PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
+                }
             }
+
         }
         else PD.inventory.HideTool();
     }
@@ -158,14 +154,16 @@ public class P_Interact
         //Debug.Log("add tool to inventory");
         PD.inventory.AddTool(obj);
         GameObject toolHand = GameObject.Find("ToolHand");
+        obj.transform.parent = toolHand.transform;// fixes object to players position/movment
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        //rb.freezeRotation = false;
         obj.GetComponentInChildren<MeshRenderer>().enabled = false;// turns it invisible until needed
         obj.GetComponent<Collider>().enabled = false;// turns off object collisions
-        obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
+        rb.useGravity = false; // turns off object so it can be in hand
         obj.transform.SetPositionAndRotation(player.toolHand.position, PD.cam.transform.rotation);
-        obj.GetComponent<Rigidbody>().freezeRotation = true;
-        obj.GetComponent<Rigidbody>().velocity = rotation;
-        obj.transform.position = player.hand.position; // fixes object to player hand position
-        obj.transform.parent = toolHand.transform;// fixes object to players position/movment
+        rb.freezeRotation = true;
+        rb.velocity = rotation;
+        //obj.transform.position = player.hand.position; // fixes object to player hand position
     }
 
     public void ThrowHandObj()
