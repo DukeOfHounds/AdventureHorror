@@ -27,6 +27,7 @@ public class P_Inventory
 
     public void AddTool(GameObject tool)
     {
+        Debug.Log("you added " + tool + " to your toolbelt");
         PD.tools.Add(tool);
     }
     public void DisplayTool(string toolName)

@@ -17,24 +17,28 @@ public class P_Interact
 
     public void InteractCheck()
     {
+        
         Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;// holds data on what is infront of the player
         Physics.Raycast(ray, out hit, PD.InteractRange);// finds what is infront of the player
         if (hit.collider != null)
+        {
+           
             switch (hit.collider.tag) //determins if hit is interactable
             {
                 case "Manipulable":
                     rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
+                    Debug.Log(PD.inventory.hasTool(rm.NeededTool()) +"" + rm.NeededTool());
                     if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
                     {
-                        //Debug.Log("displaying tool " + rm.NeededTool());
+                        
                         PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
                     }
                     break;
                 default:
                     break;
-
             }
+        }
         else PD.inventory.HideTool();
     }
 
@@ -77,10 +81,10 @@ public class P_Interact
                     PickUpObject(hit.collider.gameObject);
                     try
                     {
-                        if (PD.inHand == null)
-                        {
-                            AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
-                        }
+                        //if (PD.inHand == null)
+                        //{
+                        AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+                        //}
                     }
                     catch
                     {
@@ -151,7 +155,7 @@ public class P_Interact
     public void AddTool(GameObject obj)
     {
 
-        Debug.Log("add tool to hand");
+        Debug.Log("add tool to inventory");
         PD.inventory.AddTool(obj);
         GameObject toolHand = GameObject.Find("ToolHand");
         obj.GetComponentInChildren<MeshRenderer>().enabled = false;// turns it invisible until needed

@@ -8,7 +8,7 @@ public class Screw : RemovableObjects
     private Panel panel;
     AudioSource sound;
     private bool removed;
-    public string neededTool = "ScrewDriver";
+    private string neededTool = "ScrewDriver";
     public override string NeededTool()
     {
         return neededTool;
