@@ -22280,6 +22280,18 @@ PrefabInstance:
       propertyPath: avoidancePriority
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4401976623431633441, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401976623431633441, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401976623431633441, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ac49dfbd3f3f23f4c8dd30ba8d0cbbd5, type: 2}
     - target: {fileID: 5381011661273598010, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
