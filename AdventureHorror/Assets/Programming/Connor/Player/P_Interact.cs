@@ -155,7 +155,7 @@ public class P_Interact
     public void AddTool(GameObject obj)
     {
 
-        Debug.Log("add tool to inventory");
+        //Debug.Log("add tool to inventory");
         PD.inventory.AddTool(obj);
         GameObject toolHand = GameObject.Find("ToolHand");
         obj.GetComponentInChildren<MeshRenderer>().enabled = false;// turns it invisible until needed
@@ -164,7 +164,7 @@ public class P_Interact
         obj.transform.SetPositionAndRotation(player.toolHand.position, PD.cam.transform.rotation);
         obj.GetComponent<Rigidbody>().freezeRotation = true;
         obj.GetComponent<Rigidbody>().velocity = rotation;
-        //obj.transform.position = player.hand.position; // fixes object to player hand position
+        obj.transform.position = player.hand.position; // fixes object to player hand position
         obj.transform.parent = toolHand.transform;// fixes object to players position/movment
     }
 
