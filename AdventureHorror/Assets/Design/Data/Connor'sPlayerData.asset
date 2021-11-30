@@ -20,7 +20,7 @@ MonoBehaviour:
   jumpHeight: 0
   gravity: -9.81
   throwForce: 5
-  mouseSensitivity: 0.1
+  mouseSensitivity: 1
   InteractRange: 3
   HUD: {fileID: 4197089807440806321, guid: 81032fd666b1c844b8068db265b8df9d, type: 3}
   fear: 0
