@@ -15,7 +15,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftLowerLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -23,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -77,7 +78,102 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Papa(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye_buttons
+      parentName: Papa(Clone)
+      position: {x: 0.050071858, y: 5.5890985, z: 0.5886182}
+      rotation: {x: 0.6766303, y: -0.056179125, z: 0.009176292, w: 0.7341193}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Button_5
+      parentName: Eye_buttons
+      position: {x: -0.3608705, y: 0.04214759, z: 0.026265763}
+      rotation: {x: 0.034692116, y: 0.0024288855, z: 0.06979939, w: 0.9969547}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Button_6
+      parentName: Eye_buttons
+      position: {x: 0.2642593, y: -0.023804942, z: -0.018636484}
+      rotation: {x: -1.4849288e-16, y: -7.274498e-18, z: -0.15016401, w: 0.9886611}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pockets
+      parentName: Papa(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pocket_1
+      parentName: Pockets
+      position: {x: -0.8814847, y: 3.0454519, z: 0.5631294}
+      rotation: {x: -0.077564254, y: -0.3104547, z: 0.043091424, w: 0.94643795}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pocket
+      parentName: Pockets
+      position: {x: 0.77970403, y: 3.040906, z: 0.628305}
+      rotation: {x: -0.06520651, y: 0.25010678, z: -0.050853357, w: 0.9646806}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shirt_Buttons
+      parentName: Papa(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Button_4
+      parentName: Shirt_Buttons
+      position: {x: 0.05159562, y: 1.0654095, z: 0.81959414}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Button_2
+      parentName: Shirt_Buttons
+      position: {x: 0.05159562, y: 2.1925707, z: 0.84127086}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Button_1
+      parentName: Shirt_Buttons
+      position: {x: 0.05765326, y: 2.7935662, z: 0.836706}
+      rotation: {x: 0.6803029, y: -0.028258175, z: -0.010908265, w: 0.7323049}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Button_3
+      parentName: Shirt_Buttons
+      position: {x: 0.05159562, y: 1.590016, z: 0.82508314}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Button
+      parentName: Shirt_Buttons
+      position: {x: 0.052100983, y: 3.3424275, z: 0.78911024}
+      rotation: {x: 0.6766303, y: -0.056179125, z: 0.009176292, w: 0.7341193}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pants
+      parentName: Papa(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Good__shirt
+      parentName: Papa(Clone)
+      position: {x: 0.0061609023, y: 3.3572044, z: -0.105957836}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Shoe
+      parentName: Papa(Clone)
+      position: {x: -1.028286, y: -5.5787883, z: -0.32996926}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hair
+      parentName: Papa(Clone)
+      position: {x: 0.026862063, y: 5.8766956, z: -0.67454326}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Face_and_Hands
+      parentName: Papa(Clone)
+      position: {x: -0.766252, y: -0.716545, z: 0.10697292}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eyebrows
+      parentName: Papa(Clone)
+      position: {x: -0.24388413, y: 5.850222, z: 0.77509993}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -88,13 +184,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
