@@ -46,7 +46,7 @@ public class PP_Movement
 
     public void HandleMovement()
     {
-        Debug.Log(papaData.sawHiding);
+        //Debug.Log(papaData.sawHiding);
         if (papaData.canSeeTarget)
         {
             currentState = State.Chase;

@@ -10,7 +10,7 @@ public class Wire : RemovableObjects
     public MeshRenderer cutWireMeshRender;
     public AudioSource ZapSound;
     public AudioSource SnipSound;
-    public string neededTool = "WireCutter";
+    private string neededTool = "WireCutter";
     public bool isCut = false;
     public override string NeededTool()
     {
