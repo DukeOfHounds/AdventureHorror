@@ -447,44 +447,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb121b8767d65e84fa7cba6556360d43, type: 3}
---- !u!1 &307036194 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4286186848586257024, guid: c5dbf8bf4d0517d48b0a8346c1c40cbc, type: 3}
-  m_PrefabInstance: {fileID: 7510180172224228201}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &307036195
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307036194}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &307036196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307036194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 529da18328353d54190e63773f50e947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  friendType: 3
-  friendAnimator: {fileID: 307036195}
 --- !u!1001 &325061903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4986,18 +4948,6 @@ PrefabInstance:
     - target: {fileID: 8927577874943433496, guid: c5dbf8bf4d0517d48b0a8346c1c40cbc, type: 3}
       propertyPath: m_RootOrder
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8927577874943433496, guid: c5dbf8bf4d0517d48b0a8346c1c40cbc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8927577874943433496, guid: c5dbf8bf4d0517d48b0a8346c1c40cbc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8927577874943433496, guid: c5dbf8bf4d0517d48b0a8346c1c40cbc, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8927577874943433496, guid: c5dbf8bf4d0517d48b0a8346c1c40cbc, type: 3}
       propertyPath: m_LocalPosition.x
