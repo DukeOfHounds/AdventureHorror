@@ -35,6 +35,7 @@ public class Papa : MonoBehaviour
         {
             los.LineOfSightCheck();
             ppM.HandleMovement();
+            animator.SetFloat("speed", agent.velocity.magnitude/4);
             if (ppD.timesSearched > 10)
             {
                 //ppM.currentState = PP_Movement.State.Despawn;
@@ -45,13 +46,24 @@ public class Papa : MonoBehaviour
     //Stops movement along navMesh for "wait" seconds
     public void StopMovement(float wait)
     {
+        animator.SetTrigger("stop");
         waiting = true;
         StartCoroutine(SM(wait));
         waiting = false;
     }
+
+    public void AnimationTrigger(float wait, string anim)
+    {
+        animator.SetTrigger(anim);
+        waiting = true;
+        StartCoroutine(SM(wait));
+        waiting = false;
+    }
+
+
     public IEnumerator SM(float wait)
     {
-        if(ppD.canSeeTarget)
+        while(ppD.canSeeTarget)
         {
             yield break;
         }

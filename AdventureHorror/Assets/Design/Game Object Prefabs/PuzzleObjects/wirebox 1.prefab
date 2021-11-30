@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 7078018447259066625}
   m_Layer: 0
   m_Name: wire
-  m_TagString: Removable
+  m_TagString: Manipulable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,6 @@ MonoBehaviour:
   cutWireMeshRender: {fileID: 5083144940348832066}
   ZapSound: {fileID: 8413676344196936585}
   SnipSound: {fileID: 7078018447259066625}
-  neededTool: WireCutter
   isCut: 0
 --- !u!82 &8413676344196936585
 AudioSource:
