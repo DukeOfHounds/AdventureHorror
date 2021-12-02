@@ -20351,13 +20351,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4170078118663414069, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7553782785607179350, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_Name
-      value: Kelly's Lvl (Edited)
+      value: Kelly's Lvl (Cleaned Up)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
