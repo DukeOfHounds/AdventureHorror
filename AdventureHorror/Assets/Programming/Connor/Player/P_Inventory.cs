@@ -32,15 +32,21 @@ public class P_Inventory
     }
     public void DisplayTool(string toolName)
     {
-        foreach (GameObject tool in PD.tools)
+        foreach (GameObject tool in PD.tools)// loops through toolbelt
         {
-            Tool t = tool.GetComponent<Tool>();
-            if (t.IsTool().Equals(toolName))
+            Tool t = tool.GetComponent<Tool>(); //assignment that increases efficency
+            if (t.IsTool().Equals(toolName))// locates needed tool
             {
+                Debug.Log("Displaying the tool");
                 mr = tool.GetComponentInChildren<MeshRenderer>();
+                if(PD.inToolHand != null)
+                {
+                    HideTool();
+                }
                 PD.inToolHand = tool;
                 mr.enabled = true;
                 toolHidden = false;
+                Debug.Log("Is tool hidden?:" + mr.enabled);
             }
         }
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390390518846012068}
   - component: {fileID: 2820821119968936343}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Light
   m_TagString: PoweredLight
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.40081882, g: 0.4197084, b: 0.509434, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8319401244205666848}
   - component: {fileID: 8319401244205666849}
   - component: {fileID: 1020716354786632082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: First Person Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ MonoBehaviour:
   deathMenu: {fileID: 2433278291422785610, guid: 651c55c2a21b2a546ab729ea05988fa8, type: 3}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   ppD: {fileID: 0}
-  deathsounds: {fileID: 0}
+  deathsounds: {fileID: 1020716354786632082}
   dead: 0
 --- !u!114 &1020716354786632082
 MonoBehaviour:
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8319401245316301283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 8319401246273016054}
   - component: {fileID: 8319401246273016053}
   - component: {fileID: 6003203706698088871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -588,6 +588,14 @@ PrefabInstance:
     - target: {fileID: 1626118939937770610, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
       propertyPath: m_Name
       value: Player Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626118939937770610, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150950360462927882, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
