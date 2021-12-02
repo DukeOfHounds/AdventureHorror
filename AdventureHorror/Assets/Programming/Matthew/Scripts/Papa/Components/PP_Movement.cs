@@ -31,7 +31,6 @@ public class PP_Movement
         this.papaData = papaData;
         this.papa = papa;
         this.paparef = papaData.Papa;
-
     }
 
 
