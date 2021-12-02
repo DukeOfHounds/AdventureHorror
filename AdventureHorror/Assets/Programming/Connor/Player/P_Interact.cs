@@ -74,17 +74,34 @@ public class P_Interact
                     break;
                 case "Friend":
                     Debug.Log(hit.collider.gameObject.tag);
-                    PickUpObject(hit.collider.gameObject);
-                    try
+                    if (hit.collider.gameObject.GetComponent<FriendBehavior>().friendType == FriendBehavior.Friend.Bair)
                     {
-                        //if (PD.inHand == null)
-                        //{
-                        AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
-                        //}
+                        try
+                        {
+                            Debug.Log("give me the flashlight damnit");
+                            GameObject obj = hit.collider.gameObject.GetComponentInChildren<Flashlight>().gameObject;
+                            obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                            PickUpObject(obj);
+                        }
+                        catch
+                        {
+                            PickUpObject(hit.collider.gameObject);
+                        }
                     }
-                    catch
+                    else
                     {
-                        Debug.LogWarning("Friend Has No tool");
+                        PickUpObject(hit.collider.gameObject);
+                        try
+                        {
+
+
+                            AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+
+                        }
+                        catch
+                        {
+                            Debug.LogWarning("Friend Has No tool");
+                        }
                     }
                     break;
                 default:
