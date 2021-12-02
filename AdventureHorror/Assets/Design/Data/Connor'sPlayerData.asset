@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Connor'sPlayerData
   m_EditorClassIdentifier: 
   BairHearts: []
-  tools: []
+  tools:
+  - {fileID: 0}
   inHand: {fileID: 0}
   inToolHand: {fileID: 0}
   speed: 8
-  jumpHeight: 1.76
+  jumpHeight: 0
   gravity: -9.81
   throwForce: 5
   mouseSensitivity: 0.1

@@ -47,6 +47,7 @@ public class Wire : RemovableObjects
             if(WD.count == WD.WireOrder.Count)
             {
                 Debug.Log("all the wires are cut, the door is open");
+                GameObject.Find("LightManager").GetComponent<LightManager>().changeLightInt(0);
                 WD.door.Unlock();
                 WD.door.Open();
             }
