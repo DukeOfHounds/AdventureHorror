@@ -17,8 +17,10 @@ public class Player : MonoBehaviour
     public Transform hand;
     public Transform toolHand;
     public GameObject deathMenu;
+    public GameObject pauseMenu;
+    public PauseMenu pm;
 
-
+    public  GameObject pauseMenuRef;
 
     public PlayerData PD;
     public PapaData ppD;
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+
         deathsounds = GetComponent<DeathSounds>();
         PD.audioManager = FindObjectOfType<AudioManager>();
         PD.inToolHand = null;
@@ -54,12 +57,10 @@ public class Player : MonoBehaviour
         PD.isHiding = false;
         PD.inHand = null;
         Instantiate(PD.HUD);
- 
+
 
     }
-
-
-    void Update()
+    void FixedUpdate()
     {
         if (!dead)
         {
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
             deathsounds.PlayDeathSound();
             dead = true;
             Instantiate(deathMenu);
-            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);  
+            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);
             Cursor.visible = true;
         }
     }
@@ -115,7 +116,7 @@ public class Player : MonoBehaviour
     }
     public void OnLeftClick(InputAction.CallbackContext context)
     {
-        if(context.performed)// please work 
+        if (context.performed)// please work 
             interact.Interact();
 
     }
@@ -126,6 +127,15 @@ public class Player : MonoBehaviour
             interact.ThrowHandObj();
         }
 
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (pauseMenuRef == null )
+        {
+            pauseMenuRef = Instantiate(pauseMenu);
+            pm = pauseMenu.GetComponentInChildren<PauseMenu>();
+            pm.PauseGame(this.gameObject);
+        }
     }
     #endregion
 

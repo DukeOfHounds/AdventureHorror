@@ -28,7 +28,7 @@ public class Papa : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Debug.Log(ppM.currentState);
         if (ppD.isActive)
