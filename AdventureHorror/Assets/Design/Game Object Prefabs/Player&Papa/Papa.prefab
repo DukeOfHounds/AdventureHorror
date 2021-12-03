@@ -1425,8 +1425,8 @@ MonoBehaviour:
   s2: {fileID: 5145562777293905476}
   s3: {fileID: 4838257892822115303}
   collisionSounds:
-  - clip: {fileID: 8300000, guid: 19e9c1b5d69ff954ea11cd174c7c8379, type: 3}
-  - clip: {fileID: 8300000, guid: f21f8b09d61d32d44a9dd299416e134a, type: 3}
+  - clip: {fileID: 8300000, guid: ce8d04e1a70af994a850655a6e006045, type: 3}
+  - clip: {fileID: 8300000, guid: e32a742b4513dd74da4ca5541178cc31, type: 3}
   - clip: {fileID: 8300000, guid: 036dcc4ad2fe10442b44373d21640654, type: 3}
 --- !u!136 &4741543778578259237
 CapsuleCollider:

@@ -47,7 +47,6 @@ public class PP_Breathing : MonoBehaviour
         if (!s1.isPlaying)
         {
             s1.clip = currentSound;
-            s1.time = .2f;
             s1.Play();
         }
     }
@@ -57,7 +56,6 @@ public class PP_Breathing : MonoBehaviour
         if (!s2.isPlaying)
         {
             s2.clip = currentSound;
-            s2.time = .2f;
             s2.Play();
         }
     }
