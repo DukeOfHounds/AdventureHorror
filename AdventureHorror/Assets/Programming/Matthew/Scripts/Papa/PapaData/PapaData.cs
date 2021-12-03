@@ -20,6 +20,8 @@ public class PapaData : ScriptableObject
     [Range(0, 360)]
     public float angle;
     [Range(0, 5)]
+    public float sightPoint;
+    [Range(0, 5)]
     public float catchRange = 3;
     public bool canSeeTarget;
     public bool sawHiding;

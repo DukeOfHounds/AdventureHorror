@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: PapaData
   m_EditorClassIdentifier: 
   Papa: {fileID: 0}
-  targetLastSeen: {x: -2.9323473, y: -3.7153687, z: -56.302532}
+  targetLastSeen: {x: 2.0093412, y: -0.8906869, z: -95.633255}
   isActive: 1
   timeOut: {x: 0, y: 0, z: 0}
   despawning: 1
   spawnPoint: {x: 2.9315994, y: 0.58395064, z: 59.74163}
-  angle: 149.2
+  angle: 174
+  sightPoint: 3.1
   catchRange: 3
-  canSeeTarget: 1
+  canSeeTarget: 0
   sawHiding: 0
   isAgro: 1
   radius: 10000
@@ -42,4 +43,4 @@ MonoBehaviour:
     m_Bits: 2048
   papaMinDespawnDist: 50
   papaMaxDespawnDist: 60
-  currentDest: {x: -2.9323473, y: -3.7153687, z: -56.302532}
+  currentDest: {x: -1.5732116, y: -3.7711935, z: -6.819652}
