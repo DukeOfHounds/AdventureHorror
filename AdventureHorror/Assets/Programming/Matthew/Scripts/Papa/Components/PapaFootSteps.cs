@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PP_Breathing : MonoBehaviour
+public class PapaFootSteps : MonoBehaviour
 {
     public Papa papa;
 
@@ -10,7 +10,7 @@ public class PP_Breathing : MonoBehaviour
     public AudioSource s2;
     public AudioSource s3;
     AudioClip currentSound;
-    public List<SoundStruct> collisionSounds;
+    public List<SoundStruct> soundList;
     bool clipPlaying;
     int index;
 
@@ -24,38 +24,40 @@ public class PP_Breathing : MonoBehaviour
         switch (papa.ppM.currentState)
         {
             case PP_Movement.State.StartSearch:
-                LightBreath();
+                LightSteps();
                 break;
 
             case PP_Movement.State.Search:
-                LightBreath();
+                LightSteps();
                 break;
 
             case PP_Movement.State.Chase:
-                HeavyBreath();
+                HeavySteps();
                 break;
 
             case PP_Movement.State.ResetWires:
-                HeavyBreath();
+                HeavySteps();
                 break;
         }
 
     }
-    public void LightBreath()
+    public void LightSteps()
     {
-        currentSound = collisionSounds[0].clip;
+        currentSound = soundList[0].clip;
         if (!s1.isPlaying)
         {
             s1.clip = currentSound;
+            s1.time = .2f;
             s1.Play();
         }
     }
-    public void HeavyBreath()
+    public void HeavySteps()
     {
-        currentSound = collisionSounds[1].clip;
+        currentSound = soundList[1].clip;
         if (!s2.isPlaying)
         {
             s2.clip = currentSound;
+            s2.time = .2f;
             s2.Play();
         }
     }

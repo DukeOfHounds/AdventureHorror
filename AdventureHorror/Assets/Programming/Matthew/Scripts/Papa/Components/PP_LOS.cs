@@ -51,8 +51,9 @@ public class PP_LOS
     {
         //Debug.Log(((int)cD));
         //Array of Colliders (within line of sight) only of the layer specified in targetLayer
-        Collider[] rangeChecks = Physics.OverlapSphere(papa.agent.transform.position, papaData.radius, papaData.targetLayer);
-        //If collider is in the array, find angle from front of Papa, to the player (presumably).
+        Vector3 ppHead = new Vector3(papa.agent.transform.position.x, papa.agent.transform.position.y + papaData.sightPoint, papa.agent.transform.position.z);
+        Collider[] rangeChecks = Physics.OverlapSphere(ppHead, papaData.radius, papaData.targetLayer);
+        //If collider is in the array, find angle from froynt of Papa, to the player (presumably).
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
@@ -62,7 +63,7 @@ public class PP_LOS
             if (Vector3.Angle(papa.agent.transform.forward, directionOfTarget) < papaData.angle / 2f)//Reduce size of cone by half to do more detailed angle check.
             {
                 float distanceToTarget = Vector3.Distance(papa.agent.transform.position, target.position);
-                if (!Physics.Raycast(papa.agent.transform.position, directionOfTarget, distanceToTarget, papaData.occlusionLayers))
+                if (!Physics.Raycast(ppHead, directionOfTarget, distanceToTarget, papaData.occlusionLayers))
                 {
                     cD = timer;
                     papaData.targetLastSeen = target.position;
@@ -70,7 +71,7 @@ public class PP_LOS
                     papaData.isAgro = true;
                     lostSight = false;
                     Debug.Log(papaData.canSeeTarget);
-                    Debug.DrawLine(paparef.transform.position, target.position, Color.red, 5f);
+                    Debug.DrawLine(ppHead, target.position, Color.red, 5f);
 
                 }
                 else

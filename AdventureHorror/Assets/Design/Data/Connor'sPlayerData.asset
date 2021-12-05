@@ -17,10 +17,10 @@ MonoBehaviour:
   inHand: {fileID: 0}
   inToolHand: {fileID: 0}
   speed: 8
-  jumpHeight: 0
+  jumpHeight: 10
   gravity: -9.81
   throwForce: 5
-  mouseSensitivity: 0.2
+  mouseSensitivity: 0.537
   InteractRange: 3
   HUD: {fileID: 4197089807440806321, guid: 81032fd666b1c844b8068db265b8df9d, type: 3}
   fear: 0
