@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public P_Interact interact;
     public DeathSounds deathsounds;
     public bool dead = false;
+    public bool paused = false;
 
 
     ////////////////Update/Start/Awake////////////////
@@ -62,7 +63,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if (!dead)
+        if (!dead && !paused)
         {
             Cursor.visible = false;
             movment.UpdateCamera(mouseX, mouseY);

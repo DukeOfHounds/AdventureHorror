@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     void Awake()
     {
         pauseScreen = this.gameObject;
+        player = FindObjectOfType<Player>();
     }
     public void Restart()
     {
@@ -34,11 +35,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.visible = false;
+       // player = p.GetComponent<Player>();
+        player.paused = false ;
         Destroy(this.gameObject);
     }
     public void PauseGame(GameObject p)
     {
         player = p.GetComponent<Player>(); ;
+        player.paused = true;
         Cursor.visible = true;
         Time.timeScale = 0;
     }
