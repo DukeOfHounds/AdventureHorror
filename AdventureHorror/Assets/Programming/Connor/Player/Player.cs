@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
-
+        Instantiate(PD.HUD);
         deathsounds = GetComponent<DeathSounds>();
         PD.audioManager = FindObjectOfType<AudioManager>();
         PD.inToolHand = null;
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;// locks cursor to game window
         PD.isHiding = false;
         PD.inHand = null;
-        Instantiate(PD.HUD);
+       
 
 
     }

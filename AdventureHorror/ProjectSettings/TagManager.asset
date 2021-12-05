@@ -15,6 +15,7 @@ TagManager:
   - Papa
   - Tool
   - Friend
+  - Hud
   layers:
   - Default
   - TransparentFX
