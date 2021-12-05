@@ -9,10 +9,12 @@ public class P_Interact
     private Player player;
     private Vector3 rotation = new Vector3(0, 0, 0);
     private RemovableObjects rm;
+    private HotBair hotbair;
     public P_Interact(PlayerData PD)
     {
         this.PD = PD;
         this.player = PD.player;
+        this.hotbair = GameObject.FindGameObjectWithTag("Hud").GetComponentInChildren<HotBair>();
     }
 
     public void InteractCheck()
@@ -82,9 +84,11 @@ public class P_Interact
                             GameObject obj = hit.collider.gameObject.GetComponentInChildren<Flashlight>().gameObject;
                             obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                             PickUpObject(obj);
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
                         }
                         catch
                         {
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
                             PickUpObject(hit.collider.gameObject);
                         }
                     }
@@ -94,7 +98,7 @@ public class P_Interact
                         try
                         {
 
-
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
                             AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
 
                         }
