@@ -86,6 +86,8 @@ public class Player : MonoBehaviour
             Instantiate(deathMenu);
             deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);
             Cursor.visible = true;
+            paused = true;
+            Time.timeScale = 0;
         }
     }
 
@@ -131,7 +133,7 @@ public class Player : MonoBehaviour
     }
     public void OnPause(InputAction.CallbackContext context)
     {
-        if (pauseMenuRef == null )
+        if (pauseMenuRef == null &&! dead)
         {
             pauseMenuRef = Instantiate(pauseMenu);
             pm = pauseMenu.GetComponentInChildren<PauseMenu>();
