@@ -54,6 +54,10 @@ public class P_Interact
                 //    InteractWithDoor(hit.collider.gameObject); // opens or closes door (if you can)
                 //    break;
                 case "PickUpAble":
+                    if (hit.collider.gameObject.name.Contains("Flashlight"))
+                    {
+                        hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
+                    }
                     PickUpObject(hit.collider.gameObject);// picks up PickUp
                     break;
                 case "HidingPlace":
@@ -72,6 +76,7 @@ public class P_Interact
                     break;
                 case "Tool":
                     //Debug.Log(hit.collider.gameObject.tag);
+                    hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
                     AddTool(hit.collider.gameObject);
                     break;
                 case "Friend":
