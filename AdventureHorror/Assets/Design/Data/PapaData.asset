@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PapaData
   m_EditorClassIdentifier: 
   Papa: {fileID: 0}
-  targetLastSeen: {x: 2.0093412, y: -0.8906869, z: -95.633255}
+  targetLastSeen: {x: 29.620783, y: 31.007475, z: -45.385384}
   isActive: 1
   timeOut: {x: 0, y: 0, z: 0}
   despawning: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
   angle: 174
   sightPoint: 3.1
   catchRange: 3
-  canSeeTarget: 0
+  canSeeTarget: 1
   sawHiding: 0
   isAgro: 1
   radius: 10000
@@ -33,8 +33,8 @@ MonoBehaviour:
     m_Bits: 512
   adjustCone: {x: 0, y: 0, z: 0}
   papaBaseSpeed: 2
-  chaseSpeedMultiplier: 3
-  timesSearched: 0
+  chaseSpeedMultiplier: 4
+  timesSearched: 1
   searchNodeLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -43,4 +43,4 @@ MonoBehaviour:
     m_Bits: 2048
   papaMinDespawnDist: 50
   papaMaxDespawnDist: 60
-  currentDest: {x: -1.5732116, y: -3.7711935, z: -6.819652}
+  currentDest: {x: 29.620783, y: 31.007475, z: -45.385384}
