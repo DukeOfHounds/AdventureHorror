@@ -56,7 +56,14 @@ public class P_Interact
                 case "PickUpAble":
                     if (hit.collider.gameObject.name.Contains("Flashlight"))
                     {
-                        hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
+                        try
+                        {
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
+                        }
+                        catch
+                        {
+
+                        }
                     }
                     PickUpObject(hit.collider.gameObject);// picks up PickUp
                     break;
@@ -197,10 +204,11 @@ public class P_Interact
         GameObject obj = PD.inHand;
         PD.inHand = null;
         obj.transform.parent = null;
-        obj.GetComponent<Rigidbody>().useGravity = true;
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        rb.useGravity = true;
         obj.GetComponent<Collider>().enabled = true;
-        obj.GetComponent<Rigidbody>().freezeRotation = false;
-        obj.GetComponent<Rigidbody>().velocity = (obj.transform.forward * PD.throwForce);
+        rb.constraints = RigidbodyConstraints.None;
+        rb.velocity = (obj.transform.forward * PD.throwForce);
 
 
     }
