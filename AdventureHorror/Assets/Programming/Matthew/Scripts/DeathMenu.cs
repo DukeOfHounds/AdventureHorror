@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class DeathMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-     public void Restart()
+    public void Start()
+    {
+        StartCoroutine(Pause());
+    }
+    public void Restart()
     {
         Debug.Log("papa");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -14,5 +18,11 @@ public class DeathMenu : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    IEnumerator Pause()
+    {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
     }
 }
