@@ -14,6 +14,8 @@ public class Papa : MonoBehaviour
     public Animator animator;
     public bool waiting;
 
+    public Collider hitbox;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -63,11 +65,14 @@ public class Papa : MonoBehaviour
 
     public IEnumerator SM(float wait)
     {
-        while(ppD.canSeeTarget)
+        agent.isStopped = true;
+        while (ppD.canSeeTarget && ppM.currentState != PP_Movement.State.Chase)
         {
+            animator.enabled = false;
+            animator.enabled = true;
+            agent.isStopped = false;
             yield break;
         }
-        agent.isStopped = true;
         yield return new WaitForSeconds(wait);
         agent.isStopped = false;
     }
@@ -88,5 +93,7 @@ public class Papa : MonoBehaviour
         //Debug.Log("Teleport wooosh wooosh wooosh");
         //Debug.Log(spawnPoint);
     }
+
+
 
 }

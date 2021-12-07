@@ -23,7 +23,6 @@ public class FriendBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
         PD = GameObject.FindObjectOfType<Player>().PD;
     }
 
@@ -34,6 +33,7 @@ public class FriendBehavior : MonoBehaviour
         {
             tool = GetComponentInChildren<Tool>().gameObject;
             PD.tools.Add(tool);
+            Interact();
         }
         catch
         {
@@ -60,7 +60,7 @@ public class FriendBehavior : MonoBehaviour
         friendAnimator.SetInteger("State", index);
         yield return new WaitForSeconds(time);
         isPlaying = false;
-        Initialize();
+        //Interact();
         // }
         //else
         //{
@@ -69,15 +69,15 @@ public class FriendBehavior : MonoBehaviour
         //}
     }
 
-    private void Initialize()
+    private void Interact()
     {
         switch (friendType)
         {
             case Friend.Bair:
-                StartCoroutine(PlayAnimation(0, 1));
+                StartCoroutine(PlayAnimation(1, 1));
                 break;
             case Friend.Octopus:
-                StartCoroutine(PlayAnimation(0, 1));
+                StartCoroutine(PlayAnimation(2, 1));
                 break;
             case Friend.GuineaPig:
                 StartCoroutine(PlayAnimation(0, 1));
