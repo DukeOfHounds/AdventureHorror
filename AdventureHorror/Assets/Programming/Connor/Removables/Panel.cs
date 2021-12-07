@@ -56,4 +56,23 @@ public class Panel : RemovableObjects
         if (VentPortal != null)
             VentPortal.canExit = true;
     }
+    public IEnumerator ForceRemove()
+    {
+        if (!removed)
+        {
+            removed = true;
+            PanelSound.Play();
+           
+            foreach (Screw screw in screws)
+            {
+                screw.Remove();
+            }
+             yield return new WaitForSeconds(1.5F);
+            dropPanel();
+        }
+    }
+    void dropPanel()
+    {
+        StartCoroutine(DropPanel());
+    }
 }
