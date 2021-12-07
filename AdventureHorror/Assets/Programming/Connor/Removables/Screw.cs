@@ -40,7 +40,7 @@ public class Screw : RemovableObjects
 
     IEnumerator Unscrew()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.5f);
         panel.RemoveScrewFromList(this);
         //animation of screw being turned. 
         this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
