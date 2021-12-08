@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
             deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);
             Cursor.visible = true;
             paused = true;
+            
         }
     }
 

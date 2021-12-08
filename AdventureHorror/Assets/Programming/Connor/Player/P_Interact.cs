@@ -54,6 +54,17 @@ public class P_Interact
                 //    InteractWithDoor(hit.collider.gameObject); // opens or closes door (if you can)
                 //    break;
                 case "PickUpAble":
+                    if (hit.collider.gameObject.name.Contains("Flashlight"))
+                    {
+                        try
+                        {
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
+                        }
+                        catch
+                        {
+
+                        }
+                    }
                     PickUpObject(hit.collider.gameObject);// picks up PickUp
                     break;
                 case "HidingPlace":
@@ -72,6 +83,7 @@ public class P_Interact
                     break;
                 case "Tool":
                     //Debug.Log(hit.collider.gameObject.tag);
+                    hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
                     AddTool(hit.collider.gameObject);
                     break;
                 case "Friend":
@@ -192,10 +204,11 @@ public class P_Interact
         GameObject obj = PD.inHand;
         PD.inHand = null;
         obj.transform.parent = null;
-        obj.GetComponent<Rigidbody>().useGravity = true;
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        rb.useGravity = true;
         obj.GetComponent<Collider>().enabled = true;
-        obj.GetComponent<Rigidbody>().freezeRotation = false;
-        obj.GetComponent<Rigidbody>().velocity = (obj.transform.forward * PD.throwForce);
+        rb.constraints = RigidbodyConstraints.None;
+        rb.velocity = (obj.transform.forward * PD.throwForce);
 
 
     }
