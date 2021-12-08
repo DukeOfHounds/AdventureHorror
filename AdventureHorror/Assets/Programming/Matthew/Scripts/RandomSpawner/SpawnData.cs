@@ -7,4 +7,7 @@ using UnityEngine;
 public class SpawnData : ScriptableObject
 {
     public enum spawnType { bed, table };
+    public SpawnManager sM;
+    public GameObject hamster;
+    public GameObject snake;
 }
