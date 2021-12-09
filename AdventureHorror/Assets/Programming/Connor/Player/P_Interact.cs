@@ -114,6 +114,7 @@ public class P_Interact
                             hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
                             PickUpObject(hit.collider.gameObject);
                         }
+                        PickUpObject(hit.collider.gameObject);
                     }
                     else
                     {
