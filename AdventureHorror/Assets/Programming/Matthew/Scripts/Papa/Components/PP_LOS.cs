@@ -58,6 +58,13 @@ public class PP_LOS
         {
             Transform target = rangeChecks[0].transform;
             Vector3 directionOfTarget = (target.position - papa.agent.transform.position).normalized;
+            float distanceToPlayer = Vector3.Distance(papa.agent.transform.position, target.position);
+            if (distanceToPlayer < 4 && !Physics.Raycast(ppHead, directionOfTarget, distanceToPlayer, papaData.occlusionLayers))
+            {
+                papaData.canSeeTarget = true;
+                papaData.targetLastSeen = papa.pD.player.transform.position;
+                lostSight = false;
+            }
 
             //Check if the angle is outside of Papa's sight cone.
             if (Vector3.Angle(papa.agent.transform.forward, directionOfTarget) < papaData.angle / 2f)//Reduce size of cone by half to do more detailed angle check.
