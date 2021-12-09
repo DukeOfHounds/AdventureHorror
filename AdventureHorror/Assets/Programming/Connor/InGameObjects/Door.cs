@@ -139,6 +139,7 @@ public class Door : MonoBehaviour
         //    stayOpen = false;
         //}
     }
+
     public void OnTriggerExit(Collider other)
     {
         //Debug.Log("CLOSE DAMN IT: "+ other.name);
