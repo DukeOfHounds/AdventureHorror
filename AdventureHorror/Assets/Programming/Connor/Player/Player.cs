@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
         PD.audioManager = FindObjectOfType<AudioManager>();
         PD.inToolHand = null;
         PD.inHand = null;
+        PD.inFlashlightHand = null;
         PD.hand = hand;
         PD.toolHand = toolHand;
         PD.cam = Camera.main;
@@ -138,6 +139,14 @@ public class Player : MonoBehaviour
             pauseMenuRef = Instantiate(pauseMenu);
             pm = pauseMenu.GetComponentInChildren<PauseMenu>();
             pm.PauseGame(this.gameObject);
+        }
+    }
+    public void OnFlashlight(InputAction.CallbackContext context)
+    {
+        if(PD.inFlashlightHand != null)
+        {
+            PD.inFlashlightHand.GetComponent<Flashlight>().Use();
+
         }
     }
     #endregion

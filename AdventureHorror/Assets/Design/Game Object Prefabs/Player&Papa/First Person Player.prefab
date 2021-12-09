@@ -291,6 +291,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 75575b93-b018-45d2-8613-d6e904b34fdb
     m_ActionName: ChildControlls/InteractWtih [/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8319401244205666849}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnFlashlight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd9f8615-f07f-42df-8111-1d7adef34605
+    m_ActionName: ChildControlls/Flahslight[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: ChildControlls
@@ -605,13 +621,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 1626118939937770610, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
-      propertyPath: m_Layer
-      value: 8
+    - target: {fileID: 7278470962927572903, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.315
       objectReference: {fileID: 0}
-    - target: {fileID: 7150950360462927882, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
-      propertyPath: m_Layer
-      value: 8
+    - target: {fileID: 7278470962927572903, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278470962927572903, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278470962927572903, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7278470962927572903, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18f7b0e991902d04abed518ea44d95c1, type: 3}
