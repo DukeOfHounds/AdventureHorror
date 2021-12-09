@@ -8751,6 +8751,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2082751059014215041, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.024
+      objectReference: {fileID: 0}
     - target: {fileID: 2082751059014215042, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -10098,6 +10102,14 @@ PrefabInstance:
     - target: {fileID: 3155782640243378402, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_LocalPosition.y
       value: 37.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155782640438214558, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 75.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155782640537183116, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -112.31
       objectReference: {fileID: 0}
     - target: {fileID: 3161474147251211181, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_NavMeshLayer
@@ -12447,6 +12459,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6525484298352084537, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0214
+      objectReference: {fileID: 0}
     - target: {fileID: 6527254482876020859, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -13954,6 +13970,18 @@ PrefabInstance:
     - target: {fileID: 8196403087782981564, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203924040370929673, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.350731
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203924040370929673, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.838055
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203924040370929673, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.0639
       objectReference: {fileID: 0}
     - target: {fileID: 8209596368714514712, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_NavMeshLayer
