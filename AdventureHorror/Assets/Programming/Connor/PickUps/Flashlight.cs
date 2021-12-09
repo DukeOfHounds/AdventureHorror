@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Flashlight : MonoBehaviour
+public class Flashlight : Tool 
 {
     private Light light;
     public float lightIntensity;
     public AudioManager audioManager;
+    private string isTool = "Flashlight";
     public void Use()
     {
         Sound s = Array.Find(audioManager.sounds, sound => sound.name == "flash_on_1");
@@ -47,5 +48,15 @@ public class Flashlight : MonoBehaviour
     {
         yield return new  WaitForSeconds(.5f);
         light.intensity = intensity;
+    }
+
+    public override void Use(GameObject obj)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override string IsTool()
+    {
+        return isTool;
     }
 }

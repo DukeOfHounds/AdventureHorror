@@ -68,8 +68,10 @@ public class P_Interact
                         {
 
                         }
+                        PickUpFlashlight(hit.collider.gameObject);
                     }
-                    PickUpObject(hit.collider.gameObject);// picks up PickUp
+                    else
+                        PickUpObject(hit.collider.gameObject);// picks up PickUp
                     break;
                 case "HidingPlace":
                     //Debug.Log("so hidden wow");
@@ -88,7 +90,12 @@ public class P_Interact
                 case "Tool":
                     //Debug.Log(hit.collider.gameObject.tag);
                     hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
-                    AddTool(hit.collider.gameObject);
+                    if (hit.collider.gameObject.GetComponent<Tool>().IsTool().Equals("Flashlight"))
+                    {
+                        PickUpFlashlight(hit.collider.gameObject);
+                    }
+                    else
+                        AddTool(hit.collider.gameObject);
                     break;
                 case "Friend":
                     Debug.Log(hit.collider.gameObject.tag);
@@ -99,7 +106,7 @@ public class P_Interact
                             Debug.Log("give me the flashlight damnit");
                             GameObject obj = hit.collider.gameObject.GetComponentInChildren<Flashlight>().gameObject;
                             obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                            PickUpObject(obj);
+                            PickUpFlashlight(obj);
                             hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
                         }
                         catch
@@ -107,6 +114,7 @@ public class P_Interact
                             hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
                             PickUpObject(hit.collider.gameObject);
                         }
+                        PickUpObject(hit.collider.gameObject);
                     }
                     else
                     {
@@ -125,17 +133,11 @@ public class P_Interact
                     }
                     break;
                 default:
-                    if (PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
-                    {
-                        PD.inHand.GetComponent<Flashlight>().Use();
-                    }
+                    
                     break;
             }
         }
-        else if (PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
-        {
-            PD.inHand.GetComponent<Flashlight>().Use();
-        }
+       
 
     }
     //private void InteractWithDoor(GameObject door)
@@ -174,6 +176,26 @@ public class P_Interact
             //obj.transform.position = player.hand.position; // fixes object to player hand position
             obj.transform.parent = hand.transform;// fixes object to players position/movment
         }
+        //allows you to throw something
+    }
+    private void PickUpFlashlight(GameObject obj)
+    {
+
+        //Attaches OBJ to player in a visable way
+        //prevents you from picking up something else
+        //Debug.Log("pickup");
+
+        GameObject hand = GameObject.Find("FlashlightHand");
+        PD.inFlashlightHand = obj;
+        obj.GetComponent<Collider>().enabled = false;// turns off object collisions
+        obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
+        obj.transform.SetPositionAndRotation(player.hand.position, PD.cam.transform.rotation);
+        obj.GetComponent<Rigidbody>().freezeRotation = true;
+        obj.GetComponent<Rigidbody>().velocity = rotation;
+        //obj.transform.position = player.hand.position; // fixes object to player hand position
+        obj.transform.parent = hand.transform;// fixes object to players position/movment
+        obj.transform.position = hand.transform.position;
+        obj.GetComponent<Flashlight>().Use();
         //allows you to throw something
     }
 
@@ -216,5 +238,5 @@ public class P_Interact
 
 
     }
-
+    
 }
