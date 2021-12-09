@@ -16,7 +16,7 @@ MonoBehaviour:
   tools: []
   inHand: {fileID: 0}
   inToolHand: {fileID: 0}
-  speed: 8
+  speed: 5
   jumpHeight: 0
   gravity: -9.81
   throwForce: 5
