@@ -35,6 +35,10 @@ public class P_Interact
                     PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
                 }
             }
+            else
+            {
+                PD.inventory.HideTool();
+            }
 
         }
         else PD.inventory.HideTool();
