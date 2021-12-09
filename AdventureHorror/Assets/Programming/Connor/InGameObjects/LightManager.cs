@@ -34,6 +34,14 @@ public class LightManager : MonoBehaviour
         foreach(GameObject light in Lights)
         {
             light.GetComponent<Light>().intensity = intensity;
+            //if(intensity == 0)
+            //{
+            //    light.GetComponent<Material>() = noIlumination;
+            //}
+            //else
+            //{
+            //    light.GetComponent<Material>() = Ilumination;
+            //}
         }
     }
 
