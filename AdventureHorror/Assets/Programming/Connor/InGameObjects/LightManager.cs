@@ -10,6 +10,8 @@ public class LightManager : MonoBehaviour
     [Range(0,200)]
     public float currentIntesity = 0;
     private float setIntensity;
+    public Texture Ilumination;
+    public Texture noIlumination;
 
     public GameObject[] Lights;
 
@@ -34,14 +36,14 @@ public class LightManager : MonoBehaviour
         foreach(GameObject light in Lights)
         {
             light.GetComponent<Light>().intensity = intensity;
-            //if(intensity == 0)
-            //{
-            //    light.GetComponent<Material>() = noIlumination;
-            //}
-            //else
-            //{
-            //    light.GetComponent<Material>() = Ilumination;
-            //}
+            if (intensity == 0)
+            {
+                light.GetComponent<Material>().mainTexture = noIlumination;
+            }
+            else
+            {
+                light.GetComponent<Material>().mainTexture = Ilumination;
+            }
         }
     }
 

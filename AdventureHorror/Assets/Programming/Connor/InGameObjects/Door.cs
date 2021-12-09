@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
     AudioSource sound;
     float doorOpenTime = 0;
     bool stayOpen = false;
+    bool wait = true;
     //AudioManager audioManager;
     //Sound s;
     //public PuzzlePoster poster;
@@ -84,15 +85,31 @@ public class Door : MonoBehaviour
             StartCoroutine(CanOpenOrClose());
             doorOpenTime = 0;
         }
+        else
+        {
+            if (wait)
+            {
+                wait = false;
+                StartCoroutine(WaitToClose());
+            }
+        }
 
+
+
+    }
+    IEnumerator WaitToClose()
+    {
+        yield return new WaitForSeconds(1f);
+        wait = true;
+        Close();
     }
     IEnumerator CanOpenOrClose()
     {
         canOpenOrClose = false;
-        collider.enabled = false;
+        //collider.enabled = false;
         yield return new WaitForSeconds(1f);
         canOpenOrClose = true;
-        collider.enabled = true;
+        //collider.enabled = true;
     }
     public IEnumerator PlaySound()
     {
@@ -142,22 +159,23 @@ public class Door : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        //Debug.Log("CLOSE DAMN IT: "+ other.name);
+        Debug.Log("CLOSE DAMN IT: " + other.name);
 
         if ((other.tag == "Player" || other.tag == "Papa") && isOpen)
         {
             Close();
         }
-       
+
 
     }
 
-    //public void OnTriggerStay(Collider other)
-    //{
-    //    Debug.Log(other.name);
-    //    //if (other.tag == "Player" || other.tag == "Papa")
-    //    //{
-    //    //    stayOpen = true;
-    //    //}
-    //}
+    public void OnTriggerStay(Collider other)
+    {
+        // Debug.Log(other.name);
+        if ((other.tag == "Player" || other.tag == "Papa") && isOpen == false)
+        {
+            Open();
+        }
+
+    }
 }
