@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
     }
     public void OnPause(InputAction.CallbackContext context)
     {
-        if (pauseMenuRef == null &&! dead)
+        if (pauseMenuRef == null && !dead && !paused)
         {
             pauseMenuRef = Instantiate(pauseMenu);
             pm = pauseMenu.GetComponentInChildren<PauseMenu>();
