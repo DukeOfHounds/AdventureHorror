@@ -17,7 +17,10 @@ public class FriendBehavior : MonoBehaviour
         Octopus,
         GuineaPig,
         Snake,
-        Rabbit
+        Rabbit,
+        Monkey,
+        Hippo,
+        TRex
 
     }
     // Start is called before the first frame update

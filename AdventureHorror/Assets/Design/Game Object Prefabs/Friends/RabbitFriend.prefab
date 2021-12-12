@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1944118114424917257}
   - component: {fileID: 1944118114424917256}
   - component: {fileID: 1944118114424917259}
+  - component: {fileID: 7214520440439436650}
   m_Layer: 0
   m_Name: RabbitFriend
-  m_TagString: PickUpAble
+  m_TagString: Friend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendType: 4
-  friendAnimator: {fileID: 0}
+  friendAnimator: {fileID: 7214520440439436650}
 --- !u!64 &1944118114424917259
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -78,6 +79,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6031396616607451065, guid: e604f9fc06b87a144a9f6dee48407fc9, type: 3}
+--- !u!95 &7214520440439436650
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944118114424917263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1944118114436184422
 PrefabInstance:
   m_ObjectHideFlags: 0

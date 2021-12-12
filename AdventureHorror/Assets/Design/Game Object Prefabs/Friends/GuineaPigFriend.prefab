@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6383869794034861103}
   - component: {fileID: 8014107520845237130}
   - component: {fileID: 5247576600590204736}
-  - component: {fileID: 5152575852501632451}
   m_Layer: 0
   m_Name: GuineaPig
   m_TagString: Untagged
@@ -83,25 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &5152575852501632451
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6040417187690913429}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7762235032107741402
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,6 +94,7 @@ GameObject:
   - component: {fileID: 1541295996}
   - component: {fileID: 1541295995}
   - component: {fileID: 7466976305613812423}
+  - component: {fileID: 1709248499912309746}
   m_Layer: 0
   m_Name: GuineaPigFriend
   m_TagString: Friend
@@ -180,7 +161,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendType: 2
-  friendAnimator: {fileID: 5152575852501632451}
+  friendAnimator: {fileID: 1709248499912309746}
+--- !u!95 &1709248499912309746
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762235032107741402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4291280892593129562
 PrefabInstance:
   m_ObjectHideFlags: 0
