@@ -13,7 +13,7 @@ public class DeathMenu : MonoBehaviour
     }
     public void Restart()
     {
-        Debug.Log("papa");
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Quit()

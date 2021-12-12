@@ -46,4 +46,14 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
     }
-}
+
+    #region Input Methods
+    public void OnEscape(InputAction.CallbackContext context)
+    {
+        //if (player.paused == true)
+        //{
+        //    ResumeGame();
+        //}
+    }
+        #endregion
+    }

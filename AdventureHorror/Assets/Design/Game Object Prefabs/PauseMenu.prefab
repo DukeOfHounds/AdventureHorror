@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 3856786367250945315}
   - component: {fileID: 7882613875640578126}
   - component: {fileID: 2988703549356377382}
+  - component: {fileID: 4536516283183212984}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -780,6 +781,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b9b8fe1a66dd6468ece143a39be70e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4536516283183212984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252461608635075434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 83567f4e466d1f74b82ce0a67b94f7ab, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64a5d5b0-b38e-41c9-986a-310ce693686b
+    m_ActionName: ChildControlls/Move Forward/Backwards[/Keyboard/s,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 710f510d-a4e0-4070-9e18-4921033ae2cb
+    m_ActionName: ChildControlls/Strafe Left/Right[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 910954c9-7cae-4429-8fa1-4e43b66bced5
+    m_ActionName: ChildControlls/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3ea3144a-5a2a-4a72-a50f-d5969353c8ec
+    m_ActionName: ChildControlls/Crouch[/Keyboard/leftCtrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b8d37ea-d917-4fb7-ab1d-191a1cb38b98
+    m_ActionName: ChildControlls/Camera Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bde0b333-1f4b-4192-b1f6-d746caad385d
+    m_ActionName: ChildControlls/Throw[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2988703549356377382}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OnEscape
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ba688af3-eee2-476a-ae2b-ffcf1fe4864c
+    m_ActionName: ChildControlls/PauseGame[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75575b93-b018-45d2-8613-d6e904b34fdb
+    m_ActionName: ChildControlls/InteractWtih [/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd9f8615-f07f-42df-8111-1d7adef34605
+    m_ActionName: ChildControlls/Flahslight[/Keyboard/f]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: ChildControlls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4359183625682588811
 GameObject:
   m_ObjectHideFlags: 0
