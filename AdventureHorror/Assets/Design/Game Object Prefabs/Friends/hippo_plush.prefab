@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2714678453690338236}
   m_Layer: 0
   m_Name: hippo_plush
-  m_TagString: Untagged
+  m_TagString: PickUpAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

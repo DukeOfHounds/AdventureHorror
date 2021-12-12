@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &839638190123944396
+--- !u!1 &3855768613302984723
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 66761043128406902}
-  - component: {fileID: 3982014701051567315}
-  - component: {fileID: 1199648601448327193}
-  - component: {fileID: 8806329471719048211}
-  - component: {fileID: 6892674998603280949}
+  - component: {fileID: 4524324926000609961}
+  - component: {fileID: 677363045394625804}
+  - component: {fileID: 3351396448303956422}
+  - component: {fileID: 3855768613302984725}
+  - component: {fileID: 3855768613302984722}
   m_Layer: 0
-  m_Name: Book
+  m_Name: crayonunwrapped
   m_TagString: PickUpAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &66761043128406902
+--- !u!4 &4524324926000609961
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839638190123944396}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.226581, y: -4.780764, z: -0.39521766}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 3855768613302984723}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.54, y: 27.4315, z: 36.5817}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3982014701051567315
+--- !u!33 &677363045394625804
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839638190123944396}
-  m_Mesh: {fileID: 3630052555719164603, guid: b2adcd47e0897064cbb39360f6985e92, type: 3}
---- !u!23 &1199648601448327193
+  m_GameObject: {fileID: 3855768613302984723}
+  m_Mesh: {fileID: -3262789968867269347, guid: e7b423465c719e3428a3bd0f29711623, type: 3}
+--- !u!23 &3351396448303956422
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839638190123944396}
+  m_GameObject: {fileID: 3855768613302984723}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a0520afb4134c2488bb215882d322af, type: 2}
+  - {fileID: 2100000, guid: 8cd0d344847104748af0bc8d8c72112d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,26 +84,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8806329471719048211
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839638190123944396}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.09940839, y: 0.34085712, z: 0.28006846}
-  m_Center: {x: 0.00027661398, y: 0, z: 0.009030275}
---- !u!54 &6892674998603280949
+--- !u!54 &3855768613302984725
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839638190123944396}
+  m_GameObject: {fileID: 3855768613302984723}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -112,4 +99,18 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
+--- !u!64 &3855768613302984722
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855768613302984723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3262789968867269347, guid: e7b423465c719e3428a3bd0f29711623, type: 3}

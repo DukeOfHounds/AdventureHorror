@@ -167,6 +167,10 @@ public class P_Interact
             {
                 fB.PlayPickUpAnimation();
             }
+            else if(obj.TryGetComponent( out PickUpBehavior PUB))
+            {
+                PUB.PlayPickUp();
+            }
             PD.inHand = obj;
             obj.GetComponent<Collider>().enabled = false;// turns off object collisions
             obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
