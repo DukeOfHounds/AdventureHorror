@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.22
+  m_AmbientIntensity: 0.35
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -8734,6 +8734,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 798480037432067932, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.001095
+      objectReference: {fileID: 0}
     - target: {fileID: 798698900713652091, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -15165,6 +15169,10 @@ PrefabInstance:
     - target: {fileID: 7635987306884934852, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640542839473274259, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000147
       objectReference: {fileID: 0}
     - target: {fileID: 7640884589268583860, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_audioClip
