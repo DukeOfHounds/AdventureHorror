@@ -8,7 +8,7 @@ public class Screw : RemovableObjects
     private Panel panel;
     AudioSource sound;
     private bool removed;
-    public string neededTool = "ScrewDriver";
+    private string neededTool = "ScrewDriver";
     public override string NeededTool()
     {
         return neededTool;
@@ -40,7 +40,7 @@ public class Screw : RemovableObjects
 
     IEnumerator Unscrew()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.5f);
         panel.RemoveScrewFromList(this);
         //animation of screw being turned. 
         this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +7,23 @@ using UnityEngine.SceneManagement;
 public class DeathMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-     public void Restart()
+    public void Start()
     {
-        Debug.Log("papa");
+        StartCoroutine(Pause());
+    }
+    public void Restart()
+    {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Quit()
     {
         Application.Quit();
+    }
+
+    IEnumerator Pause()
+    {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
     }
 }

@@ -8,6 +8,12 @@ public class SettingsMenu : MonoBehaviour
     public PlayerData pD;
     public Slider slider;
 
+    private void Start()
+    {
+        slider.value = pD.mouseSensitivity;
+        SetSensitivity();
+    }
+
     private Vector2Int[] resolutions = 
     {
         new Vector2Int(640, 480),

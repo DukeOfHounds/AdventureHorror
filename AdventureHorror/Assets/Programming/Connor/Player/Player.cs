@@ -17,8 +17,10 @@ public class Player : MonoBehaviour
     public Transform hand;
     public Transform toolHand;
     public GameObject deathMenu;
+    public GameObject pauseMenu;
+    public PauseMenu pm;
 
-
+    public  GameObject pauseMenuRef;
 
     public PlayerData PD;
     public PapaData ppD;
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     public P_Interact interact;
     public DeathSounds deathsounds;
     public bool dead = false;
+    public bool paused = false;
 
 
     ////////////////Update/Start/Awake////////////////
@@ -36,10 +39,12 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+        Instantiate(PD.HUD);
         deathsounds = GetComponent<DeathSounds>();
         PD.audioManager = FindObjectOfType<AudioManager>();
         PD.inToolHand = null;
         PD.inHand = null;
+        PD.inFlashlightHand = null;
         PD.hand = hand;
         PD.toolHand = toolHand;
         PD.cam = Camera.main;
@@ -53,15 +58,13 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;// locks cursor to game window
         PD.isHiding = false;
         PD.inHand = null;
-        Instantiate(PD.HUD);
- 
+       
+
 
     }
-
-
     void Update()
     {
-        if (!dead)
+        if (!dead && !paused)
         {
             Cursor.visible = false;
             movment.UpdateCamera(mouseX, mouseY);
@@ -82,8 +85,10 @@ public class Player : MonoBehaviour
             deathsounds.PlayDeathSound();
             dead = true;
             Instantiate(deathMenu);
-            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);  
+            deathMenu.GetComponent<Animator>().SetBool("StopAnim", true);
             Cursor.visible = true;
+            paused = true;
+            
         }
     }
 
@@ -115,7 +120,7 @@ public class Player : MonoBehaviour
     }
     public void OnLeftClick(InputAction.CallbackContext context)
     {
-        if(context.performed)// please work 
+        if (context.performed)// please work 
             interact.Interact();
 
     }
@@ -126,6 +131,23 @@ public class Player : MonoBehaviour
             interact.ThrowHandObj();
         }
 
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (pauseMenuRef == null && !dead && !paused)
+        {
+            pauseMenuRef = Instantiate(pauseMenu);
+            pm = pauseMenu.GetComponentInChildren<PauseMenu>();
+            pm.PauseGame(this.gameObject);
+        }
+    }
+    public void OnFlashlight(InputAction.CallbackContext context)
+    {
+        if(PD.inFlashlightHand != null)
+        {
+            PD.inFlashlightHand.GetComponent<Flashlight>().Use();
+
+        }
     }
     #endregion
 

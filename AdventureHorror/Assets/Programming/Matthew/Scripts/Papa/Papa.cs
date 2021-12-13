@@ -14,6 +14,8 @@ public class Papa : MonoBehaviour
     public Animator animator;
     public bool waiting;
 
+    public Collider hitbox;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -28,13 +30,14 @@ public class Papa : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Debug.Log(ppM.currentState);
         if (ppD.isActive)
         {
             los.LineOfSightCheck();
             ppM.HandleMovement();
+            animator.SetFloat("speed", agent.velocity.magnitude/4);
             if (ppD.timesSearched > 10)
             {
                 //ppM.currentState = PP_Movement.State.Despawn;
@@ -45,17 +48,31 @@ public class Papa : MonoBehaviour
     //Stops movement along navMesh for "wait" seconds
     public void StopMovement(float wait)
     {
+        animator.SetTrigger("stop");
         waiting = true;
         StartCoroutine(SM(wait));
         waiting = false;
     }
+
+    public void AnimationTrigger(float wait, string anim)
+    {
+        animator.SetTrigger(anim);
+        waiting = true;
+        StartCoroutine(SM(wait));
+        waiting = false;
+    }
+
+
     public IEnumerator SM(float wait)
     {
-        if(ppD.canSeeTarget)
+        agent.isStopped = true;
+        while (ppD.canSeeTarget && ppM.currentState != PP_Movement.State.Chase)
         {
+            animator.enabled = false;
+            animator.enabled = true;
+            agent.isStopped = false;
             yield break;
         }
-        agent.isStopped = true;
         yield return new WaitForSeconds(wait);
         agent.isStopped = false;
     }
@@ -76,5 +93,7 @@ public class Papa : MonoBehaviour
         //Debug.Log("Teleport wooosh wooosh wooosh");
         //Debug.Log(spawnPoint);
     }
+
+
 
 }

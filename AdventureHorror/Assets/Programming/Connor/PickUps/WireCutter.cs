@@ -6,7 +6,7 @@ public class WireCutter : Tool
 {
     private Animator wireAnimator;
     private Animator wireCutterAnimator;
-    public string isTool = "WireCutter";
+    private string isTool = "WireCutter";
 
     //private Screw S;
 
@@ -22,15 +22,11 @@ public class WireCutter : Tool
     /// <param name="wire"></param>
     public override void Use(GameObject wire)
     {
-        //S = screw.GetComponent<Screw>();
-        if (wire.name.Contains("Wire"))
-        //if (canManipulate.Equals(S.isA))//
-        {
-            wireAnimator = wire.GetComponent<Animator>();// gets wire animations
-                                                           // cuts wire somehow idk yet
+        
+            //wireAnimator = wire.GetComponent<Animator>();// gets wire animations
             Debug.Log("Wire begone");
-            wire.SetActive(false);
-        }
+            wire.GetComponent<Wire>().Remove();
+        
 
     }
 

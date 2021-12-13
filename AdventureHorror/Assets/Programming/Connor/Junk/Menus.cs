@@ -30,31 +30,7 @@ namespace HealthAndDamage
         // Update is called once per frame
         void Update()
         {
-            if (SceneManager.GetActiveScene().name == "Level1")
-            {
-                if (!gameManager.GetComponent<GameManager>().gameOver)
-                {
-                    healthText.text = "Health: " + (int)player.GetComponent<HealthScript>().health;
-                    speedText.text = "Speed: " + (int)player.GetComponent<Rigidbody>().velocity.magnitude;
-                    //if (player.GetComponent<Spaceship>().boosting)
-                    //{
-                    BoostingText.text = "Boost\n  Tank:\n    " + (int)player.GetComponent<Spaceship>().currentBoostAmount;
-                    //}
-                    //else
-                    //{
-                    //    BoostingText.text = "";
-                    //}
-                }
-                if (keyDoor.GetComponent<JewelDoorSystem>().JewelsDestroyed && !keyDoor.GetComponent<JewelDoorSystem>().FoundPortal)
-                {
-                    Mission.text = "MISSION:\n  Find Portal\n      Home in\n         Asteroid";
-                }
-                if (keyDoor.GetComponent<JewelDoorSystem>().FoundPortal)
-                {
-                    Mission.text = "Good Work\n      Pilot,\n     Welcome\n         home ";
-                    SceneManager.LoadScene("MainMenu");
-                }
-
+            
                 if (Input.GetKeyDown(KeyCode.Escape) && sP)
                 {
                     pauseScreen.gameObject.SetActive(false);
@@ -68,9 +44,6 @@ namespace HealthAndDamage
                     Time.timeScale = 0;
                     sP = true;
                 }
-
-                // Update 
-            }
         }
         public void Restart()
         {

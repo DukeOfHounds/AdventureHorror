@@ -16,11 +16,11 @@ MonoBehaviour:
   tools: []
   inHand: {fileID: 0}
   inToolHand: {fileID: 0}
-  speed: 8
+  speed: 5
   jumpHeight: 0
   gravity: -9.81
   throwForce: 5
-  mouseSensitivity: 1
+  mouseSensitivity: 0.19892342
   InteractRange: 3
   HUD: {fileID: 4197089807440806321, guid: 81032fd666b1c844b8068db265b8df9d, type: 3}
   fear: 0
@@ -31,3 +31,4 @@ MonoBehaviour:
   hand: {fileID: 0}
   toolHand: {fileID: 0}
   audioManager: {fileID: 0}
+  hidingPlace: {fileID: 0}

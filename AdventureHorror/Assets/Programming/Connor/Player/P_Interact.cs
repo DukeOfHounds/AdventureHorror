@@ -9,32 +9,38 @@ public class P_Interact
     private Player player;
     private Vector3 rotation = new Vector3(0, 0, 0);
     private RemovableObjects rm;
+    private HotBair hotbair;
     public P_Interact(PlayerData PD)
     {
         this.PD = PD;
         this.player = PD.player;
+        this.hotbair = GameObject.FindGameObjectWithTag("Hud").GetComponentInChildren<HotBair>();
     }
 
     public void InteractCheck()
     {
+
         Ray ray = PD.cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;// holds data on what is infront of the player
         Physics.Raycast(ray, out hit, PD.InteractRange);// finds what is infront of the player
         if (hit.collider != null)
-            switch (hit.collider.tag) //determins if hit is interactable
-            {
-                case "Manipulable":
-                    rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
-                    if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
-                    {
-                        //Debug.Log("displaying tool " + rm.NeededTool());
-                        PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
-                    }
-                    break;
-                default:
-                    break;
+        {
 
+            if (hit.collider.tag.Equals("Manipulable")) //determins if hit is Manipulable
+            {
+                rm = hit.collider.gameObject.GetComponent<RemovableObjects>();
+                Debug.Log(PD.inventory.hasTool(rm.NeededTool()) + "" + rm.NeededTool());
+                if (PD.inventory.hasTool(rm.NeededTool())) // checks to see if you have neccessary tool
+                {
+                    PD.inventory.DisplayTool(rm.NeededTool()); // displays needed tool
+                }
             }
+            else
+            {
+                PD.inventory.HideTool();
+            }
+
+        }
         else PD.inventory.HideTool();
     }
 
@@ -52,7 +58,20 @@ public class P_Interact
                 //    InteractWithDoor(hit.collider.gameObject); // opens or closes door (if you can)
                 //    break;
                 case "PickUpAble":
-                    PickUpObject(hit.collider.gameObject);// picks up PickUp
+                    if (hit.collider.gameObject.name.Contains("Flashlight"))
+                    {
+                        try
+                        {
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
+                        }
+                        catch
+                        {
+
+                        }
+                        PickUpFlashlight(hit.collider.gameObject);
+                    }
+                    else
+                        PickUpObject(hit.collider.gameObject);// picks up PickUp
                     break;
                 case "HidingPlace":
                     //Debug.Log("so hidden wow");
@@ -70,35 +89,55 @@ public class P_Interact
                     break;
                 case "Tool":
                     //Debug.Log(hit.collider.gameObject.tag);
-                    AddTool(hit.collider.gameObject);
+                    hotbair.AquireFriend(hit.collider.gameObject.GetComponentInParent<FriendBehavior>().friendType);
+                    if (hit.collider.gameObject.GetComponent<Tool>().IsTool().Equals("Flashlight"))
+                    {
+                        PickUpFlashlight(hit.collider.gameObject);
+                    }
+                    else
+                        AddTool(hit.collider.gameObject);
                     break;
                 case "Friend":
                     Debug.Log(hit.collider.gameObject.tag);
-                    PickUpObject(hit.collider.gameObject);
-                    try
+                    if (hit.collider.gameObject.GetComponent<FriendBehavior>().friendType == FriendBehavior.Friend.Bair)
                     {
-                        if (PD.inHand == null)
+                        try
                         {
-                            AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+                            Debug.Log("give me the flashlight damnit");
+                            GameObject obj = hit.collider.gameObject.GetComponentInChildren<Flashlight>().gameObject;
+                            obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                            PickUpFlashlight(obj);
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
                         }
+                        catch
+                        {
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
+                            PickUpObject(hit.collider.gameObject);
+                        }
+                        PickUpObject(hit.collider.gameObject);
                     }
-                    catch
+                    else
                     {
-                        Debug.LogWarning("Friend Has No tool");
+                        PickUpObject(hit.collider.gameObject);
+                        try
+                        {
+
+                            hotbair.AquireFriend(hit.collider.gameObject.GetComponent<FriendBehavior>().friendType);
+                            AddTool(hit.collider.gameObject.GetComponentInChildren<Tool>().gameObject);
+
+                        }
+                        catch
+                        {
+                            Debug.LogWarning("Friend Has No tool");
+                        }
                     }
                     break;
                 default:
-                    if (PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
-                    {
-                        PD.inHand.GetComponent<Flashlight>().Use();
-                    }
+                    
                     break;
             }
         }
-        else if (PD.inHand != null && PD.inHand.name.Contains("Flashlight"))
-        {
-            PD.inHand.GetComponent<Flashlight>().Use();
-        }
+       
 
     }
     //private void InteractWithDoor(GameObject door)
@@ -128,6 +167,10 @@ public class P_Interact
             {
                 fB.PlayPickUpAnimation();
             }
+            else if(obj.TryGetComponent( out PickUpBehavior PUB))
+            {
+                PUB.PlayPickUp();
+            }
             PD.inHand = obj;
             obj.GetComponent<Collider>().enabled = false;// turns off object collisions
             obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
@@ -137,6 +180,26 @@ public class P_Interact
             //obj.transform.position = player.hand.position; // fixes object to player hand position
             obj.transform.parent = hand.transform;// fixes object to players position/movment
         }
+        //allows you to throw something
+    }
+    private void PickUpFlashlight(GameObject obj)
+    {
+
+        //Attaches OBJ to player in a visable way
+        //prevents you from picking up something else
+        //Debug.Log("pickup");
+
+        GameObject hand = GameObject.Find("FlashlightHand");
+        PD.inFlashlightHand = obj;
+        obj.GetComponent<Collider>().enabled = false;// turns off object collisions
+        obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
+        obj.transform.SetPositionAndRotation(player.hand.position, PD.cam.transform.rotation);
+        obj.GetComponent<Rigidbody>().freezeRotation = true;
+        obj.GetComponent<Rigidbody>().velocity = rotation;
+        //obj.transform.position = player.hand.position; // fixes object to player hand position
+        obj.transform.parent = hand.transform;// fixes object to players position/movment
+        obj.transform.position = hand.transform.position;
+        obj.GetComponent<Flashlight>().Use();
         //allows you to throw something
     }
 
@@ -151,17 +214,19 @@ public class P_Interact
     public void AddTool(GameObject obj)
     {
 
-        Debug.Log("add tool to hand");
+        //Debug.Log("add tool to inventory");
         PD.inventory.AddTool(obj);
         GameObject toolHand = GameObject.Find("ToolHand");
+        obj.transform.parent = toolHand.transform;// fixes object to players position/movment
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        //rb.freezeRotation = false;
         obj.GetComponentInChildren<MeshRenderer>().enabled = false;// turns it invisible until needed
         obj.GetComponent<Collider>().enabled = false;// turns off object collisions
-        obj.GetComponent<Rigidbody>().useGravity = false; // turns off object so it can be in hand
+        rb.useGravity = false; // turns off object so it can be in hand
         obj.transform.SetPositionAndRotation(player.toolHand.position, PD.cam.transform.rotation);
-        obj.GetComponent<Rigidbody>().freezeRotation = true;
-        obj.GetComponent<Rigidbody>().velocity = rotation;
+        rb.freezeRotation = true;
+        rb.velocity = rotation;
         //obj.transform.position = player.hand.position; // fixes object to player hand position
-        obj.transform.parent = toolHand.transform;// fixes object to players position/movment
     }
 
     public void ThrowHandObj()
@@ -169,12 +234,13 @@ public class P_Interact
         GameObject obj = PD.inHand;
         PD.inHand = null;
         obj.transform.parent = null;
-        obj.GetComponent<Rigidbody>().useGravity = true;
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        rb.useGravity = true;
         obj.GetComponent<Collider>().enabled = true;
-        obj.GetComponent<Rigidbody>().freezeRotation = false;
-        obj.GetComponent<Rigidbody>().velocity = (obj.transform.forward * PD.throwForce);
+        rb.constraints = RigidbodyConstraints.None;
+        rb.velocity = (obj.transform.forward * PD.throwForce);
 
 
     }
-
+    
 }
