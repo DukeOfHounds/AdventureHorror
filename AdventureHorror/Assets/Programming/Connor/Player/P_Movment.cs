@@ -16,6 +16,8 @@ public class P_Movment
     private bool isGrounded;
     private float groundDistance = .4f;
     private Vector3 velocity;
+    private float horizontalAcceleration;
+    private float verticalAcceleration;
     private Sound s;
     public P_Movment(PlayerData PD)
     {
@@ -35,6 +37,14 @@ public class P_Movment
     }
     public void UpdatePosition(float horizontal1D, float vertical1D)
     {
+        if (horizontal1D == 0)
+            horizontalAcceleration = 0;
+        else if (horizontalAcceleration < 1)
+            horizontalAcceleration += PD.acceleration;
+        if (vertical1D == 0)
+            verticalAcceleration = 0;
+        else if (verticalAcceleration < 1)
+            verticalAcceleration += PD.acceleration;
         if(horizontal1D != 0 || vertical1D != 0)
         {
             if (!s.source.isPlaying)
@@ -50,7 +60,7 @@ public class P_Movment
             velocity.y = -2f;
         }
 
-        Vector3 move = PD.player.transform.right * horizontal1D + PD.player.transform.forward * vertical1D;
+        Vector3 move = PD.player.transform.right * horizontal1D *  horizontalAcceleration + PD.player.transform.forward * vertical1D * verticalAcceleration;
 
         PD.player.GetComponent<CharacterController>().Move(move * PD.speed * Time.deltaTime);
 
