@@ -19,7 +19,7 @@ public class BoneCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision obj)
     {
-        if (obj.collider.tag.Equals("PickUpAble") &&! papa.waiting)
+        if ((obj.collider.tag.Equals("PickUpAble") || obj.collider.tag.Equals("Friend")) && ! papa.waiting)
         {
             papa.StopMovement(2);//
         }

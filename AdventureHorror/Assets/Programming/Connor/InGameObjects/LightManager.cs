@@ -10,40 +10,54 @@ public class LightManager : MonoBehaviour
     [Range(0,200)]
     public float currentIntesity = 0;
     private float setIntensity;
-    public Texture Ilumination;
-    public Texture noIlumination;
+    public Material Ilumination;
+    public Material noIlumination;
 
     public GameObject[] Lights;
 
     private void Update()
     {
+        
         if (currentIntesity != 0 && currentIntesity != setIntensity)
         {
             setIntensity = currentIntesity;
             changeLightInt(currentIntesity);
         }
     }
-    public void Awake()
+    public void Start()
     {
         setIntensity = defaltIntensity;
         currentIntesity = defaltIntensity;
         Lights = GameObject.FindGameObjectsWithTag("PoweredLight");
         changeLightInt(defaltIntensity);
+        
     }
 
     public void changeLightInt(float intensity)
     {
         foreach(GameObject light in Lights)
         {
-            light.GetComponent<Light>().intensity = intensity;
-            if (intensity == 0)
-            {
-                light.GetComponent<Material>().mainTexture = noIlumination;
-            }
+            Debug.Log("test");
+           if(light.name.Contains("Spot"))
+                light.GetComponent<Light>().intensity = intensity;
             else
             {
-                light.GetComponent<Material>().mainTexture = Ilumination;
+                if (intensity == 0)
+                {
+                    //light.GetComponent<MeshRenderer>().material = noIlumination;
+                    Ilumination.DisableKeyword("_EMISSION");
+                }
+                else
+                {
+                    //light.GetComponent<MeshRenderer>().material = noIlumination;
+                    Ilumination.EnableKeyword("_EMISSION");
+
+                    //light.GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
+                    // light.GetComponent<Material>().EnableKeyword("_EMISSION");
+                }
             }
+            
+            
         }
     }
 

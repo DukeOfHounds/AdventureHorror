@@ -15,12 +15,14 @@ MonoBehaviour:
   BairHearts: []
   tools: []
   inHand: {fileID: 0}
+  inFlashlightHand: {fileID: 0}
   inToolHand: {fileID: 0}
   speed: 5
   jumpHeight: 0
   gravity: -9.81
   throwForce: 5
-  mouseSensitivity: 0.19892342
+  acceleration: 0.02
+  mouseSensitivity: 0.12
   InteractRange: 3
   HUD: {fileID: 4197089807440806321, guid: 81032fd666b1c844b8068db265b8df9d, type: 3}
   fear: 0
