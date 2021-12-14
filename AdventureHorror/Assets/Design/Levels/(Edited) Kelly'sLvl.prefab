@@ -12505,7 +12505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 3350379581112477054}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 5993254689728195568}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -13052,7 +13053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 346471175174588846}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 6007441320708558022}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -18413,7 +18415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 2944174566802367793}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 6163578733805546431}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -32840,7 +32843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 5008139810701156916}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 6875746143071770170}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -33098,7 +33102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 332756080624960852}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 1585972030413682279}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -34789,7 +34794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 1005572041253483435}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 7117803723631141307}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -48103,7 +48109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 1814979854680158074}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 8503671548479389034}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -55462,7 +55469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 5821007762462988543}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 9217980062940629643}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -55722,7 +55730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 2929915110352323079}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 9167490437189879663}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -56030,7 +56039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 2813739791078507985}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 9181064676150037397}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -63028,7 +63038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 5046501488980244510}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 808094558747170451}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -72789,7 +72800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 7954877524080649612}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 1452365028888056100}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -73403,7 +73415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 8057018923576287205}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 1554578322931788621}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -82313,7 +82326,6 @@ Transform:
   m_Children:
   - {fileID: 3534136505838206301}
   - {fileID: 8744006834666948530}
-  - {fileID: 3051337502569195353}
   m_Father: {fileID: 5432544652818270929}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88395,7 +88407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 295907504187655242}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 3116422710598178366}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -104591,7 +104604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 2638002145525356795}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 4501315762221903093}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -106598,7 +106612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e0135159adff4a8f8bfd1581d03b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VentOfExit: {fileID: 8124902684500351058}
+  ventPortalOfExit: {fileID: 0}
+  ventOfExit: {fileID: 0}
   ExitPosition: {fileID: 4467386200284100319}
   PD: {fileID: 11400000, guid: 16c6ff39fb349774fa0b4b29804bfe52, type: 2}
   canExit: 0
@@ -112131,68 +112146,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7803066589678338280, guid: bc9fa506d6bbf4e458792bad586af325, type: 3}
   m_PrefabInstance: {fileID: 7131223772341667655}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7291328673922246129
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7800019571239710272}
-    m_Modifications:
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -58.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -28.96592
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 27.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5721972338446533289, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-      propertyPath: m_Name
-      value: Decoration
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b9cc4041a26764a4da7217083839d348, type: 3}
---- !u!4 &3051337502569195353 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5721972338446533288, guid: b9cc4041a26764a4da7217083839d348, type: 3}
-  m_PrefabInstance: {fileID: 7291328673922246129}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7919756868680382864
 PrefabInstance:
