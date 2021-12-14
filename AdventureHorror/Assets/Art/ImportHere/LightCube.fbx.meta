@@ -3,7 +3,12 @@ guid: 4718a988004153049bd02580004ac330
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightCube
+    second: {fileID: 2100000, guid: 72cb4fde822c5224abee1117890e2507, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -57,7 +57,7 @@ public class FriendBehavior : MonoBehaviour
         //if (!isPlaying)
         //{
         isPlaying = true;
-        friendAnimator.SetInteger("State", index);
+        //friendAnimator.SetInteger("State", index);
         yield return new WaitForSeconds(time);
         isPlaying = false;
         //Interact();

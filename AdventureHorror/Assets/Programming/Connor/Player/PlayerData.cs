@@ -30,6 +30,7 @@ public class PlayerData : ScriptableObject
     public float gravity = -9.81f;
     [Range(0, 100)]
     public float throwForce = 20;
+    public float acceleration = .01f;
 
     [Header("Camera Variables")]
     [Range(0, 1)]

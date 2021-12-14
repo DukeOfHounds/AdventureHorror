@@ -102,8 +102,7 @@ public class P_Interact
                     if (hit.collider.gameObject.GetComponent<FriendBehavior>().friendType == FriendBehavior.Friend.Bair)
                     {
                         try
-                        {
-                            Debug.Log("give me the flashlight damnit");
+                        {  
                             GameObject obj = hit.collider.gameObject.GetComponentInChildren<Flashlight>().gameObject;
                             obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                             PickUpFlashlight(obj);
