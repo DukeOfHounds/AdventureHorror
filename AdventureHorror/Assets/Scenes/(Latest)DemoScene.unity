@@ -1756,6 +1756,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3216493447035222242, guid: 8b19a26a3f7c5f349b675df167074f57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.725
+      objectReference: {fileID: 0}
     - target: {fileID: 4858734703716579645, guid: 8b19a26a3f7c5f349b675df167074f57, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -1811,6 +1815,10 @@ PrefabInstance:
     - target: {fileID: 8181567025790764054, guid: 8b19a26a3f7c5f349b675df167074f57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.144
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181567026015752242, guid: 8b19a26a3f7c5f349b675df167074f57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b19a26a3f7c5f349b675df167074f57, type: 3}
