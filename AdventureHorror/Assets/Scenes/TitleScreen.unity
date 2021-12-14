@@ -777,7 +777,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Kelly Knowd\t\t\t      Johnie Cariste\t\t\tAaron Kreymer\t\n\nJonathan
-    Levitz\t\t     Declan Ornelas   \t\t          London Sawyer\t        \n\nWill
+    Levitz\t\t     Declan Ornelas   \t\t          London Sawyer\t        \n\nWil
     Weiss\t\t\t         \t     Jack Xue\t\t\t          Jeremy Marsh\t\n\t\nErnesto
     Rodriguez\t\t   "
   m_isRightToLeft: 0
@@ -1715,7 +1715,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Logan Ingersoll\t\t\tDaniel Lvovsky\t\t\tZach Farkas\t\t\t\n\n\nJohnie
-    C\t\t\t\tAryan Ansary\t\t\tWil Weiss\n\n\nDavid Kerns\t\t          Ernesto Rodriguez"
+    Cariste\t\t\tAryan Ansary\t\t\tWil Weiss\n\n\nDavid Kerns\t\t          Ernesto
+    Rodriguez"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
