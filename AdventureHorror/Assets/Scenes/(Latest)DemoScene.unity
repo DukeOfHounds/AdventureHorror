@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Papa
       objectReference: {fileID: 0}
+    - target: {fileID: 3898064118609060921, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3898064118609060924, guid: 3dbad449aaf0d0c4b8baafd3d6719d90, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -767,7 +771,7 @@ Transform:
   - {fileID: 1710187232}
   - {fileID: 1343791706}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520874590 stripped
 GameObject:
@@ -2665,6 +2669,10 @@ PrefabInstance:
     - target: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
       propertyPath: m_Name
       value: First Person Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319401244205666853, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8319401244205666855, guid: d1eee8dee9f0889478b597eaec539b66, type: 3}
       propertyPath: m_RootOrder
