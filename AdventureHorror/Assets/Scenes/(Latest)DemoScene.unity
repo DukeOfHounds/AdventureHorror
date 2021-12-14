@@ -3357,6 +3357,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2655864655631211458, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655864655631211458, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655864656682544958, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655864656682544958, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3076288177935897989, guid: 48f15f284c4c3a34da2d68ed0d536929, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
