@@ -17,7 +17,10 @@ public class P_Movment
     private float groundDistance = .4f;
     private Vector3 velocity;
     private float horizontalAcceleration;
+    private float horizontalDeceleration = 0;
     private float verticalAcceleration;
+    private float verticalDeceleration = 0;
+
     private Sound s;
     public P_Movment(PlayerData PD)
     {
@@ -59,7 +62,24 @@ public class P_Movment
         {
             velocity.y = -2f;
         }
-
+        if(horizontal1D == 0)
+        {
+            horizontalDeceleration += PD.acceleration;
+            horizontal1D = 1 - horizontalDeceleration ;
+        }
+        else
+        {
+            horizontalDeceleration = 0;
+        }
+        if(vertical1D == 0)
+        {
+            verticalDeceleration += PD.acceleration;
+            vertical1D = 1 - verticalDeceleration;
+        }
+        else
+        {
+            horizontalDeceleration = 0;
+        }
         Vector3 move = PD.player.transform.right * horizontal1D *  horizontalAcceleration + PD.player.transform.forward * vertical1D * verticalAcceleration;
 
         PD.player.GetComponent<CharacterController>().Move(move * PD.speed * Time.deltaTime);

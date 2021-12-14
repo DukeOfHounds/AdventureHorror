@@ -44,4 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaltIntensity: 5
+  currentIntesity: 0
+  Ilumination: {fileID: 2100000, guid: 4b125bfd81a99a947af2e9c4e9c0fec6, type: 2}
+  noIlumination: {fileID: 2100000, guid: 15fea05f68173b9498d193e4985ca985, type: 2}
   Lights: []

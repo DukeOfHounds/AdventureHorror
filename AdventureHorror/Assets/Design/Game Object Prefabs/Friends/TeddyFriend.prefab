@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9022567266644793051}
   - component: {fileID: 7698867282618959714}
-  - component: {fileID: 5742593198743951681}
   - component: {fileID: 5852296127080909835}
+  - component: {fileID: 503329775899738682}
   m_Layer: 0
   m_Name: TeddyFriend
   m_TagString: Friend
@@ -51,20 +51,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!64 &5742593198743951681
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313924328121290966}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6031396616607451065, guid: e604f9fc06b87a144a9f6dee48407fc9, type: 3}
 --- !u!114 &5852296127080909835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +64,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   friendType: 0
-  friendAnimator: {fileID: 4151683569487752161}
+  friendAnimator: {fileID: 0}
+--- !u!65 &503329775899738682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313924328121290966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.63907874, y: 0.74864405, z: 0.41756415}
+  m_Center: {x: -0.077340186, y: 0.35125366, z: 0.0048108175}
 --- !u!1001 &1756688927947932118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,10 +224,5 @@ PrefabInstance:
 --- !u!4 &8033738806410178971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 702d9bddd82a8d14897f2bce58062f70, type: 3}
-  m_PrefabInstance: {fileID: 7563562049295619696}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4151683569487752161 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 702d9bddd82a8d14897f2bce58062f70, type: 3}
   m_PrefabInstance: {fileID: 7563562049295619696}
   m_PrefabAsset: {fileID: 0}

@@ -50,10 +50,10 @@ public class PauseMenu : MonoBehaviour
     #region Input Methods
     public void OnEscape(InputAction.CallbackContext context)
     {
-        //if (player.paused == true)
-        //{
-        //    ResumeGame();
-        //}
+        if (player.paused == true && context.canceled)
+        {
+            ResumeGame();
+        }
     }
         #endregion
     }
