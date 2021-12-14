@@ -141,6 +141,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 912082550116232860}
     m_Modifications:
+    - target: {fileID: 670399648695242265, guid: 2b6bc68466df31b4aa6a6e28668ae0ce, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 937306258798670778, guid: 2b6bc68466df31b4aa6a6e28668ae0ce, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3124770655508057444, guid: 2b6bc68466df31b4aa6a6e28668ae0ce, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -184,6 +192,10 @@ PrefabInstance:
     - target: {fileID: 3124770655508057444, guid: 2b6bc68466df31b4aa6a6e28668ae0ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713081450882029402, guid: 2b6bc68466df31b4aa6a6e28668ae0ce, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8739446306391967667, guid: 2b6bc68466df31b4aa6a6e28668ae0ce, type: 3}
       propertyPath: m_Name
